@@ -1,0 +1,22 @@
+<mat-icon [color]="color" fontSet="fa" fontIcon="fa-grav"></mat-icon>
+<h4>Set Icon Color</h4>
+<mat-button-toggle-group [(ngModel)]="color">
+  <mat-button-toggle value="">
+    Font Color
+  </mat-button-toggle>
+  <mat-button-toggle value="primary">
+    Primary
+  </mat-button-toggle>
+  <mat-button-toggle value="accent">
+    Accent
+  </mat-button-toggle>
+  <mat-button-toggle value="warn">
+    Warn
+  </mat-button-toggle>
+</mat-button-toggle-group>
+<br>
+<mat-grid-list cols="8" rowHeight="1:1">
+  <mat-grid-tile *ngFor="let icon of icons | async">
+    <mat-icon [color]="color" fontSet="fa" fontIcon="fa-{{icon}}"></mat-icon>
+  </mat-grid-tile>
+</mat-grid-list>

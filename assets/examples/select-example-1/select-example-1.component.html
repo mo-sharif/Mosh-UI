@@ -1,0 +1,9 @@
+<mat-form-field>
+  <mat-select placeholder="What! Is your favourite color?" [(ngModel)]="favColor">
+      <mat-option value="blue">Blue</mat-option>
+      <mat-option value="green">Green</mat-option>
+      <mat-option value="blue-wait-yell">Blue. No, yel-- auuuuuuuugh!</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<h2 *ngIf="favColor">Your favourite color is {{ favColor }}</h2>

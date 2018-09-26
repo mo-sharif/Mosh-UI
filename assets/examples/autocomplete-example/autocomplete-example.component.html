@@ -1,0 +1,14 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <form>
+    <mat-form-field class="country-select">
+      <input matInput placeholder="Choose a country" aria-label="Country" [matAutocomplete]="auto" [formControl]="countryCtrl">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let country of filteredCountries | async" [value]="country.name">
+          <img aria-hidden src="{{ country.flag }}" width="45"/>
+          <span>{{ country.name }}</span> |
+          <small>Population: {{ country.population }}</small>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+</div>

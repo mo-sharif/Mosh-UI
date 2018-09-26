@@ -1,0 +1,10 @@
+<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="32px">
+  <mat-slide-toggle
+  [disabled]="disabled"
+  [(ngModel)]="checked">{{ checked? 'Checked!':'Slide Me!' }}
+  </mat-slide-toggle>
+  <section fxLayout="column">
+    <mat-checkbox [(ngModel)]="checked" [disabled]="disabled">Checked</mat-checkbox>
+    <mat-checkbox [(ngModel)]="disabled">Disabled</mat-checkbox>
+  </section>
+</div>

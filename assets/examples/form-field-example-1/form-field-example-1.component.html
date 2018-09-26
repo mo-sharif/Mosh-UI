@@ -1,0 +1,79 @@
+<div fxLayout="row" fxLayoutAlign="space-around center" fxLayout.lt-md="column" fxLayoutAlign.lt-md="none">
+  <form [formGroup]="customerForm">
+    <h2 class="mat-headline">Register Customer</h2>
+    <div fxLayout="row">
+      <mat-form-field [color]="formColor" [ngStyle]="{ 'font-size': formFontSize + 'px' }" [floatPlaceholder]="formPlaceholders" [hideRequiredMarker]="!formRequired" class="example-firstname-field">
+        <input matInput
+          formControlName="firstname"
+          type="text"
+          required
+          placeholder="Enter your first name">
+
+        <mat-error *ngIf="customerForm.get('firstname').hasError('required')">
+          This is a required field
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field [color]="formColor" [ngStyle]="{ 'font-size': formFontSize + 'px' }" [floatPlaceholder]="formPlaceholders" [hideRequiredMarker]="!formRequired">
+        <input matInput
+          formControlName="lastname"
+          type="text"
+          required
+          placeholder="Enter your last name">
+
+        <mat-error *ngIf="customerForm.get('lastname').hasError('required')">
+          We also need your last name
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row">
+      <mat-form-field [color]="formColor" [ngStyle]="{ 'font-size': formFontSize + 'px' }" [floatPlaceholder]="formPlaceholders" [hideRequiredMarker]="!formRequired" fxFlex>
+        <input matInput
+          formControlName="email"
+          type="text"
+          required
+          placeholder="Enter your email address">
+
+        <mat-error *ngIf="customerForm.get('email').hasError('required')">
+          Please enter your email
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row">
+      <mat-form-field [color]="formColor" [ngStyle]="{ 'font-size': formFontSize + 'px' }" [floatPlaceholder]="formPlaceholders" [hideRequiredMarker]="!formRequired" fxFlex>
+        <textarea matInput
+          formControlName="describe"
+          maxlength="255"
+          placeholder="Describe yourself in 255 chars"></textarea>
+        <mat-hint align="end">{{ customerForm.value.describe?.length || 0 }}/255</mat-hint>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row">
+      <mat-form-field [color]="formColor" [ngStyle]="{ 'font-size': formFontSize + 'px' }" [floatPlaceholder]="formPlaceholders" [hideRequiredMarker]="!formRequired" fxFlex>
+        <input matInput placeholder="Amount you will donate" type="number">
+        <span matPrefix>$&nbsp;</span>
+        <span matSuffix>.00</span>
+      </mat-form-field>
+    </div>
+  </form>
+  <div fxLayout="column">
+    <h2 class="mat-headline">Form Controls</h2>
+    <mat-form-field>
+      <mat-select placeholder="Theme Color" [(ngModel)]="formColor">
+        <mat-option value="primary">Primary</mat-option>
+        <mat-option value="accent">Accent</mat-option>
+        <mat-option value="warn">Warn</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <label>Font Size</label>
+    <mat-slider min="14" max="32" step="1" value="16" thumbLabel [(ngModel)]="formFontSize"></mat-slider>
+    <label>Float placeholder: </label>
+    <mat-radio-group class="example-placeholder-option" [(ngModel)]="formPlaceholders">
+      <mat-radio-button value="auto">Auto</mat-radio-button>
+      <mat-radio-button value="always">Always</mat-radio-button>
+      <mat-radio-button value="never">Never</mat-radio-button>
+    </mat-radio-group>
+    <mat-slide-toggle [(ngModel)]="formRequired">Show required</mat-slide-toggle>
+  </div>
+</div>

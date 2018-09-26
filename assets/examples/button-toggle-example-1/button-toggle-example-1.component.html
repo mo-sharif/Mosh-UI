@@ -1,0 +1,22 @@
+<mat-button-toggle-group [(ngModel)]="alignText">
+  <mat-button-toggle value="left">
+    <mat-icon>format_align_left</mat-icon>
+  </mat-button-toggle>
+  <mat-button-toggle value="center">
+    <mat-icon>format_align_center</mat-icon>
+  </mat-button-toggle>
+  <mat-button-toggle value="right">
+    <mat-icon>format_align_right</mat-icon>
+  </mat-button-toggle>
+  <mat-button-toggle value="justify">
+    <mat-icon>format_align_justify</mat-icon>
+  </mat-button-toggle>
+</mat-button-toggle-group>
+
+<p [ngStyle]="{ 'text-align': alignText }">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum alias doloribus eum quibusdam provident placeat voluptatem inventore dolorem accusantium facilis officia iure temporibus non perferendis, veritatis ullam magni sapiente ipsam?</p>
+
+<mat-button-toggle (change)="starChange($event)">
+  <mat-icon>star</mat-icon>
+</mat-button-toggle>
+
+<p>Stars: {{ stars | number }}</p>

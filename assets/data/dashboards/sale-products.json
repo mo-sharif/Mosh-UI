@@ -1,0 +1,29 @@
+[{
+    "product": "White Skirt",
+    "photo":"assets\/images\/products\/product-01.jpg",
+    "salesIncrease": "22%",
+    "sales": 575,
+    "discount": "12%",
+    "stock": "125"
+}, {
+    "product": "Bomber Jacket",
+    "photo":"assets\/images\/products\/product-02.jpg",
+    "salesIncrease": "25%",
+    "sales": 153,
+    "discount": "19%",
+    "stock": "25"
+}, {
+    "product": "Luxury Black Shirt",
+    "photo":"assets\/images\/products\/product-03.jpg",
+    "salesIncrease": "21%",
+    "sales": 135,
+    "discount": "11%",
+    "stock": "568"
+}, {
+    "product": "Sporty Hoodie",
+    "photo":"assets\/images\/products\/product-04.jpg",
+    "salesIncrease": "13%",
+    "sales": 98,
+    "discount": "7%",
+    "stock": "115"
+}]

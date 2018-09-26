@@ -1,0 +1,19 @@
+<div fxLayout="row" fxLayoutAlign="space-around center">
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="selectedDate">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Select a language" [ngModel]="language" (change)="changeLocale($event)">
+        <mat-option value="en-US">English</mat-option>
+        <mat-option value="el">Greek</mat-option>
+        <mat-option value="he">Hebrew</mat-option>
+        <mat-option value="zh-CN">Chinese</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div fxLayout="row" fxLayoutAlign="space-around center">
+  <h2 *ngIf="selectedDate">You selected {{ selectedDate | date:'medium' }}</h2>
+</div>

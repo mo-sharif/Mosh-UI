@@ -1,0 +1,31 @@
+<mat-horizontal-stepper linear="true">
+  <mat-step label="What is your name?" [stepControl]="nameForm">
+    <form [formGroup]="nameForm">
+      <mat-form-field>
+        <input matInput placeholder="First name" formControlName="firstName" required>
+        <mat-error *ngIf="nameForm.get('firstName').hasError('required')">
+          You must enter this to continue
+        </mat-error>
+      </mat-form-field>
+    </form>
+    <div>
+      <button mat-button matStepperNext>Next</button>
+    </div>
+  </mat-step>
+  <mat-step label="What is your quest?" [stepControl]="questForm">
+    <form [formGroup]="questForm">
+      <mat-form-field>
+        <input matInput placeholder="State your quest" formControlName="quest" required>
+        <mat-error *ngIf="questForm.get('quest').hasError('required')">
+          You must enter this to continue
+        </mat-error>
+      </mat-form-field>
+    </form>
+    <div>
+      <button mat-button matStepperNext>Next</button>
+    </div>
+  </mat-step>
+  <mat-step label="Finished">
+    <h3>All Done.  Thanks!</h3>
+  </mat-step>
+</mat-horizontal-stepper>
