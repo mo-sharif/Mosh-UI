@@ -1,5 +1,6 @@
 # Mosh UI
 
+<a href="https://mosh-media.github.io/Mosh-UI/">Live Demo</a>
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
 
 ## Project summary
