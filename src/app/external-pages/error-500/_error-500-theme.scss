@@ -1,0 +1,18 @@
+@mixin portal-error-500-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $accent: map-get($theme, accent);
+  $primary: map-get($theme, primary);
+
+  .portal-error-500 {
+    h1 {
+      color: mat-color($accent, default);
+    }
+    mat-card-content {
+      background-color: mat-color($background, card);
+    }
+     &:before {
+      color: rgba(mat-color($accent, default-contrast), .1);
+    }
+  }
+}

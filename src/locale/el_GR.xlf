@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="f85d3635e67d1aaaf60378a1d81c4f1aa47b64cc" datatype="html">
+        <source>Dashboard Example</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/examples/dashboards/dashboard/dashboard.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group><target>Νταζμποαρντ Εχαμπλε</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

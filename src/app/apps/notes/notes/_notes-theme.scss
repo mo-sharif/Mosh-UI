@@ -1,0 +1,34 @@
+@mixin portal-notes-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+
+  .portal-notes-app {
+    background: mat-color($background, background);
+  }
+  .portal-notes-container {
+    background: mat-color($background, background);
+  }
+
+  .portal-sidenav-content {
+    background: mat-color($background, card);
+  }
+
+  .portal-note {
+    background: mat-color($background, card);
+  }
+
+  .portal-sidenav-ticket--state-active {
+    background: mat-color($background, hover);
+  }
+  .portal-notes-list-item .mat-icon {
+    color: mat-color($warn, default);
+  }
+
+  .portal-notes-no-note__container {
+    background: mat-color($accent, default);
+  }
+}

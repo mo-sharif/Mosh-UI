@@ -1,0 +1,22 @@
+@mixin portal-project-states-widget-theme($theme) {
+  $accent: map-get($theme, accent);
+  $primary: map-get($theme, primary);
+
+
+  .portal-project-stepper__progress {
+    background-color: mat-color($primary, lighter);
+  }
+  .portal-project-stepper__progress-bar {
+    background: linear-gradient(to right, mat-color($primary), mat-color($accent));
+    &:after {
+      background: mat-color($accent, default);
+    }
+    [dir='rtl'] & {
+      background: linear-gradient(to left, mat-color($primary), mat-color($accent));
+      &:after {
+        left: auto;
+        right: calc(100% - 4px);
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<div class="portal-example-page">
+  <div class="portal-example-pager__header" fxLayout="row" fxLayoutAlign="center center">
+    <div class="portal-example-pager__header-content">
+      <button mat-button (click)="openSnackBar()" aria-label="Show an example snack-bar">
+        Example Snackbar
+      </button>
+    </div>
+  </div>
+  <div class="portal-example-pager__content">
+    <p>Snackbars provide brief feedback about an operation through a message at the bottom of the screen.</p>
+    <p>Snackbars contain a single line of text directly related to the operation performed. They may contain a text action, but no icons.</p>
+    <p>Only one snackbar may be displayed at a time. Each snackbar may contain a single action, neither of which may be "Dismiss" or "Cancel".</p>
+
+    <p>Snackbars animate upwards from the bottom edge of the screen.</p>
+
+    <h3 class="portal-example-pager__content--heading">Snackbar Example</h3>
+    <p>In the next example we will show you how to use a snackbar.</p>
+    <example-with-code title="Snackbar Example" example="snackbar-example-1" [tabs]="['ts', 'html']">
+      <example-snackbar-1></example-snackbar-1>
+    </example-with-code>
+  </div>
+</div>

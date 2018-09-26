@@ -1,0 +1,44 @@
+<mat-card fxLayout="column">
+  <div class="portal-widget__padding  portal-widget__content--flex">
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div fxFlex>
+        <h2 class="mat-subheading-2 portal-widget__no-margin" il8n>Sales By Region</h2>
+        <h4 class="mat-caption portal-font-weight-light portal-widget__no-margin portal-mini-caption" il8n>Shop distribution</h4>
+      </div>
+      <div>
+        <mat-menu #mapMenu="matMenu">
+          <button mat-menu-item (click)="onPersonClick(markers[2])" i18n>North</button>
+          <button mat-menu-item (click)="onPersonClick(markers[4])" i18n>South</button>
+          <button mat-menu-item (click)="onPersonClick(markers[1])" i18n>West</button>
+          <button mat-menu-item (click)="onPersonClick(markers[3])" i18n>East</button>
+        </mat-menu>
+        <button mat-icon-button [matMenuTriggerFor]="mapMenu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="portal-widget__map" fxFlex>
+    <agm-map
+      [latitude]="lat"
+      [longitude]="lng"
+      [zoomControl]="false"
+      [zoom]="8"
+      [scrollwheel]="false"
+      [disableDefaultUI]="false"
+      [styles]="styles"
+      (mapReady)="onMapReady($event)"
+      [usePanning]="true">
+      <agm-marker *ngFor="let marker of markers"
+        (markerClick)="onPersonClick(marker)"
+        [latitude]="marker.lat"
+        [longitude]="marker.lng"
+        [markerDraggable]="false">
+        <agm-info-window [isOpen]="marker.isOpen" [maxWidth]="180">
+          <strong>{{ marker.name }} - {{ marker.surname }}</strong>
+        </agm-info-window>
+      </agm-marker>
+    </agm-map>
+  </div>
+</mat-card>

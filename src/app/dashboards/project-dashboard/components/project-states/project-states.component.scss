@@ -1,0 +1,65 @@
+.portal-project-stepper {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(150px, 1fr) );
+  overflow: hidden;
+}
+.portal-project-stepper__step {
+  opacity: 0.6;
+  &.portal-project-stepper__step--done {
+    opacity: 1;
+    display: none;
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+}
+
+.portal-project-stepper__step__heading {
+  font-size: 0.875rem;
+  line-height: 1;
+  margin: 0;
+  padding: 16px;
+}
+
+.portal-project-stepper__step__content {
+  padding: 16px;
+  margin: 0;
+  opacity: 0.75;
+}
+
+.portal-project-stepper__progress {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  left: 0;
+  top: 44px;
+}
+
+.portal-project-stepper__progress-bar {
+  height: 100%;
+  position: relative;
+  transform: translateX(-110%);
+  animation: portal-project-stepper__progress-bar  .75s ease-out  forwards 1;
+  animation-delay: 2s;
+  &:after {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    left: calc(100% - 4px);
+    top: -2px;
+  }
+}
+
+
+@keyframes portal-project-stepper__progress-bar {
+  0% {
+    transform: translateX(-110%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}

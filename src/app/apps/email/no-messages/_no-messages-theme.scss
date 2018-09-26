@@ -1,0 +1,32 @@
+@mixin portal-email-no-messages-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  .portal-email-no-messages {
+    h2 {
+      color: mat-color($foreground, secondary-text);
+    }
+    &:before {
+      background: mat-color($background, hover);
+    }
+    .portal-email-no-messages__envelope {
+      background: mat-color($accent, default);
+      box-shadow: 0 0 1px mat-color($accent, 700) inset;
+      &:before, &:after {
+        border: 0 solid transparent;
+      }
+      &:before {
+        border-bottom-color: mat-color($accent, 700);
+        border-left-color: transparent;
+        border-right-color: transparent;
+      }
+      &:after {
+        border-right-color: mat-color($accent, 500);
+        border-left-color: mat-color($accent, default);
+        border-bottom-color: mat-color($accent, default);
+      }
+    }
+  }
+}

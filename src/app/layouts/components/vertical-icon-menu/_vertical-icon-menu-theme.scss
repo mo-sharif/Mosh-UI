@@ -1,0 +1,17 @@
+@mixin portal-layout-compact-theme($theme, $typography) {
+  $accent: map-get($theme, accent);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .portal-compact-sidemenu {
+    background: mat-color($background, app-bar);
+    color: mat-color($foreground, text);
+  }
+
+  // Badge
+  strong.portal-compact-sidemenu__end_detail {
+    background: mat-color($accent, default);
+    color: mat-color($accent, default-contrast);
+  }
+}
+

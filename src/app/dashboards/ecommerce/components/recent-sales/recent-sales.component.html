@@ -1,0 +1,21 @@
+<mat-card fxLayout="row" fxLayoutAlign="space-between stretch">
+  <div class="portal-widget__padding" fxflex="auto">
+    <div fxLayout="column" fxLayoutAlign="start end">
+      <h4 class="mat-caption portal-mini-caption portal-widget__no-margin" il8n>Recent Sales</h4>
+      <div >
+        <mat-icon class="portal-trend-up">trending_up</mat-icon>
+        <span class="mat-display-1 portal-font-weight-light portal-commerce-count portal-widget__no-margin"  portalCount [countTo]="recentSales"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="portal-area-chart" fxflex>
+    <canvas baseChart
+      [datasets]="lineChartData"
+      [labels]="lineChartLabels"
+      [options]="lineChartOptions"
+      [colors]="lineChartColors"
+      [legend]="false"
+      chartType="line"></canvas>
+  </div>
+</mat-card>

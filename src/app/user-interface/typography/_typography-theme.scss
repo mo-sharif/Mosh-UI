@@ -1,0 +1,7 @@
+@mixin portal-typography-theme($theme) {
+  $background: map-get($theme, background);
+
+  .portal-typography {
+    background: mat-color($background, app-bar);
+  }
+}

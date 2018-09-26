@@ -1,0 +1,21 @@
+.portal-stat-tab {
+  height: 86px;
+  .mat-title {
+    margin: 0px;
+  }
+  .mat-icon {
+    font-size: .85em;
+    width: 1.5em;
+    height: 1em;
+    line-height: 1em;
+  }
+  &.mat-tab-label-active {
+    opacity: 1;
+  }
+}
+
+.portal-tab-chart {
+  padding: 24px;
+  position: relative;
+  height: 300px;
+}

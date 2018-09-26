@@ -1,0 +1,39 @@
+@import '../../../../sass/utils';
+
+h2.headline {
+  margin: 16px;
+}
+.portal-email-card {
+  margin: 16px;
+}
+
+.portal-email-card__header {
+  margin-bottom: 24px;
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: -24px;
+    right: -24px;
+    height: 1px;
+  }
+}
+
+.portal-email-card__title {
+  margin-bottom: 6px;
+}
+
+.portal-email-card__subtitle {
+  margin-bottom: 0;
+}
+
+.portal-email-card__date {
+  opacity: .5;
+}
+
+.portal-email-card__actions {
+  .mat-icon {
+    @include portal-ui-icon-sizing(18px);
+  }
+}

@@ -1,0 +1,28 @@
+<div class="portal-example-page">
+  <div class="portal-example-pager__header" fxLayout="row" fxLayoutAlign="center center">
+    <div class="portal-example-pager__header-content">
+      <mat-form-field class="portal-select-preview-example-field">
+        <mat-select placeholder="What! Is your favourite color?">
+            <mat-option value="blue">Blue</mat-option>
+            <mat-option value="green">Green</mat-option>
+            <mat-option value="blue-wait">Blue. No, yel-- auuuuuuuugh!</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="portal-example-pager__content">
+    <p>In your template, create an <code>mat-select</code> element. For each option you'd like in your select, add an <code>mat-option</code> tag. Note that you can disable items by adding the <code>disabled</code> boolean attribute or binding to it.</p>
+
+    <h3 class="portal-example-pager__content--heading">Simple Example</h3>
+    <p>In this example we will show you how to set up a simple select box using angular material.</p>
+    <example-with-code title="Select with options" example="select-example-1" [tabs]="['html']">
+      <select-example-1></select-example-1>
+    </example-with-code>
+
+    <h3 class="portal-example-pager__content--heading">Fetch values of select from HTTP</h3>
+    <p>In this example we will show you how to create a select box json data fetched via http.</p>
+    <example-with-code title="Select options from HTTP" example="select-example-2">
+      <select-example-2></select-example-2>
+    </example-with-code>
+  </div>
+</div>

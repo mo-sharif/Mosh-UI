@@ -1,0 +1,36 @@
+@mixin portal-notification-sidenav($theme) {
+  $primary: map-get($theme, primary);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .portal-notification-sidenav {
+    background: mat-color($background, background);
+    color: mat-color($foreground, text);
+  }
+
+  .portal-notifications-notification {
+    background: mat-color($background, card);
+    @include mat-elevation(1);
+    .portal-notifications-subheader, .mat-card-header {
+      background: mat-color($background, 'hover');
+    }
+    .mat-line mat-icon {
+      color: mat-color($primary, A200);
+    }
+    .mat-card-header-text {
+      flex: 1 1 0;
+    }
+    .mat-card-avatar {
+      background: mat-color($primary, default);
+      color: mat-color($primary, default-contrast);
+    }
+    &:hover {
+      @include mat-elevation(6);
+    }
+  }
+  .portal-notifications-weather-item {
+    .mat-list-item-content div.mat-list-text {
+      padding: 0;
+    }
+  }
+}

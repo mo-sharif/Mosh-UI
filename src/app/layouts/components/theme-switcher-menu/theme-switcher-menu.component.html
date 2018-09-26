@@ -1,0 +1,21 @@
+<button mat-icon-button [matMenuTriggerFor]="colorMenu" matTooltip="Change Colors">
+  <mat-icon>invert_colors</mat-icon>
+</button>
+<mat-menu #colorMenu="matMenu" fxLayout="column" classList="portal-menu-no-padding portal-theme-switcher-menu">
+  <mat-grid-list cols="3" rowHeight="60px" gutterSize="10px">
+    <mat-grid-tile *ngFor="let theme of themes"
+    class="portal-theme-switcher-item"
+    [ngClass]="{ active: currentTheme.id === theme.id }">
+      <div class="portal-theme-icon"
+        (click)="switch(theme)"
+        [matTooltip]="theme.name">
+        <div class="portal-theme-icon__sidebar" [ngStyle]="{ background: theme.sidebar }"></div>
+        <div class="portal-theme-icon__toolbar" [ngStyle]="{ background: theme.toolbar }"></div>
+        <div class="portal-theme-icon__content" [ngStyle]="{ background: theme.content }">
+          <div class="portal-theme-icon__primary" [ngStyle]="{ background: theme.primary }"></div>
+          <div class="portal-theme-icon__accent" [ngStyle]="{ background: theme.accent }"></div>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-menu>

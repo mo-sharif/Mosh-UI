@@ -1,0 +1,17 @@
+<div fxFlexFill class="portal-dashboard-widget" fxLayout="column">
+  <h3 class="portal-dashboard-widget__title" i18n>Contacts</h3>
+  <mat-list class="portal-contacts-widget-list" fxFlex>
+    <mat-list-item *ngFor="let contact of contacts.connect() | async as contacts">
+      <img matListAvatar [src]="contact.photo" [alt]="contact.name">
+      <h3 matLine>{{ contact.name }} {{ contact.surname }}</h3>
+      <p matLine>
+        {{ contact.phone }}
+      </p>
+    </mat-list-item>
+  </mat-list>
+  <mat-toolbar class="portal-contacts-widget-search">
+    <mat-form-field floatPlaceholder="never">
+      <input matInput placeholder="Search" (keyup)="applyFilter($event.target.value)">
+    </mat-form-field>
+  </mat-toolbar>
+</div>

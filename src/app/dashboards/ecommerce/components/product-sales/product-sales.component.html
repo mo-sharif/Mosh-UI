@@ -1,0 +1,56 @@
+<mat-card fxLayout="column" fxLayoutAlign="center stretch">
+  <div class="portal-widget__padding  portal-widget__content--flex">
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div fxFlex>
+        <h2 class="mat-subheading-2 portal-widget__no-margin" il8n>Sales Per Product</h2>
+        <h4 class="mat-caption portal-font-weight-light portal-widget__no-margin portal-mini-caption" il8n>Top 4 products of the month</h4>
+      </div>
+      <div>
+        <mat-menu #productSalesMenu="matMenu">
+          <button mat-menu-item (click)="reorderData()" i18n>Month</button>
+          <button mat-menu-item (click)="reorderData()" i18n>Week</button>
+          <button mat-menu-item (click)="reorderData()" i18n>Day</button>
+        </mat-menu>
+        <button mat-icon-button [matMenuTriggerFor]="productSalesMenu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <mat-table [dataSource]="salesDataSource">
+    <ng-container matColumnDef="photo">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let item"><img [src]="item.photo" [alt]="item.product" width="24" class="portal-commerce-product-image"></mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="product">
+      <mat-header-cell *matHeaderCellDef il8n>Product</mat-header-cell>
+      <mat-cell *matCellDef="let item">{{ item.product }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="salesIncrease">
+      <mat-header-cell *matHeaderCellDef i18n>Sales Increase</mat-header-cell>
+      <mat-cell *matCellDef="let item">{{ item.salesIncrease }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="sales">
+      <mat-header-cell *matHeaderCellDef i18n>Sale Volume</mat-header-cell>
+      <mat-cell *matCellDef="let item">{{ item.sales }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="discount">
+      <mat-header-cell *matHeaderCellDef i18n>Discount</mat-header-cell>
+      <mat-cell *matCellDef="let item">{{ item.discount }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="stock">
+      <mat-header-cell *matHeaderCellDef i18n>Stock</mat-header-cell>
+      <mat-cell *matCellDef="let item">{{ item.stock }}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+  </mat-table>
+</mat-card>

@@ -1,0 +1,24 @@
+<div fxLayout="column" fxFlexFill class="portal-calendar-page portal-calendar-page__background" [ngClass]="'portal-calendar-page__background-month-'+currentMonthNum">
+  <div class="portal-calendar-page__container">
+    <div  fxFlex fxLayoutAlign="start center" fxLayout="row" fxLayoutGap="16px" >
+      <a mat-icon-button (click)="calendarNavigate('prev')" i18n><mat-icon>chevron_left</mat-icon></a>
+      <h1 class="portal-calendar-page__date">{{ selectedView === 'agendaWeek' ? 'Week ' : '' }} {{ currentDay | date:viewFormats[selectedView] }}</h1>
+      <a mat-icon-button (click)="calendarNavigate('next')" i18n><mat-icon>chevron_right</mat-icon></a>
+    </div>
+    <div fxLayoutAlign="center center" class="portal-calendar-page__view-container">
+      <button mat-icon-button
+        *ngFor="let view of viewOptions"
+        (click)="changeView(view.viewName)"
+        [ngClass]="{ 'portal-calendar-page__view-active': selectedView  === view.viewName }" [matTooltip]="view.name">
+        <mat-icon>{{ view.iconName }}</mat-icon>
+      </button>
+      <div class="portal-calendar-page__view-indicator"></div>
+    </div>
+  </div>
+  <div fxLayout="column" fxFlex class="portal-calendar-page__container">
+    <angular2-fullcalendar #calendar [options]="calendarOptions"></angular2-fullcalendar>
+  </div>
+  <button mat-fab class="portal-calendar-page__event_button" color="accent" (click)="openDialog()">
+      <mat-icon>add</mat-icon>
+  </button>
+</div>

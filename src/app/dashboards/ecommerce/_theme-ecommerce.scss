@@ -1,0 +1,108 @@
+@mixin portal-ecommerce-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $accent: map-get($theme, accent);
+  $primary: map-get($theme, primary);
+  $red: mat-palette($mat-red);
+  $green: mat-palette($mat-green);
+
+  .portal-ecommerce-page-wrapper {
+    background: mat-color($background, background);
+  }
+
+  // Widget colors
+  .portal-widget__color-primary {
+    color: mat-color($primary, default);
+  }
+  .portal-widget__color-accent {
+    color: mat-color($accent, default);
+  }
+  .portal-trend-down {
+    color: mat-color($red, default);
+  }
+  .portal-trend-up {
+    color: mat-color($green, default);
+  }
+
+    // Widget heading
+  .portal-ecommerce-page-wrapper .portal-widget__heading {
+    border-color: mat-color($primary, default);
+    &:after {
+      background-color: mat-color($accent, default);
+    }
+  }
+  [dir='rtl'] .portal-ecommerce-page-wrapper .portal-widget__heading {
+    padding-right: 12px;
+    padding-left: 0;
+    border-left-width: 0;
+    border-right-width: 2px;
+    border-right-style: solid;
+    &:after {
+      right: -2px;
+      left: auto;
+    }
+  }
+
+  // Widget content
+  .portal-widget__content {
+    .mat-card {
+      box-sizing: border-box;
+      height: 100%;
+    }
+  }
+  .portal-widget__content--no-padding {
+    .mat-card {
+      padding: 0;
+    }
+  }
+
+  .portal-widget__no-margin {
+    margin: 0 !important;
+  }
+  .portal-widget__content--no-padding-bottom {
+    .mat-card {
+      padding-bottom: 0;
+    }
+  }
+
+  // Widget content classes
+  .portal-widget__padding {
+    padding: 24px;
+  }
+  .portal-widget__padding-x {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .portal-widget__padding-y {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  .portal-mini-caption {
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+  .portal-commerce-count {
+    min-width: 1.1em;
+    text-align: left;
+    display: inline-block;
+  }
+
+  .portal-commerce-product-image {
+    border-radius: 4px;
+  }
+  .portal-widget__content-divider {
+    height: 1px;
+    background: mat-color($foreground, dividers);
+  }
+
+  // Primary widget
+  .portal-widget__content--primary {
+    .mat-card  {
+      background: linear-gradient(0deg, mat-color($primary, default), mat-color($primary, 600));
+      color: mat-color($primary, default-contrast);
+    }
+    .portal-widget__content-divider {
+      background: rgba(mat-color($primary, default-contrast), .2);
+    }
+  }
+}

@@ -1,0 +1,7 @@
+<button mat-icon-button [matMenuTriggerFor]="languageMenu">
+  <mat-icon>language</mat-icon>
+</button>
+<mat-menu #languageMenu="matMenu">
+  <button mat-menu-item (click)="selectLanguage(null)" i18n>English</button>
+  <button mat-menu-item (click)="selectLanguage('el_GR')" i18n>Greek</button>
+</mat-menu>

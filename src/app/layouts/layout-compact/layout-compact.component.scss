@@ -1,0 +1,19 @@
+@import '../../../sass/utils';
+
+.portal-compact-leftsidenav {
+  box-shadow: 4px 0px 16px rgba(0, 0, 0, 0.2), -4px 0px 16px rgba(0, 0, 0, 0.2);
+  width: 120px;
+}
+
+.portal-compact-rightsidenav {
+  width: 320px;
+}
+
+.portal-compact-content-wrapper {
+  position: relative;
+}
+
+.portal-compact-content {
+  overflow-y: auto;
+}
+

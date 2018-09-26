@@ -1,0 +1,7 @@
+@import '../../../../sass/utils';
+
+.mat-menu-item {
+  .mat-list-icon {
+    @include portal-ui-icon-sizing(16px);
+  }
+}

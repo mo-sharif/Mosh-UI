@@ -1,0 +1,19 @@
+<div class="portal-example-page">
+  <div class="portal-example-pager__header" fxLayout="row" fxLayoutAlign="center center">
+    <div class="portal-example-pager__header-content">
+      <button mat-raised-button (click)="openDialog()">I am a Dialog</button>
+    </div>
+  </div>
+  <div class="portal-example-pager__content">
+    <p>Dialogs inform users about a specific task and may contain critical information, require decisions, or involve multiple tasks.</p>
+    <p>Dialogs contain text and UI controls. They retain focus until dismissed or a required action has been taken.</p>
+    <p>Use dialogs sparingly because they are interruptive.</p>
+    <p>Dialogs should never be obscured, either by other elements or the screen edge.</p>
+
+    <h3 class="portal-example-pager__content--heading">Dialog Example</h3>
+    <p>In the next example we will show you how to use a dialog popup.</p>
+    <example-with-code title="Dialog Example" example="dialog-example-1" [tabs]="['ts', 'html']">
+      <example-dialog-1></example-dialog-1>
+    </example-with-code>
+  </div>
+</div>

@@ -1,0 +1,70 @@
+.portal-profile-container {
+  min-height: 100%;
+  overflow: auto;
+}
+
+.portal-profile__header {
+  transform: translateY(80px);
+  opacity: 0;
+  animation: portal-profile 1s forwards 1;
+  animation-delay: .5s;
+}
+
+.portal-profile__header-content {
+  width: 100%;
+  padding: 200px 0px 24px;
+  @media (max-width: 600px) {
+    padding-top: 24px;
+  }
+}
+
+.portal-profile__avatar {
+  width: 80px;
+  border-radius: 50%;
+}
+
+.portal-profile__header-text {
+  position: relative;
+  z-index: 1;
+  h1, p {
+    margin-bottom: 0;
+  }
+}
+
+.portal-profile__content {
+  padding-bottom: 48px;
+  opacity: 0;
+  transform: translateY(80px);
+  animation: portal-profile 1s forwards 1;
+  animation-delay: .8s;
+  .mat-card {
+    padding: 0;
+    box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
+  }
+  .mat-card-actions {
+    padding: 36px;
+  }
+  .mat-icon {
+    font-size: 16px;
+    line-height: 24px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .toggle-container {
+    padding-bottom: 24px;
+  }
+}
+
+// Demo animations
+@keyframes portal-profile {
+  0% {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+

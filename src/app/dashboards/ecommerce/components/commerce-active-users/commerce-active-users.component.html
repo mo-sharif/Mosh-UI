@@ -1,0 +1,21 @@
+<mat-card fxLayout="row" fxLayoutAlign="space-between stretch">
+  <div class="portal-widget__padding" fxflex="auto">
+    <div fxLayout="column" fxLayoutAlign="start end">
+      <h4 class="mat-caption portal-mini-caption portal-widget__no-margin" il8n>Active Users</h4>
+      <div>
+        <mat-icon class="portal-trend-up">trending_up</mat-icon>
+        <span class="mat-display-1 portal-font-weight-light portal-commerce-count portal-widget__no-margin"  portalCount [countTo]="commerceActiveUsers"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="portal-bar-chart" fxflex>
+    <canvas baseChart
+      [datasets]="barChartDatasets"
+      [labels]="barChartLabels"
+      [options]="barChartOptions"
+      [colors]="barChartColors"
+      [legend]="false"
+      chartType="bar" ></canvas>
+  </div>
+</mat-card>

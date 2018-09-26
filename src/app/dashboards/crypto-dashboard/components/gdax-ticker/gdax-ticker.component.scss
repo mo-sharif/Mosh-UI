@@ -1,0 +1,52 @@
+.ticker-card {
+  position: relative;
+  &.mat-card {
+    padding: 0;
+  }
+}
+
+.ticker-card-content {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.ticker-content {
+  display: flex;
+  will-change: transform;
+}
+
+.ticker-strip {
+  display: flex;
+}
+
+.ticker-item {
+  margin: 0px 16px;
+  min-width: 96px;
+  padding: 24px;
+  img {
+    width: 24px;
+    height: 24px;
+  }
+  h2 {
+    margin: 0px;
+    padding: 0 8px;
+    font-size: 16px;
+  }
+
+  h4 {
+    margin: 8px 0 0 0;
+    font-size: 27px;
+    &::first-letter {
+      font-size: 16px;
+      display: inline-block;
+      padding-right: .2em;
+      opacity: 0.5;
+    }
+  }
+}
+.ticker-item__name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

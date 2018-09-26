@@ -1,0 +1,20 @@
+.portal-bar-chart {
+  display: flex;
+  justify-content: flex-end;
+  canvas {
+    height: 350px;
+    max-width: 100%;
+    min-height: 100%;
+  }
+}
+
+
+.mat-card-title {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.mat-card-subtitle {
+  margin-top: -8px;
+  margin-bottom: 0;
+}

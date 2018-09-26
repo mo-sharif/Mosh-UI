@@ -1,0 +1,24 @@
+<div class="portal-dashboard-page-wrapper">
+  <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutGap="16px">
+    <div class="portal-widget" fxFlex="70">
+      <p class="portal-widget__heading mat-subheading-2 ">Portal Analytics</p>
+      <portal-dashboard-tabbed-chart-widget class="portal-widget__content portal-widget__content--no-padding"></portal-dashboard-tabbed-chart-widget>
+    </div>
+
+    <div class="portal-widget" fxFlex="30">
+      <p class="portal-widget__heading mat-subheading-2">Active User</p>
+      <portal-dashboard-active-users class="portal-widget__content portal-widget__content--primary portal-widget__content--no-padding"></portal-dashboard-active-users>
+    </div>
+
+  </div>
+  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="16px">
+    <div class="portal-widget" fxFlex="30">
+      <p class="mat-subheading-2 portal-widget__heading">Sessions By Device</p>
+      <portal-dashboard-doughnut-chart-widget class="portal-widget__content"></portal-dashboard-doughnut-chart-widget>
+    </div>
+    <div class="portal-widget" fxFlex="70">
+      <p class="portal-widget__heading mat-subheading-2">Client Acquisition</p>
+      <portal-dashboard-table-widget class="portal-widget__content portal-widget__content--no-padding"></portal-dashboard-table-widget>
+    </div>
+  </div>
+</div>

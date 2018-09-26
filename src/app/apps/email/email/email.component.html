@@ -1,0 +1,31 @@
+<div fxLayout="row" fxFlexFill>
+  <div fxLayout="column">
+    <div fxFlex class="portal-email-menu" fxLayout="column">
+      <a mat-button
+        *ngFor="let menu of menuItems"
+        class="portal-email-menu__item"
+        [routerLink]="['/apps/email', { outlets: { list: [menu.list], messages: 'none' } }]"
+        routerLinkActive="portal-email-menu__item--active"
+        (click)="menuItemClick()">
+        <mat-icon>{{ menu.icon }}</mat-icon>
+        <h3 i18n>{{ menu.name }}</h3>
+        <strong
+          class="portal-email-menu__end_detail"
+          *ngIf="menu.count">
+          {{ menu.count }}
+        </strong>
+      </a>
+    </div>
+  </div>
+
+  <mat-drawer-container fxFlex>
+    <mat-drawer class="mat-elevation-z4" [mode]="messagesDrawerMode" [opened]="messagesDrawerOpen" #messagesDrawer>
+      <router-outlet name="list"></router-outlet>
+    </mat-drawer>
+    <router-outlet name="messages"></router-outlet>
+    <button mat-fab class="portal-email-compose-fab" (click)="compose()">
+      <mat-icon class="mat-18">email</mat-icon>
+    </button>
+  </mat-drawer-container>
+</div>
+

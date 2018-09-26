@@ -1,0 +1,28 @@
+<h3 class="mat-headline">Layout Title</h3>
+<div fxLayout="row" fxLayoutAlign="start center">
+  <mat-form-field>
+    <input matInput
+      [(ngModel)]="layoutTitle"
+      type="text"
+      required
+      placeholder="Enter a title for this layout">
+  </mat-form-field>
+  <button mat-button (click)="layoutService.setTitle(layoutTitle)">Set Title</button>
+</div>
+
+<h3 class="mat-headline">Layout Loader</h3>
+<div fxLayout="row" fxLayoutAlign="start center">
+  <mat-slider [(ngModel)]="loaderTime" min="0" max="60" step="1"></mat-slider>
+  <button mat-button (click)="showLoader(loaderTime)">Show Loader</button>
+  <span>For {{ loaderTime | number }} seconds</span>
+</div>
+
+<h3 class="mat-headline">Layout Direction</h3>
+<div fxLayout="row" fxLayoutAlign="start center">
+  <mat-slide-toggle
+    labelPosition="before"
+    [ngModel]="layoutService.isRTL() | async"
+    (change)="layoutService.toggleDirection()">
+    RTL
+  </mat-slide-toggle>
+</div>

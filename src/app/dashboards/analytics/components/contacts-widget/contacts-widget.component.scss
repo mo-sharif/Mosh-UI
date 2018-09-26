@@ -1,0 +1,11 @@
+.portal-contacts-widget-list {
+  margin-top: 0px;
+  overflow-y: auto;
+}
+
+.portal-contacts-widget-search {
+  background: transparent;
+  .mat-form-field {
+    width: 100%;
+  }
+}

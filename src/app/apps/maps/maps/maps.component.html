@@ -1,0 +1,56 @@
+<div class="portal-map-page-wrapper"  fxLayout.xs="column">
+  <div fxLayout="column" fxLayoutGap="16px" class="portal-map-cards" fxFlex.xs="auto" fxFlex.sm="50" fxFlex="30">
+    <mat-card class="portal-map-card-contact mat-elevation-z8 portal-hide-scrollbars">
+        <mat-list>
+          <mat-list-item
+            *ngFor="let marker of markers"
+            (click)="onPersonClick(marker)"
+            [class.portal-maps-contact-item--active]="marker === activeMarker">
+            <img matListAvatar [src]="marker.photo" [alt]="marker.name">
+            <h3 matLine>{{ marker.name }} {{ marker.surname }}</h3>
+            <p matLine>
+              {{ marker.profession }}
+            </p>
+            <mat-icon mat-list-icon>room</mat-icon>
+          </mat-list-item>
+        </mat-list>
+    </mat-card>
+    <mat-card class="portal-maps-contact-detail-card mat-elevation-z8 portal-hide-scrollbars">
+      <div>
+      <div *ngIf="activeMarker; else noMarkerSelected">
+        <h3 class="portal-font-weight-bold">{{ activeMarker.name }} - {{ activeMarker.surname }} - {{ activeMarker.age }} - {{ activeMarker.profession }}</h3>
+        <p>About {{ activeMarker.name }} : {{ activeMarker.bio }}</p>
+      </div>
+      <ng-template #noMarkerSelected>
+          <div class='portal-maps-contact-detail-card__pin'></div>
+          <div class='portal-maps-contact-detail-card__pulse'></div>
+          <p class="portal-maps-contact-detail-card__explainer">Click on one of the map markers or the avatars above in order to view that person's details.</p>
+      </ng-template>
+      </div>
+    </mat-card>
+  </div>
+
+  <agm-map
+    [latitude]="lat"
+    [longitude]="lng"
+    [zoomControl]="false"
+    [zoom]="8"
+    [scrollwheel]="false"
+    [disableDefaultUI]="false"
+    [styles]="styles"
+    (mapReady)="onMapReady($event)"
+    [usePanning]="true">
+    <agm-marker *ngFor="let marker of markers"
+      (markerClick)="onPersonClick(marker)"
+      [latitude]="marker.lat"
+      [longitude]="marker.lng"
+      [label]="marker.name"
+      [markerDraggable]="false">
+      <agm-info-window [isOpen]="marker.isOpen" [maxWidth]="180">
+        <img [src]="marker.photo">
+        <strong>{{ marker.name }} - {{ marker.surname }}</strong>
+      </agm-info-window>
+    </agm-marker>
+  </agm-map>
+
+</div>

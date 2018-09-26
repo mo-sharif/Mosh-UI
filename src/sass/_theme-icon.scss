@@ -1,0 +1,371 @@
+.portal-theme-icon {
+  width: 36px;
+  height: 36px;
+  position: relative;
+  cursor: pointer;
+}
+
+.portal-theme-icon__sidebar {
+  position: absolute;
+  top: 0;
+  border-radius: 2px;
+  width: 33.33333%;
+  height: 100%;
+  left: 0;
+  z-index: 2;
+  .mat-toolbar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+  }
+}
+
+.portal-theme-icon__toolbar {
+  position: absolute;
+  top: 0;
+  border-radius: 2px;
+  width: 55.55555%;
+  height: 16.66666%;
+  right: 0;
+}
+
+.portal-theme-icon__content {
+  position: absolute;
+  border-radius: 2px;
+  width: 55.55555%;
+  height: 72.2222%;
+  bottom: 0;
+  right: 0;
+  opacity: 0.8;
+}
+
+.portal-theme-icon__primary,
+.portal-theme-icon__accent {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  transition: all .3s;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  .portal-theme-icon:hover & {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+.portal-theme-icon__primary {
+  top: 60%;
+  left: 30%;
+  .portal-theme-icon:hover & {
+    top: 10%;
+    left: 50%;
+  }
+}
+
+.portal-theme-icon__accent {
+  top: 60%;
+  left: 70%;
+  .portal-theme-icon:hover & {
+    top: 60%;
+    left: 50%;
+  }
+}
+
+.portal-theme-icon__action {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  transform: translate3d(-50%, -50%, 0);
+  top: 3px;
+  left: 15px;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+// Layouts
+.portal-theme-icon--layout-toolbar {
+  .portal-theme-icon__sidebar {
+    width: 0;
+  }
+  .portal-theme-icon__content,
+  .portal-theme-icon__toolbar {
+    width: 100%;
+  }
+  .portal-theme-icon__action {
+    left: 3px;
+  }
+}
+.portal-theme-icon--layout-compact {
+  .portal-theme-icon__sidebar {
+    width: 16.66666665%;
+  }
+  .portal-theme-icon__content,
+  .portal-theme-icon__toolbar {
+    width: 72.222222%;
+  }
+  .portal-theme-icon__action {
+    left: 10px;
+  }
+}
+
+.portal-theme-icon--layout-boxed {
+  .portal-theme-icon__sidebar {
+    width: 0%;
+  }
+  .portal-theme-icon__content,
+  .portal-theme-icon__toolbar {
+    width: 90%;
+    right: 5%;
+  }
+  .portal-theme-icon__toolbar {
+    top: 5%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .portal-theme-icon__content {
+    height: 73.334%;
+    bottom: 5%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .portal-theme-icon__action {
+    left: 5px;
+    top: 5px;
+  }
+}
+
+.portal-theme-icon--layout-tabbed {
+  .portal-theme-icon__sidebar {
+    width: 0%;
+  }
+  .portal-theme-icon__content,
+  .portal-theme-icon__toolbar {
+    width: 90%;
+    right: 5%;
+  }
+  .portal-theme-icon__toolbar {
+    top: 5%;
+    width: 25%;
+    right: auto;
+    left: 5%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .portal-theme-icon__content {
+    height: 73.334%;
+    bottom: 5%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .portal-theme-icon__action {
+    left: 20px;
+    top: 5px;
+  }
+}
+
+.portal-theme-icon--layout-funky {
+  .portal-theme-icon__sidebar {
+    width: 16.66666665%;
+    .mat-toolbar:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0px;
+      z-index: 2;
+      display: block;
+      background: inherit;
+      border-radius: 2px;
+    }
+  }
+
+  .portal-theme-icon__content,
+  .portal-theme-icon__toolbar {
+    width: 72.222222%;
+  }
+  .portal-theme-icon__action {
+    left: 10px;
+  }
+}
+
+// Layout Animations
+$animation-duration: 2.5s;
+$animation-delay: .5s;
+
+// General
+.portal-theme-icon {
+  &:hover {
+    .portal-theme-icon__sidebar,
+    .portal-theme-icon__toolbar,
+    .portal-theme-icon__sidebar .mat-toolbar:after,
+    .portal-theme-icon__content,
+    .portal-theme-icon__action {
+      animation-duration: $animation-duration;
+      animation-delay: $animation-delay;
+      animation-iteration-count: infinite;
+      animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    }
+    .portal-theme-icon__action {
+      animation-name: layout-action;
+      animation-timing-function: ease-in;
+    }
+  }
+}
+@keyframes layout-action {
+  0%, 16%, 100% {
+    width: 4px;
+    height: 4px;
+    opacity: 0;
+  }
+  8% {
+    width: 20px;
+    height: 20px;
+    opacity: .3;
+  }
+}
+// Classic
+.portal-theme-icon--layout-classic {
+  &:hover {
+    .portal-theme-icon__sidebar {
+      animation-name: classic-sidebar;
+    }
+    .portal-theme-icon__toolbar,
+    .portal-theme-icon__content {
+      animation-name: classic-content;
+    }
+  }
+}
+@keyframes classic-sidebar {
+  0%, 16%, 64%, 100% {
+    width: 33.33333333%;
+  }
+  32%, 48% {
+    width: 0%;
+  }
+}
+
+@keyframes classic-content {
+  0%, 16%, 64%, 100% {
+    width: 55.55555555%;
+  }
+  32%, 48% {
+    width: 100%;
+  }
+}
+
+// Toolbar
+.portal-theme-icon--layout-toolbar,
+.portal-theme-icon--layout-boxed {
+  &:hover {
+    .portal-theme-icon__sidebar {
+      animation-name: toolbar-sidebar;
+    }
+    .portal-theme-icon__toolbar,
+    .portal-theme-icon__content {
+      animation-name: toolbar-content;
+    }
+  }
+}
+@keyframes toolbar-sidebar {
+  0%, 16%, 64%, 100% {
+    width: 0%;
+  }
+  32%, 48% {
+    width: 33.33333%;
+  }
+}
+@keyframes toolbar-content {
+  0%, 16%, 64%, 100% {
+    opacity: 0.8;
+  }
+  32%, 48% {
+    opacity: 0.3;
+  }
+}
+
+// Tabbed
+.portal-theme-icon--layout-tabbed {
+  &:hover {
+    .portal-theme-icon__toolbar{
+      animation-name: tabbed-toolbar;
+    }
+  }
+}
+@keyframes tabbed-toolbar {
+  0%, 16%, 64%, 100% {
+    left: 5%;
+  }
+  32%, 48% {
+    left: 30%;
+  }
+}
+@keyframes toolbar-content {
+  0%, 16%, 64%, 100% {
+    opacity: 0.8;
+  }
+  32%, 48% {
+    opacity: 0.3;
+  }
+}
+
+// Compact
+.portal-theme-icon--layout-compact {
+  &:hover {
+    .portal-theme-icon__sidebar {
+      animation-name: compact-sidebar;
+    }
+    .portal-theme-icon__toolbar,
+    .portal-theme-icon__content {
+      animation-name: compact-content;
+    }
+  }
+}
+@keyframes compact-sidebar {
+  0%, 16%, 64%, 100% {
+    width: 16.66666665%;
+  }
+  32%, 48% {
+    width: 0%;
+  }
+}
+
+@keyframes compact-content {
+  0%, 16%, 64%, 100% {
+    width: 72.222222%;
+  }
+  32%, 48% {
+    width: 100%;
+  }
+}
+
+// Funky
+.portal-theme-icon--layout-funky {
+  &:hover {
+    .portal-theme-icon__sidebar .mat-toolbar:after {
+      animation-name: funky-sidebar;
+    }
+    .portal-theme-icon__toolbar,
+    .portal-theme-icon__content {
+      animation-name: funky-content;
+    }
+  }
+}
+@keyframes funky-sidebar {
+  0%, 16%, 64%, 100% {
+    left: 0px;
+  }
+  32%, 48% {
+    left: 9px;
+  }
+}
+
+@keyframes funky-content {
+  0%, 16%, 64%, 100% {
+    opacity: 0.8;
+  }
+  32%, 48% {
+    opacity: 0.3;
+  }
+}

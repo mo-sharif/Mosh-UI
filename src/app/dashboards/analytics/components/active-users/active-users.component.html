@@ -1,0 +1,18 @@
+<mat-card fxLayout="column" fxLayoutAlign="space-between stretch">
+  <div class="portal-widget__padding">
+    <p class="mat-body-2" il8n>Active users right now </p>
+    <p class="mat-display-3 portal-font-weight-light" portalCount [countTo]="activeUsers"></p>
+    <p class="mat-caption">Page views per minute</p>
+    <div class="portal-widget__content-divider"></div>
+  </div>
+
+  <div class="portal-widget__padding-x">
+    <canvas baseChart
+      [datasets]="barChartDatasets"
+      [labels]="barChartLabels"
+      [options]="barChartOptions"
+      [colors]="barChartColors"
+      [legend]="false"
+      chartType="bar" ></canvas>
+    </div>
+</mat-card>

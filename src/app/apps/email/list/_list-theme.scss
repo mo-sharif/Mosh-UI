@@ -1,0 +1,8 @@
+@mixin portal-email-list-theme($theme) {
+  $primary: map-get($theme, primary);
+
+  .portal-thread-list__item--active {
+    background: mat-color($primary, lighter);
+    color: mat-contrast($primary, lighter);
+  }
+}

@@ -1,0 +1,37 @@
+<div class="portal-todo-wrapper">
+  <div fxLayout="column" fxFlexFill fxLayoutAlign="space-around stretch" fxLayoutGap="16px" fxFlex="60" fxFlexOffset="20">
+
+    <mat-card class="portal-todo mat-elevation-z8">
+      <div class="portal-todo__header portal-todo__header-demo">
+        <h2 i18n>My daily list</h2>
+        <div class="portal-todo__header-demo-mountain"></div>
+        <div class="portal-todo__header-demo-mountain"></div>
+        <div class="portal-todo__header-demo-cloud"></div>
+        <div class="portal-todo__header-demo-sun"></div>
+      </div>
+      <mat-card-content>
+        <mat-selection-list #todos  [ngModel]="selectedOptions" (ngModelChange)="onSelectedOptionsChange($event)" fxFlex="100" class="portal-todo__list">
+          <mat-list-option *ngFor="let todo of todoList" [value]="todo.name">
+            <span *ngIf="!todo.completed; else nowrap">{{ todo.name }}</span>
+            <ng-template #nowrap><del>{{ todo.name }}</del></ng-template>
+          </mat-list-option>
+        </mat-selection-list>
+      </mat-card-content>
+    </mat-card>
+    <div fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="16px" class="portal-todo__actions">
+      <div fxLayoutAlign="space-between center" fxLayout="row" fxFlex="100" fxLayoutGap="16px">
+        <button mat-button (click)="todos.selectAll()" i18n>Select all</button>
+        <button mat-button (click)="todos.deselectAll()" i18n>Deselect all</button>
+        <mat-form-field floatPlaceholder="never">
+          <input matInput placeholder="Add a task" [(ngModel)]="newTodo">
+        </mat-form-field>
+        <a mat-mini-fab (click)="addTodo()"><mat-icon>add</mat-icon></a>
+      </div>
+      <div fxLayoutAlign="space-between center" fxLayout="row" fxFlex="100" fxLayoutGap="16px" *ngIf="selectedOptions.length">
+        <button mat-button (click)="deleteSelectedTodos()" i18n *ngIf="selectedOptions.length">Delete Selected</button>
+        <button mat-button (click)="uncompleteSelectedTodos()" i18n *ngIf="selectedOptions.length">Uncomplete Selected</button>
+        <button mat-button (click)="completeSelectedTodos()" i18n *ngIf="selectedOptions.length">Complete Selected</button>
+      </div>
+    </div>
+  </div>
+</div>

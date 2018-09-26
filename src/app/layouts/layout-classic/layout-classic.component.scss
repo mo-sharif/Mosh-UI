@@ -1,0 +1,17 @@
+.portal-classic-leftsidenav {
+  box-shadow: 4px 0px 16px rgba(0, 0, 0, 0.2), -4px 0px 16px rgba(0, 0, 0, 0.2);
+  width: 256px;
+}
+
+.portal-classic-rightsidenav {
+  width: 320px;
+}
+
+.portal-classic-content-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.portal-classic-content {
+  overflow-y: auto;
+}

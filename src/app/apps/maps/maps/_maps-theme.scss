@@ -1,0 +1,48 @@
+@mixin portal-maps($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  .portal-maps-contact-item {
+    .portal-maps-contact-item--active {
+      background: mat-color($primary, lighter);
+      color: mat-contrast($primary, lighter);
+    }
+  }
+
+  .portal-maps-contact-detail-card {
+    background: mat-color($accent, default);
+    color: mat-color($accent, default-contrast);
+  }
+
+  .portal-maps-contact-item--active {
+    .mat-icon {
+      color: mat-color($accent, default);
+    }
+  }
+  .portal-maps-contact-detail-card__pin {
+    background: mat-color($accent, default-contrast);
+    &:after {
+      background: mat-color($accent, default);
+    }
+  }
+  .portal-maps-contact-detail-card__pulse {
+    background: mat-color($accent, 500);
+    &:after {
+      box-shadow: 0 0 1px 2px mat-color($accent, 600);
+    }
+  }
+
+  // Style the map info window
+  .agm-info-window-content {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    img {
+      width: 36px;
+      border-radius: 50%;
+    }
+    strong {
+      padding: 0 10px;
+    }
+  }
+}

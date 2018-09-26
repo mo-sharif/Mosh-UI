@@ -1,0 +1,172 @@
+<div class="portal-sidenav-theme" fxLayout="column" fxFlexFill>
+  <mat-toolbar>
+    <span i18n>Elements</span>
+    <span fxFlex></span>
+    <button mat-icon-button (click)="menuDrawer.close()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-toolbar>
+  <div class="portal-funky-drawer-menu" fxFlex="nogrow noshrink">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>extension</mat-icon>
+          <h3>Form Controls</h3>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/elements/autocomplete" routerLinkActive="portal-menu--active">
+          <h3 matLine>Autocomplete</h3>
+        </a>
+        <a mat-list-item routerLink="/elements/checkbox" routerLinkActive="portal-menu--active">
+          <h3 matLine>Checkbox</h3>
+        </a>
+        <a mat-list-item routerLink="/elements/datepicker" routerLinkActive="portal-menu--active">
+          <h3 matLine>Datepicker</h3>
+        </a>
+        <a mat-list-item routerLink="/elements/form-field" routerLinkActive="portal-menu--active">
+          <h3 matLine>Form Field</h3>
+        </a>
+        <a mat-list-item routerLink="/elements/input" routerLinkActive="portal-menu--active">
+          <h3 matLine>Input</h3>
+        </a>
+        <a mat-list-item routerLink="/elements/radio" routerLinkActive="portal-menu--active">
+          <h3 matLine>Radio</h3>
+        </a>
+        <a mat-list-item routerLink="/elements/select" routerLinkActive="portal-menu--active">
+          <h3 matLine>Select</h3>
+        </a>
+        <a mat-list-item routerLink="/elements/slider" routerLinkActive="portal-menu--active">
+          <h3 matLine>Slider</h3>
+        </a>
+        <a mat-list-item routerLink="/elements/toggle" routerLinkActive="portal-menu--active">
+          <h3 matLine>Slide Toggle</h3>
+        </a>
+      </mat-nav-list>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>menu</mat-icon>
+          <h3>Navigation</h3>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/elements/menu" routerLinkActive="portal-menu--active">
+          <h3 matLine>Menu</h3>
+        </a>
+        <a mat-list-item routerLink="/elements/sidenav" routerLinkActive="portal-menu--active">
+          <h3 matLine>Sidenav</h3>
+        </a>
+        <a mat-list-item routerLink="/elements/toolbar" routerLinkActive="portal-menu--active">
+          <h3 matLine>Toolbar</h3>
+        </a>
+      </mat-nav-list>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>view_module</mat-icon>
+          <h3>Layout</h3>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/elements/list" routerLinkActive="portal-menu--active">
+          <h3 matLine>List</h3>
+        </a>
+        <a mat-list-item routerLink="/elements/grid-list" routerLinkActive="portal-menu--active">
+          <h3 matLine>Grid List</h3>
+        </a>
+        <a mat-list-item routerLink="/elements/card" routerLinkActive="portal-menu--active">
+          <h3 matLine>Card</h3>
+        </a>
+        <a mat-list-item routerLink="/elements/stepper" routerLinkActive="portal-menu--active">
+          <h3 matLine>Stepper</h3>
+        </a>
+        <a mat-list-item routerLink="/elements/tabs" routerLinkActive="portal-menu--active">
+          <h3 matLine>Tabs</h3>
+        </a>
+        <a mat-list-item routerLink="/elements/expansion-panel" routerLinkActive="portal-menu--active">
+          <h3 matLine>Expansion Panel</h3>
+        </a>
+      </mat-nav-list>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>info</mat-icon>
+          <h3>Buttons & Indicators</h3>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/elements/buttons" routerLinkActive="portal-menu--active">
+          <h3 matLine>Buttons</h3>
+        </a>
+        <a mat-list-item routerLink="/elements/button-toggle" routerLinkActive="portal-menu--active">
+          <h3 matLine>Button Toggle</h3>
+        </a>
+        <a mat-list-item routerLink="/elements/chips" routerLinkActive="portal-menu--active">
+          <h3 matLine>Chips</h3>
+        </a>
+        <a mat-list-item routerLink="/elements/mat-icon" routerLinkActive="portal-menu--active">
+          <h3 matLine>Material Icons</h3>
+        </a>
+        <a mat-list-item routerLink="/elements/fa-icon" routerLinkActive="portal-menu--active">
+          <h3 matLine>Font Awesome Icons</h3>
+        </a>
+        <a mat-list-item routerLink="/elements/progress-spinner" routerLinkActive="portal-menu--active">
+          <h3 matLine>Progress Spinner</h3>
+        </a>
+        <a mat-list-item routerLink="/elements/progress-bar" routerLinkActive="portal-menu--active">
+          <h3 matLine>Progress Bar</h3>
+        </a>
+      </mat-nav-list>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>feedback</mat-icon>
+          <h3>Popups & Modals</h3>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/elements/dialog" routerLinkActive="portal-menu--active">
+          <h3 matLine>Dialog</h3>
+        </a>
+        <a mat-list-item routerLink="/elements/tooltip" routerLinkActive="portal-menu--active">
+          <h3 matLine>Tooltip</h3>
+        </a>
+        <a mat-list-item routerLink="/elements/snackbar" routerLinkActive="portal-menu--active">
+          <h3 matLine>Snackbar</h3>
+        </a>
+      </mat-nav-list>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>reorder</mat-icon>
+          <h3>Data Table</h3>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/elements/table" routerLinkActive="portal-menu--active">
+          <h3 matLine>Table</h3>
+        </a>
+        <a mat-list-item routerLink="/elements/sortable" routerLinkActive="portal-menu--active">
+          <h3 matLine>Sortable</h3>
+        </a>
+        <a mat-list-item routerLink="/elements/paginator" routerLinkActive="portal-menu--active">
+          <h3 matLine>Paginator</h3>
+        </a>
+      </mat-nav-list>
+    </mat-expansion-panel>
+  </div>
+  <mat-toolbar>
+    <mat-toolbar-row>
+      <span fxFlex></span>
+      <button mat-icon-button>
+        <mat-icon>info</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>

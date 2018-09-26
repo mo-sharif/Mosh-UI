@@ -1,0 +1,7 @@
+<div class="portal-dashboard-widget" fxLayout="column">
+  <agm-map [latitude]="lat" [longitude]="lng" [zoomControl]="false" [zoom]="8" [scrollwheel]="false">
+    <agm-marker [latitude]="lat" [longitude]="lng">
+        <agm-info-window>Custom Marker Text Here</agm-info-window>
+    </agm-marker>
+  </agm-map>
+</div>

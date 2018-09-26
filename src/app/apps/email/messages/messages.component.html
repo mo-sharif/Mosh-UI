@@ -1,0 +1,27 @@
+<div *ngIf="currentThread$ | async as thread">
+  <h2 class="headline">{{ thread.subject }}</h2>
+  <mat-card class="portal-email-card" *ngFor="let message of thread.messages">
+    <mat-card-header class="portal-email-card__header" fxLayout="row" fxLayoutAlign="start center">
+
+      <img mat-card-avatar [src]="message.from.image">
+      <div fxFlex>
+        <mat-card-title class="portal-email-card__title">{{ message.from.name }}</mat-card-title>
+        <mat-card-subtitle class="portal-email-card__subtitle">{{ message.from.email }}</mat-card-subtitle>
+      </div>
+      <div class="portal-email-card__date portal-font-italic">
+        {{ message.date | date | amTimeAgo }}
+      </div>
+    </mat-card-header>
+    <mat-card-content [innerHTML]="message.content"></mat-card-content>
+    <mat-card-actions  class="portal-email-card__actions" fxLayout="row">
+      <div class="portal-email-card__actions-reply" fxFlex>
+        <button mat-icon-button (click)="reply('reply', thread, message)"><mat-icon>reply</mat-icon></button>
+        <button mat-icon-button (click)="reply('replyAll', thread, message)"><mat-icon>reply_all</mat-icon></button>
+        <button mat-icon-button (click)="reply('forward', thread, message)"><mat-icon>forward</mat-icon></button>
+      </div>
+      <div class="portal-email-card__actions-delete">
+        <button mat-icon-button color="warn" (click)="delete(thread, message)"><mat-icon>delete</mat-icon></button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>

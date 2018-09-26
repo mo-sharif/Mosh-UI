@@ -1,0 +1,89 @@
+/**
+ * Copy of material designs theme function, but this allows us to set the app-bar color
+ */
+@function portal-light-theme($primary, $accent, $warn: mat-palette($mat-red), $app-bar-background: white, $app-bar-color: black) {
+  @return (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    is-dark: false,
+    foreground: (
+      base:              black,
+      divider:           $black-12-opacity,
+      dividers:          $black-12-opacity,
+      disabled:          rgba(black, 0.38),
+      disabled-button:   rgba(black, 0.38),
+      disabled-text:     rgba(black, 0.38),
+      hint-text:         rgba(black, 0.38),
+      secondary-text:    rgba(black, 0.54),
+      icon:              rgba(black, 0.54),
+      icons:             rgba(black, 0.54),
+      text:              rgba(black, 0.87),
+      slider-min:        rgba(black, 0.87),
+      slider-off:        rgba(black, 0.26),
+      slider-off-active: rgba(black, 0.38),
+      app-bar:           $app-bar-color
+    ),
+    background: (
+      status-bar: map_get($mat-grey, 300),
+      app-bar:    $app-bar-background,
+      background: map_get($mat-grey, 50),
+      hover:      rgba(black, 0.04), // TODO(kara): check style with Material Design UX
+      card:       white,
+      dialog:     white,
+      disabled-button: $black-12-opacity,
+      raised-button: white,
+      focused-button: $black-6-opacity,
+      selected-button: map_get($mat-grey, 300),
+      selected-disabled-button: map_get($mat-grey, 400),
+      disabled-button-toggle: map_get($mat-grey, 200),
+      unselected-chip: map_get($mat-grey, 300),
+      disabled-list-option: map_get($mat-grey, 200),
+    )
+  );
+}
+
+/**
+ * Copy of material designs theme function, but this allows us to set the app-bar color
+ */
+@function portal-dark-theme($primary, $accent, $warn: mat-palette($mat-red), $app-bar-background: #424242, $app-bar-color: white) {
+  @return (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    is-dark: true,
+    foreground: (
+      base:              white,
+      divider:           $white-12-opacity,
+      dividers:          $white-12-opacity,
+      disabled:          rgba(white, 0.3),
+      disabled-button:   rgba(white, 0.3),
+      disabled-text:     rgba(white, 0.3),
+      hint-text:         rgba(white, 0.3),
+      secondary-text:    rgba(white, 0.7),
+      icon:              white,
+      icons:             white,
+      text:              white,
+      slider-min:        white,
+      slider-off:        rgba(white, 0.3),
+      slider-off-active: rgba(white, 0.3),
+      app-bar:           $app-bar-color
+    ),
+    background: (
+      status-bar: black,
+      app-bar:    $app-bar-background,
+      background: #303030,
+      hover:      rgba(white, 0.04), // TODO(kara): check style with Material Design UX
+      card:       map_get($mat-grey, 800),
+      dialog:     map_get($mat-grey, 800),
+      disabled-button: $white-12-opacity,
+      raised-button: map-get($mat-grey, 800),
+      focused-button: $white-6-opacity,
+      selected-button: map_get($mat-grey, 900),
+      selected-disabled-button: map_get($mat-grey, 800),
+      disabled-button-toggle: black,
+      unselected-chip: map_get($mat-grey, 700),
+      disabled-list-option: black,
+    )
+  );
+}

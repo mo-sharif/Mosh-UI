@@ -1,0 +1,14 @@
+<div *ngIf="layoutService.getLoader() | async" class="portal-layout-loader" fxLayout="column" fxLayoutAlign="center center">
+  <div class="portal-logo">
+    <div class="portal-logo__circles">
+      <div class="portal-logo__circle portal-logo__circle--bottom"></div>
+      <div class="portal-logo__circle portal-logo__circle--top"></div>
+      <div class="portal-logo__circle portal-logo__circle--left"></div>
+      <div class="portal-logo__circle portal-logo__circle--right"></div>
+      <div class="portal-logo__circle portal-logo__circle--inner"></div>
+    </div>
+  </div>
+  <span>
+    Loading...
+  </span>
+</div>

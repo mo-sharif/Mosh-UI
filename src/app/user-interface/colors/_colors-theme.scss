@@ -1,0 +1,55 @@
+@mixin portal-colors-theme($theme) {
+  $background: map-get($theme, background);
+
+  $mat-palettes: (
+    red: $mat-red,
+    pink: $mat-pink,
+    purple: $mat-purple,
+    deep-purple: $mat-deep-purple,
+    indigo: $mat-indigo,
+    blue: $mat-blue,
+    light-blue: $mat-light-blue,
+    cyan: $mat-cyan,
+    teal: $mat-teal,
+    green: $mat-green,
+    light-green: $mat-light-green,
+    lime: $mat-lime,
+    yellow: $mat-yellow,
+    amber: $mat-amber,
+    orange: $mat-orange,
+    deep-orange: $mat-deep-orange,
+    brown: $mat-brown,
+    grey: $mat-grey,
+    blue-grey: $mat-blue-grey
+  );
+
+  $mat-hues: (
+    50,
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900,
+    A100,
+    A200,
+    A400,
+    A700
+  );
+
+  .portal-colors {
+    background: mat-color($background, app-bar);
+  }
+
+  @each $name, $palette in $mat-palettes {
+    @each $hue in $mat-hues {
+      .portal-#{$name}-#{$hue} {
+        background-color: mat-color($palette, $hue);
+        color: mat-contrast($palette, $hue);
+      }
+    }
+  }
+}

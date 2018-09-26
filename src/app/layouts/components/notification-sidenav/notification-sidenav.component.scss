@@ -1,0 +1,101 @@
+.portal-notifications-today {
+  font-weight: 300;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+.portal-notifications-notification {
+  padding: 0;
+  margin: 16px 16px 24px;
+  border-radius: 4px;
+  transition: box-shadow .3s;
+  mat-icon {
+    font-size: 12px;
+    padding: 0;
+    line-height: inherit;
+  }
+  .mat-card-header {
+    line-height: 48px;
+    padding: 0 16px;
+    align-items: center;
+    overflow: hidden;
+    .mat-card-avatar {
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      text-align: center;
+    }
+    .mat-caption {
+      margin: 0;
+      line-height: inherit;
+      height: 48px;
+      display: flex;
+      flex-direction: column;
+      transition: transform .3s, opacity .3s;
+      align-items: flex-end;
+      .mat-icon {
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        margin: 12px 0;
+        text-align: center;
+        opacity: 0;
+        cursor: pointer;
+      }
+    }
+  }
+  &:hover .mat-card-header .mat-caption {
+      transform: translateY(-48px);
+      .mat-icon {
+        opacity: 1
+      }
+    }
+  .mat-card-content {
+    padding: 16px;
+  }
+}
+.portal-notifications-header {
+  margin: 16px;
+  font-weight: lighter;
+}
+.portal-notifications-subheader, .mat-card-title {
+  text-transform: uppercase;
+  color: inherit;
+  margin: 0;
+}
+
+.portal-notifications-weather-item {
+  .mat-list-avatar {
+    order: 2;
+    min-width: 120px;
+    text-align: center;
+    img {
+      max-height: 100%;
+    }
+  }
+  h3 {
+    font-weight: bolder;
+  }
+  h4 {
+    font-size: 32px;
+    font-weight: 300;
+    margin: 0px;
+    order: 3;
+  }
+}
+
+.portal-notifications-message {
+  background: #00A2EC;
+}
+.portal-notifications-facebook {
+  background: #395A93;
+}
+.portal-notifications-slack {
+  background: #E51160;
+}
+.portal-notifications-twitter {
+  background: #00A3EC;
+}
+.portal-notifications-spotify {
+  background: #00B962;
+}

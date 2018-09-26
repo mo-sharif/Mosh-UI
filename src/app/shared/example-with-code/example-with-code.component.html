@@ -1,0 +1,21 @@
+<div class="portal-example-with-code mat-elevation-z3">
+  <mat-toolbar color="primary">
+    <span>{{ title }}</span>
+    <span fxFlex></span>
+    <button mat-icon-button matTooltip="Show me the code" (click)="toggleCode()">
+        <mat-icon>code</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <mat-tab-group *ngIf="showCode">
+    <mat-tab *ngFor="let tab of codeTabs" [label]="tab.title | uppercase">
+      <pre class="hljs" [innerHTML]="tab.code$ | async"></pre>
+    </mat-tab>
+  </mat-tab-group>
+
+  <mat-divider></mat-divider>
+
+  <div class="portal-example-with-code__content">
+    <ng-content></ng-content>
+  </div>
+</div>

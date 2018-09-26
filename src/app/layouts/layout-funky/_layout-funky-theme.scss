@@ -1,0 +1,22 @@
+@mixin portal-layout-funky-theme($theme) {
+  $accent: map-get($theme, accent);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .portal-funky-icon-menu {
+    background: mat-color($background, app-bar);
+    color: mat-color($foreground, text);
+  }
+
+  .portal-funky-drawer-menu {
+    background: mat-color($background, app-bar);
+    color: mat-color($foreground, text);
+  }
+
+  // Badge
+  strong.portal-funky-icon-menu__end_detail {
+    background: mat-color($accent, default);
+    color: mat-color($accent, default-contrast);
+  }
+}
+

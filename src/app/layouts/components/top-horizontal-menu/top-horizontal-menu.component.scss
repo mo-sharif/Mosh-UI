@@ -1,0 +1,44 @@
+.portal-toolbar {
+  z-index: 5;
+  position: relative;
+  &.mat-elevation-z6 {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  &.portal-transparent-toolbar {
+    background: transparent;
+    color: inherit;
+    box-shadow: none;
+  }
+}
+
+.portal-notification {
+  position: relative;
+}
+.portal-notification .portal-notification-badge {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 50%;
+  top: 0;
+  right: 0;
+  font-size: .75em;
+}
+.portal-notification-active .mat-icon {
+  transform-origin: 50% 0;
+  animation-name: notification-active;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+}
+@keyframes notification-active {
+  0% { transform: rotate(0deg) }
+  1% { transform: rotate(25deg) }
+  3% { transform: rotate(-20deg) }
+  5% { transform: rotate(10deg) }
+  7% { transform: rotate(-5deg) }
+  9% { transform: rotate(2deg) }
+  11% { transform: rotate(-2deg) }
+  12% { transform: rotate(0deg) }
+  20% { transform: rotate(0deg) }
+}

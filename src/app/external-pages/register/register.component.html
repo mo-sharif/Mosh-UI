@@ -1,0 +1,70 @@
+<div class="portal-accent-bg portal-register-container" fxLayoutAlign="center center" fxLayoutAlign.lt-md="none">
+  <mat-card class="portal-register-card portal-horizontal-card mat-elevation-z"
+    fxFlex="100"
+    fxFlex.md="90"
+    fxFlex.gt-md="60"
+    fxLayout.lt-md="column">
+    <mat-card-content
+      fxFlex="auto"
+      fxFlex.gt-sm="50%"
+      fxLayout="column"
+      fxLayoutAlign="space-between none"
+      class="portal-primary-bg">
+      <div>
+        <mat-card-title fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+          <img class="portal-register-logo" src="assets/images/oxygenna.png"/>
+          <h1 i18n>Register</h1>
+        </mat-card-title>
+        <div>
+          <p i18n>It takes a couple of minutes to sign up for a free account.</p>
+          <p i18n>Just fill in your details to gain access the admin panel and view the dashboard.</p>
+          <p i18n>By creating an account, you agree to our Terms & Conditions and Privacy Policy.</p>
+        </div>
+      </div>
+      <button mat-button i18n type="button" color="accent" mat-raised-button (click)="login()">
+        I already have an account.
+      </button>
+    </mat-card-content>
+
+    <mat-card-content
+      fxFlex="auto"
+      fxFlex.gt-sm="50%"
+      fxLayout="column"
+      fxLayoutAlign="space-between none"
+      fxLayoutGap="16px">
+      <form [formGroup]="registerForm">
+        <div fxLayout="row" fxLayout.sm="column">
+          <mat-form-field class="portal-remove-fixed-infix-width portal-first-name">
+            <input matInput formControlName="first_name" placeholder="First Name">
+          </mat-form-field>
+          <mat-form-field class="portal-remove-fixed-infix-width">
+            <input matInput formControlName="last_name" placeholder="Last Name">
+          </mat-form-field>
+        </div>
+        <mat-form-field>
+          <input matInput formControlName="email" type="email" placeholder="Email Address">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="password" formControlName="password" placeholder="Password">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="password" formControlName="passwordConfirm" placeholder="Repeat Your Password">
+          <div *ngIf="registerForm.hasError('mismatchedPasswords')" i18n>
+            Passwords do not match.
+          </div>
+        </mat-form-field>
+      </form>
+
+      <div fxLayout="column">
+        <button mat-raised-button i18n
+          type="button"
+          fxFlex="none"
+          color="primary"
+          (click)="register()"
+          [disabled]="!registerForm.valid">
+          Register
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

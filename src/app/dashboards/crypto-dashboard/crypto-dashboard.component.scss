@@ -1,0 +1,15 @@
+.portal-dashboard-page-wrapper {
+  padding: 16px;
+  min-height: 100%;
+}
+
+// Widgets
+.portal-widget {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.portal-widget__content {
+  flex: 1 1 100%;
+}

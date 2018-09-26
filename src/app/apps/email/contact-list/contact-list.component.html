@@ -1,0 +1,9 @@
+<mat-list>
+  <mat-list-item *ngFor="let contact of contacts$ | async">
+    <img matListAvatar [src]="contact.image" [alt]="contact.name">
+    <h3 matLine>{{ contact.name }}</h3>
+    <button mat-icon-button (click)="onClick">
+      <mat-icon class="mat-18">email</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-list>

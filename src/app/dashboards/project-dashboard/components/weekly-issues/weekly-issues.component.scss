@@ -1,0 +1,10 @@
+.portal-line-chart {
+  display: flex;
+  justify-content: flex-end;
+  canvas {
+    height: 150px;
+    max-width: 100%;
+    min-height: 100%;
+  }
+}
+

@@ -1,0 +1,13 @@
+<mat-card fxLayout="column" fxLayoutAlign="space-between stretch"  class="portal-themed-shadow">
+  <mat-card-content>
+    <div class="portal-line-chart">
+      <canvas baseChart
+        [datasets]="lineChartDatasets"
+        [labels]="lineChartLabels"
+        [options]="lineChartOptions"
+        [colors]="lineChartColors"
+        [legend]="true"
+        chartType="line" ></canvas>
+    </div>
+  </mat-card-content>
+</mat-card>

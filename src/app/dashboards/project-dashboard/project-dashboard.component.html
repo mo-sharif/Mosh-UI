@@ -1,0 +1,30 @@
+<div class="portal-dashboard-page-wrapper" fxLayout="column">
+  <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutGap="16px">
+    <div class="portal-widget" fxFlex="75">
+      <p class="portal-widget__heading mat-subheading-2" i18n>Project States</p>
+      <portal-dashboard-project-states class="portal-widget__content portal-widget__content--no-padding"></portal-dashboard-project-states>
+    </div>
+
+    <div class="portal-widget" fxFlex="25">
+      <p class="portal-widget__heading mat-subheading-2" i18n>Weekly Issues</p>
+      <portal-dashboard-weekly-issues class="portal-widget__content portal-widget__content--no-padding"></portal-dashboard-weekly-issues>
+    </div>
+
+  </div>
+  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="16px">
+    <div fxFlex="66" fxLayoutAlign="space-between stretch" fxLayout="column">
+      <div class="portal-widget">
+        <p class="portal-widget__heading mat-subheading-2" i18n>Issues Status</p>
+        <portal-dashboard-issues-status class="portal-widget__content portal-widget__content--no-padding"></portal-dashboard-issues-status>
+      </div>
+      <div class="portal-widget">
+        <p class="portal-widget__heading mat-subheading-2" i18n>Backlog</p>
+        <portal-dashboard-backlog class="portal-widget__content portal-widget__content--no-padding"></portal-dashboard-backlog>
+      </div>
+    </div>
+    <div class="portal-widget" fxFlex>
+      <p class="portal-widget__heading mat-subheading-2" i18n>Tasks by Users</p>
+      <portal-dashboard-user-tasks class="portal-widget__content portal-widget__content--no-padding"></portal-dashboard-user-tasks>
+    </div>
+  </div>
+</div>

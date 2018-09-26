@@ -1,0 +1,20 @@
+<mat-card class="portal-users portal-themed-shadow" fxLayout="column">
+  <mat-card-content>
+    <mat-list class="portal-users__list portal-hide-scrollbars">
+      <div class="portal-users-list-item"
+        *ngFor="let user of users.connect() | async as users; last as isLast"
+        (click)="onClickedUser(user)"
+        [ngClass]="{ 'portal-users-list-item--active': selectedUser  === user }">
+        <a mat-list-item>
+          <img matListAvatar [src]="user.photo" [alt]="user.name">
+          <h3 class="portal-font-weight-bold" matLine>{{ user.name }} {{ user.surname }}</h3>
+          <p matLine i18n>
+            {{ user.closed_tasks }} closed issues, {{ user.new_tasks }} new
+          </p>
+          <span class="portal-badge {{selectedUser  === user ? 'portal-badge--primary': 'portal-badge--secondary'}}">{{ user.new_tasks }}</span>
+        </a>
+        <mat-divider *ngIf="!isLast" class="mat-divider-inset"></mat-divider>
+      </div>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,30 @@
+<mat-card fxLayout="column" fxLayoutAlign="center stretch">
+  <div class="portal-widget__padding  portal-widget__content--flex">
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div fxFlex>
+        <h2 class="mat-subheading-2 portal-widget__no-margin" il8n>{{ salesTitle }}</h2>
+        <h4 class="mat-caption portal-font-weight-light portal-widget__no-margin portal-mini-caption" il8n>Week 21 compared to week 20</h4>
+      </div>
+      <div>
+        <mat-menu #dailySalesMenu="matMenu">
+          <button mat-menu-item (click)="changeSales('Daily Sales')" i18n>Daily Sales</button>
+          <button mat-menu-item (click)="changeSales('Weekly Sales')" i18n>Weekly Sales</button>
+          <button mat-menu-item (click)="changeSales('Monthly Sales')" i18n>Monthly Sales</button>
+        </mat-menu>
+        <button mat-icon-button [matMenuTriggerFor]="dailySalesMenu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="portal-bar-chart">
+    <canvas baseChart
+      [datasets]="barChartDatasets"
+      [labels]="barChartLabels"
+      [options]="barChartOptions"
+      [colors]="barChartColors"
+      [legend]="false"
+      chartType="bar" ></canvas>
+  </div>
+</mat-card>

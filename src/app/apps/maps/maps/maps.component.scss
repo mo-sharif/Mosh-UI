@@ -1,0 +1,166 @@
+@import '../../../../sass/utils';
+
+.portal-map-page-wrapper {
+  height: 300px;
+  @media (min-width: 600px) {
+    height: 100%;
+  }
+}
+
+mat-list-item {
+  cursor: pointer;
+}
+
+.portal-map-cards {
+  z-index: 1;
+  padding: 16px;
+  order: 2;
+  margin-top: -100px;
+  @media (min-width: 600px) {
+    position: absolute;
+    order: 1;
+    height: 100%;
+    margin-top: 0;
+  }
+}
+.portal-map-card-contact {
+  padding: 0;
+  overflow: auto;
+  min-height: 228px;
+  @media (min-width: 600px) {
+
+  }
+  .mat-icon {
+    @include portal-ui-icon-sizing(16px);
+    order: 3;
+    opacity: .6;
+    transition: opacity .3s, color .3s;
+  }
+  .portal-maps-contact-item--active .mat-icon {
+    opacity: 1;
+  }
+}
+
+.portal-maps-contact-detail-card {
+  min-height: 176px;
+  @media (min-width: 600px) {
+    overflow: auto;
+    animation: portal-maps-contact-detail-card .3s ease-out 1;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.portal-maps-contact-detail-card__explainer {
+  text-align: center;
+  padding-top: 80px;
+}
+
+agm-map {
+  height: 400px;
+  width: 100%;
+  @media (min-width: 600px) {
+    height: 100%;
+  }
+}
+
+.agm-info-window-content {
+  display: flex;
+  align-items: center;
+  img {
+    max-width: 36px;
+  }
+  strong {
+    padding: 0 10px;
+  }
+}
+
+// Demo animations
+.portal-maps-contact-detail-card__pin {
+  width: 24px;
+  height: 24px;
+  border-radius: 50% 50% 50% 0;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 55px;
+  margin: -12px 0 0 -12px;
+  animation-name: portal-maps-contact-detail-card__pin;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  z-index: 2;
+  &:after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    margin: 8px 0 0 8px;
+    position: absolute;
+    border-radius: 50%;
+  }
+}
+
+.portal-maps-contact-detail-card__pulse {
+  border-radius: 50%;
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  left: 50%;
+  top: 55px;
+  margin: 11px 0px 0px -7px;
+  transform: rotateX(55deg);
+  z-index: 1;
+  &:after {
+    content: "";
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    margin: -13px 0 0 -13px;
+    animation: portal-maps-contact-detail-card__pulse 1s ease-out;
+    animation-iteration-count: infinite;
+    opacity: 0;
+    animation-delay: 1.1s;
+  }
+}
+@keyframes portal-maps-contact-detail-card {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes portal-maps-contact-detail-card__pulse {
+  0% {
+    transform: scale(0.1, 0.1);
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 1.0;
+  }
+  100% {
+    transform: scale(1.2, 1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes portal-maps-contact-detail-card__pin {
+  0% {
+    opacity: 0;
+    transform: translateY(-1000px) rotate(-45deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(30px) rotate(-45deg);
+  }
+  80% {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+  100% {
+    transform: translateY(0) rotate(-45deg);
+  }
+}

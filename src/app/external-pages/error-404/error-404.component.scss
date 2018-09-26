@@ -1,0 +1,62 @@
+.portal-error-404-container {
+  min-height: 100%;
+}
+.portal-error-404 {
+  padding: 0;
+  position: relative;
+  z-index: 1;
+  animation: portal-error-404 1s forwards 1;
+  animation-delay: 0.6s;
+  transform: translateY(20px);
+  opacity: 0;
+  box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
+  mat-card-content {
+    min-height: 350px;
+    padding: 48px;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .mat-form-field {
+    width: 100%;
+  }
+  .mat-icon {
+    cursor: pointer;
+  }
+  &:before {
+    content: "404";
+    display: block;
+    position: absolute;
+    font-size: 50vw;
+    transform: translate3d(-50%, -80px, 0);
+    left: 50%;
+    z-index: -1;
+    top: -40%;
+    font-weight: 300;
+    opacity: 0;
+    animation: portal-error-404-text 1s forwards 1;
+    animation-delay: 1.2s;
+  }
+}
+
+// Demo Animations
+@keyframes portal-error-404-text {
+  0% {
+    transform: translate3d(-50%, -80px, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+    opacity: 1;
+  }
+}
+@keyframes portal-error-404 {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}

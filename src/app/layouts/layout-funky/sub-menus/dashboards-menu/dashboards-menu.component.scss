@@ -1,0 +1,18 @@
+@import '../../../../../sass/utils';
+
+.portal-funky-drawer-menu {
+  overflow-y: auto;
+}
+
+// Menu List.
+.mat-nav-list {
+  padding: 0px;
+  // Left menu icon
+  .mat-list-icon {
+    @include portal-ui-icon-sizing(16px);
+  }
+  // End detail icon
+  .mat-icon.portal-sidnav-menu__end_detail {
+    @include portal-ui-icon-sizing(16px);
+  }
+}

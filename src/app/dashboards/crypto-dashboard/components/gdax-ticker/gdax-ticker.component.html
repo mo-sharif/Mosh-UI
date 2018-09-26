@@ -1,0 +1,24 @@
+<mat-card class="ticker-card">
+  <mat-card-content class="ticker-card-content">
+    <div #marquee class="ticker-content">
+      <div #strip class="ticker-strip">
+        <div class="ticker-item" *ngFor="let product of products$ | async">
+          <div class="ticker-item__name">
+            <img [src]="'assets/images/dashboards/crypto/' + product.base_currency + '.svg'" [alt]="product.display_name">
+            <h2 fxFlex>{{ product.display_name }}</h2>
+          </div>
+          <h4>{{ product.socket.price | currency }} </h4>
+        </div>
+      </div>
+      <div class="ticker-strip">
+        <div class="ticker-item" *ngFor="let product of products$ | async">
+          <div class="ticker-item__name">
+            <img [src]="'assets/images/dashboards/crypto/' + product.base_currency + '.svg'" [alt]="product.display_name">
+            <h2 fxFlex>{{ product.display_name }}</h2>
+          </div>
+          <h4>{{ product.socket.price | currency }}</h4>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

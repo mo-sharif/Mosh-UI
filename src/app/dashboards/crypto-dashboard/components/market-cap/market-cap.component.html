@@ -1,0 +1,63 @@
+<mat-card fxLayout="column" fxLayoutAlign="center stretch">
+  <div class="portal-widget__padding  portal-widget__content--flex" fxLayout="row" fxLayoutAlign="center center">
+    <div fxFlex>
+      <mat-card-title class="mat-card-title" il8n>Market Cap</mat-card-title>
+      <mat-card-subtitle class="mat-card-subtitle" il8n>Showing Top 10</mat-card-subtitle>
+    </div>
+    <div>
+      <mat-menu #marketCapMenu="matMenu">
+        <button mat-menu-item i18n>Month</button>
+        <button mat-menu-item i18n>Week</button>
+        <button mat-menu-item i18n>Day</button>
+      </mat-menu>
+      <button mat-icon-button [matMenuTriggerFor]="marketCapMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <mat-card-content>
+
+    <mat-table [dataSource]="currencyDataSource" matSort>
+      <ng-container matColumnDef="index">
+        <mat-header-cell *matHeaderCellDef mat-sort-header il8n>#</mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{item.index}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header il8n>Name</mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{item.name}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="symbol">
+        <mat-header-cell *matHeaderCellDef mat-sort-header il8n>Symbol</mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{item.symbol}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="marketCap">
+        <mat-header-cell *matHeaderCellDef mat-sort-header il8n>Market Cap</mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{item.marketCap}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="price">
+        <mat-header-cell *matHeaderCellDef mat-sort-header il8n>Price</mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{item.price}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="supply">
+        <mat-header-cell *matHeaderCellDef mat-sort-header il8n>Supply</mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{item.supply}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="change">
+        <mat-header-cell *matHeaderCellDef mat-sort-header il8n>Change</mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{item.change}} </mat-cell>
+      </ng-container>
+
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+    </mat-table>
+  </mat-card-content>
+</mat-card>

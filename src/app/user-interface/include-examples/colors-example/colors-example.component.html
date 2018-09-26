@@ -1,0 +1,11 @@
+<mat-grid-list cols="5" rowHeight="1:1">
+  <mat-grid-tile
+    *ngFor="let color of gridColors"
+    [ngClass]="'portal-' + color + '-500' + ' portal-grid-tile'"
+    (click)="openDialog(color)">
+    <mat-grid-tile-footer>
+      <h3 mat-line>{{ color }}</h3>
+    </mat-grid-tile-footer>
+  </mat-grid-tile>
+</mat-grid-list>
+

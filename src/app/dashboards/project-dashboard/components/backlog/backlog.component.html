@@ -1,0 +1,45 @@
+<mat-card fxLayout="column" fxLayoutAlign="center stretch"  class="portal-themed-shadow">
+  <mat-card-content>
+    <mat-table #table [dataSource]="logDataSource">
+      <!-- Checkbox Column -->
+      <ng-container matColumnDef="select">
+        <mat-header-cell *matHeaderCellDef>
+          <mat-checkbox (change)="$event ? masterToggle() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()">
+          </mat-checkbox>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <mat-checkbox (click)="$event.stopPropagation()"
+                        (change)="$event ? selection.toggle(row) : null"
+                        [checked]="selection.isSelected(row)">
+          </mat-checkbox>
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef il8n><strong>Issue Name</strong></mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{item.name}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="time">
+        <mat-header-cell *matHeaderCellDef il8n><strong>Estimated time</strong></mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{item.time}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <mat-header-cell *matHeaderCellDef i18n><strong>Status</strong></mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{item.status}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="priority">
+        <mat-header-cell *matHeaderCellDef i18n><strong>Priority</strong></mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{item.priority}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"
+               (click)="selection.toggle(row)">
+      </mat-row>
+    </mat-table>
+  </mat-card-content>
+</mat-card>

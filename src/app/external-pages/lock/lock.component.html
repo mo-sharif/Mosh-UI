@@ -1,0 +1,44 @@
+<div class="portal-accent-bg portal-lock-container" fxLayoutAlign="center center" fxLayoutAlign.lt-sm="none">
+  <mat-card class="portal-lock-card mat-elevation-z portal-text-align-center"
+    fxLayout="column"
+    fxFlex.lt-sm="100"
+    fxFlex="50"
+    fxFlex.md="40"
+    fxFlex.gt-md="30"
+    fxLayout.lt-sm="column">
+    <mat-card-title class="portal-primary-bg" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <img src="assets/images/oxygenna.png" class="portal-lock-card__logo">
+      <h1 i18n>Welcome back John</h1>
+      <p i18n>You have been logged out due to idleness. Enter your password to log back in.</p>
+    </mat-card-title>
+    <mat-card-content
+      fxFlex="auto"
+      fxLayout="column"
+      fxLayoutAlign="space-between none">
+      <form [formGroup]="passwordForm" (ngSubmit)="goHome()">
+        <mat-form-field>
+          <input matInput type="password" formControlName="password" placeholder="Password" (keyup.enter)="goHome()">
+        </mat-form-field>
+      </form>
+      <div fxLayout="column" fxLayoutGap="16px">
+        <div fxLayout="row" fxLayoutGap="16px" fxLayout.lt-md="column">
+          <button mat-raised-button i18n
+            type="submit"
+            fxFlex="50%"
+            fxFlex.lt-md="none"
+            color="primary"
+            (click)="goHome()"
+            [disabled]="!passwordForm.valid">
+            Log In
+          </button>
+          <a mat-button i18n
+            fxFlex="50%"
+            fxFlex.lt-md="none"
+            (click)="goLogin()">
+            Log Out
+          </a>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

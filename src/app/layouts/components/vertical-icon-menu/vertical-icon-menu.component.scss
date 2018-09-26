@@ -1,0 +1,26 @@
+@import '../../../../sass/utils';
+.portal-compact-sidemenu {
+  overflow-y: auto;
+
+  .mat-button {
+    padding: 16px;
+    position: relative;
+    h3 {
+     margin: 0;
+    }
+    .portal-compact-sidemenu__end_detail {
+      min-width: 16px;
+      height: 16px;
+      line-height: 16px;
+      text-align: center;
+      border-radius: 50%;
+      font-size: .75em;
+      position: absolute;
+      top: 16px;
+      left: 50%;
+    }
+    .mat-icon {
+      @include portal-ui-icon-sizing(16px);
+    }
+  }
+}

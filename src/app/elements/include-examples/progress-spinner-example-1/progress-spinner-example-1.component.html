@@ -1,0 +1,31 @@
+<mat-progress-spinner [mode]="mode" [color]="color" [value]="value"></mat-progress-spinner>
+<div fxLayout="column" fxLayoutAlign=" start" >
+  <label>Color</label>
+  <mat-button-toggle-group [(ngModel)]="color">
+    <mat-button-toggle value="primary">
+      Primary
+    </mat-button-toggle>
+    <mat-button-toggle value="accent">
+      Accent
+    </mat-button-toggle>
+    <mat-button-toggle value="warn">
+      Warn
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+  <label>Mode</label>
+  <mat-button-toggle-group [(ngModel)]="mode">
+    <mat-button-toggle value="determinate">
+      Determinate
+    </mat-button-toggle>
+    <mat-button-toggle value="indeterminate">
+      Indeterminate
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+  <label>Value</label>
+  <mat-slider
+    max="100"
+    min="0"
+    step="1"
+    thumb-label="true"
+    [(ngModel)]="value"></mat-slider>
+</div>

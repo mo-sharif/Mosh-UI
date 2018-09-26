@@ -1,0 +1,53 @@
+<h3>Book your flight</h3>
+<mat-expansion-panel #from>
+  <mat-expansion-panel-header>
+    <mat-panel-title>From</mat-panel-title>
+    <mat-panel-description>{{ booking.from.name }}</mat-panel-description>
+  </mat-expansion-panel-header>
+  <mat-form-field>
+    <mat-select placeholder="From" [(ngModel)]="booking.from">
+      <mat-option *ngFor="let destination of destinations" [value]="destination">
+        {{ destination.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-button (click)="from.close()">Save</button>
+</mat-expansion-panel>
+<mat-expansion-panel #to>
+  <mat-expansion-panel-header>
+    <mat-panel-title>To</mat-panel-title>
+    <mat-panel-description>{{ booking.to.name }}</mat-panel-description>
+  </mat-expansion-panel-header>
+  <mat-form-field>
+    <mat-select placeholder="To" [(ngModel)]="booking.to">
+      <mat-option *ngFor="let destination of destinations" [value]="destination">
+        {{ destination.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-button (click)="to.close()">Save</button>
+</mat-expansion-panel>
+<mat-expansion-panel #depart>
+  <mat-expansion-panel-header>
+    <mat-panel-title>Departing</mat-panel-title>
+    <mat-panel-description>{{ booking.depart | date:'longDate' }}</mat-panel-description>
+  </mat-expansion-panel-header>
+  <mat-form-field>
+    <input matInput [matDatepicker]="departPicker" placeholder="Choose a date" [(ngModel)]="booking.depart">
+    <mat-datepicker-toggle matSuffix [for]="departPicker"></mat-datepicker-toggle>
+    <mat-datepicker #departPicker></mat-datepicker>
+  </mat-form-field>
+  <button mat-button (click)="depart.close()">Save</button>
+</mat-expansion-panel>
+<mat-expansion-panel #arrive>
+  <mat-expansion-panel-header>
+    <mat-panel-title>Arrive</mat-panel-title>
+    <mat-panel-description>{{ booking.arrive | date:'longDate' }}</mat-panel-description>
+  </mat-expansion-panel-header>
+  <mat-form-field>
+    <input matInput [matDatepicker]="arrivePicker" placeholder="Choose a date" [(ngModel)]="booking.arrive">
+    <mat-datepicker-toggle matSuffix [for]="arrivePicker"></mat-datepicker-toggle>
+    <mat-datepicker #arrivePicker></mat-datepicker>
+  </mat-form-field>
+  <button mat-button (click)="arrive.close()">Save</button>
+</mat-expansion-panel>

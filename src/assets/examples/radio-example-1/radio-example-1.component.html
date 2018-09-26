@@ -1,0 +1,9 @@
+<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="32px">
+  <mat-radio-group [(ngModel)]="favFood" fxLayout="column">
+    <mat-radio-button class="example-radio" value="omelete">Omelete</mat-radio-button>
+    <mat-radio-button class="example-radio" value="souvlaki">Souvlaki</mat-radio-button>
+    <mat-radio-button class="example-radio" value="steak">Steak</mat-radio-button>
+    <mat-radio-button class="example-radio" value="potatoes">Potatoes</mat-radio-button>
+  </mat-radio-group>
+  <span>Your favorite food is: {{ favFood }}</span>
+</div>

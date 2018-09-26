@@ -1,0 +1,28 @@
+<mat-drawer-container #drawer fxFlexFill>
+  <mat-drawer
+    [position]="sidenavPosition"
+    [mode]="sidenavMode"
+    [disableClose]="sidenavDisabled">
+    <h2>Hello there!</h2>
+    <h4>I'm a sidebar</h4>
+    <button mat-raised-button (click)="drawer.close()">Close</button>
+  </mat-drawer>
+
+  <div fxFlexFill fxLayout="column" fxLayoutAlign="space-around end">
+    <label>Sidenav Location</label>
+    <mat-radio-group [(ngModel)]="sidenavPosition">
+      <mat-radio-button value="start">Start</mat-radio-button>
+      <mat-radio-button value="end">End</mat-radio-button>
+    </mat-radio-group>
+    <label>Sidenav Mode</label>
+    <mat-radio-group [(ngModel)]="sidenavMode">
+      <mat-radio-button value="over">Over</mat-radio-button>
+      <mat-radio-button value="push">Push</mat-radio-button>
+      <mat-radio-button value="side">Side</mat-radio-button>
+    </mat-radio-group>
+    <mat-slide-toggle [(ngModel)]="sidenavDisabled" color="primary">
+      Disable Close
+    </mat-slide-toggle>
+    <button mat-raised-button color="primary" (click)="drawer.open()">Open</button>
+  </div>
+</mat-drawer-container>

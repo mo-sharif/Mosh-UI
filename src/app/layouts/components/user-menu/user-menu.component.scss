@@ -1,0 +1,44 @@
+@import '../../../../sass/utils';
+
+// Button
+.portal-user-menu-button {
+  padding: 5px 10px 5px 0px;
+}
+
+.portal-user-menu-button__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.portal-user-menu-button__username {
+  margin: 0 4px;
+  font-size: 16px;
+}
+
+// Menu header
+.portal-user-menu-header {
+  padding: 20px;
+}
+
+.portal-user-menu-header__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 16px;
+  flex-shrink: 1;
+}
+
+.portal-user-menu-header__details {
+  h2, h3 {
+    margin: 0px;
+  }
+}
+
+.portal-user-menu-list {
+  padding-top: 0px;
+  .mat-icon {
+     @include portal-ui-icon-sizing(16px);
+  }
+}

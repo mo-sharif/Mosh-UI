@@ -1,0 +1,19 @@
+<div class="portal-dashboard-widget" fxLayout="column">
+  <h3 class="portal-dashboard-widget__title" i18n>Weather (from Yahoo API)</h3>
+  <mat-list>
+    <div *ngIf="weatherForecasts$ | async as weather; else loadingWeather">
+      <mat-list-item class="portal-weather-widget-item" *ngFor="let place of weather;">
+        <img matListAvatar [src]="'http://l.yimg.com/a/i/us/we/52/' + place.code + '.gif'" alt=":">
+        <h3 matLine>{{ place.city }}</h3>
+        <p matLine>{{ place.text }}</p>
+        <h4>{{ place.temp }}&deg;</h4>
+      </mat-list-item>
+    </div>
+    <ng-template #loadingWeather>
+      <mat-list-item>
+        <mat-icon>cloud_download</mat-icon>
+        <h3 matLine i18n>Fetching the latest weather</h3>
+      </mat-list-item>
+    </ng-template>
+  </mat-list>
+</div>

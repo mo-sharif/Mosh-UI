@@ -1,0 +1,20 @@
+.portal-tabbed-content-wrapper {
+  position: relative;
+}
+
+.portal-tabbed-content {
+  overflow-y: auto;
+  height: 100%;
+}
+
+.portal-tabbed-container {
+  max-width: 1200px;
+}
+
+.portal-tabbed-leftsidenav {
+  width: 256px;
+}
+
+.portal-tabbed-rightsidenav {
+  width: 320px;
+}

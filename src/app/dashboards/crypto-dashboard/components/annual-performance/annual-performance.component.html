@@ -1,0 +1,31 @@
+<mat-card fxLayout="column" fxLayoutAlign="space-between stretch">
+  <div class="portal-widget__padding  portal-widget__content--flex" fxLayout="row" fxLayoutAlign="center center">
+    <div fxFlex>
+      <mat-card-title class="mat-card-title" il8n>{{ performanceTitle }} Performance</mat-card-title>
+      <mat-card-subtitle class="mat-card-subtitle" il8n>Order by market share</mat-card-subtitle>
+    </div>
+    <div>
+      <mat-menu #annualPerformanceMenu="matMenu">
+        <button mat-menu-item (click)="changeSales('Annual')" i18n>Annual</button>
+        <button mat-menu-item (click)="changeSales('Monthly')" i18n>Month</button>
+        <button mat-menu-item (click)="changeSales('Weekly')" i18n>Week</button>
+        <button mat-menu-item (click)="changeSales('Daily')" i18n>Day</button>
+      </mat-menu>
+      <button mat-icon-button [matMenuTriggerFor]="annualPerformanceMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <mat-card-content>
+    <div class="portal-bar-chart">
+      <canvas baseChart
+        [datasets]="barChartDatasets"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+        [colors]="barChartColors"
+        [legend]="true"
+        chartType="horizontalBar" ></canvas>
+    </div>
+  </mat-card-content>
+</mat-card>

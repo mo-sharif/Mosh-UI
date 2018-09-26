@@ -1,0 +1,11 @@
+@mixin portal-charts-widget-theme($theme) {
+  $foreground: map-get($theme, foreground);
+
+  .portal-chart-widget {
+    .portal-chart-widget__chart {
+      text {
+        fill: mat-color($foreground, text);
+      }
+    }
+  }
+}

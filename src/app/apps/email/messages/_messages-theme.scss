@@ -1,0 +1,13 @@
+@mixin portal-email-messages-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+
+  .portal-email-card__header {
+    &:after {
+      background: mat-color($foreground, divider);
+    }
+  }
+}

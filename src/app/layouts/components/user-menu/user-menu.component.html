@@ -1,0 +1,41 @@
+<a class="portal-user-menu-button" mat-button [mat-menu-trigger-for]="userDetailsMenu">
+  <img class="portal-user-menu-button__avatar" src="assets/images/layouts/avatar.png" alt="Brian">
+  <span class="portal-user-menu-button__username">Brian</span>
+</a>
+<mat-menu #userDetailsMenu="matMenu" classList="portal-menu-no-padding">
+  <div class="portal-user-menu-header" fxLayout="row" fxLayoutAlign=" center">
+    <img class="portal-user-menu-header__avatar" src="assets/images/layouts/avatar.png" alt="Brian"/>
+    <div class="portal-user-menu-header__details" fxLayout="column" fxLayoutAlign="center start">
+      <h2>Brian Jones</h2>
+      <h3>Web Developer</h3>
+    </div>
+  </div>
+  <mat-nav-list class="portal-user-menu-list">
+    <a mat-list-item>
+      <mat-icon matListIcon>account_circle</mat-icon>
+      <span i18n>My Profile</span>
+    </a>
+    <a mat-list-item>
+      <mat-icon matListIcon>info</mat-icon>
+      <span i18n>Activity</span>
+    </a>
+    <a mat-list-item>
+      <mat-icon matListIcon>notifications</mat-icon>
+      <span i18n>Notifications</span>
+    </a>
+    <mat-divider></mat-divider>
+    <a mat-list-item>
+      <mat-icon matListIcon>security</mat-icon>
+      <span i18n>Settings and privacy</span>
+    </a>
+    <a mat-list-item>
+      <mat-icon matListIcon>help</mat-icon>
+      <span i18n>Help Center</span>
+    </a>
+    <mat-divider></mat-divider>
+    <a mat-list-item>
+      <mat-icon matListIcon>exit_to_app</mat-icon>
+      <span i18n>Sign Out</span>
+    </a>
+  </mat-nav-list>
+</mat-menu>

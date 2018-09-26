@@ -1,0 +1,14 @@
+<mat-form-field fxLayoutAlign="center center">
+  <input matInput placeholder="Set Gutter Size" type="number" [(ngModel)]="ratioGutter">
+</mat-form-field>
+<mat-grid-list cols="4" rowHeight="150px" [gutterSize]="ratioGutter">
+  <mat-grid-tile
+    *ngFor="let tile of tiles"
+    [colspan]="tile.cols"
+    [rowspan]="tile.rows">
+    <img [src]="tile.img">
+    <mat-grid-tile-footer>
+        <h3 mat-line>{{ tile.text }}</h3>
+    </mat-grid-tile-footer>
+  </mat-grid-tile>
+</mat-grid-list>

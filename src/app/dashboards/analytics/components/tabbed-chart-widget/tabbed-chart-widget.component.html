@@ -1,0 +1,28 @@
+<mat-card fxLayout="column" fxLayoutAlign="space-between stretch">
+  <nav mat-tab-nav-bar>
+    <a mat-tab-link
+      class="portal-stat-tab"
+      *ngFor="let tab of tabs"
+      [active]="tab === activeTab"
+      (click)="changeTab(tab)">
+      <div fxLayout="column">
+        <span class="mat-caption">{{ tab.title }}</span>
+        <span class="mat-title">{{ tab.value }}</span>
+        <span class="mat-caption" [ngClass]="{ 'portal-trend-up': tab.change > 0, 'portal-trend-down': tab.change < 0 }">
+          <mat-icon *ngIf="tab.change > 0">trending_up</mat-icon>
+          <mat-icon *ngIf="tab.change < 0">trending_down</mat-icon>
+          {{ tab.change | percent }}
+        </span>
+      </div>
+    </a>
+  </nav>
+  <div class="portal-tab-chart">
+    <canvas baseChart
+      [datasets]="lineChartData"
+      [labels]="lineChartLabels"
+      [options]="lineChartOptions"
+      [colors]="lineChartColors"
+      [legend]="false"
+      chartType="line"></canvas>
+  </div>
+</mat-card>

@@ -1,0 +1,72 @@
+<mat-sidenav-container [dir]="layoutService.getDirection() | async" fxFlexFill>
+  <!-- left side navigation -->
+  <mat-sidenav #leftSidenav class="portal-tabbed-leftsidenav" opened="false" mode="over">
+    <portal-menu-sidenav class="portal-sidenav-theme" [sidenav]="leftSidenav"></portal-menu-sidenav>
+  </mat-sidenav>
+
+  <!-- right side navigation -->
+  <mat-sidenav #rightSidenav opened="false" position="end" class="portal-tabbed-rightsidenav">
+    <portal-notification-sidenav [sidenav]="rightSidenav"></portal-notification-sidenav>
+  </mat-sidenav>
+
+  <div class="portal-content-bg" fxLayout="row" fxLayoutAlign="center none" fxFlexFill>
+    <div class="portal-tabbed-container" fxFlex.gt-md="80" fxFlex.lt-md="100" fxLayout="column">
+      <!-- top toolbar -->
+      <portal-top-horizontal-menu [leftSidenav]="leftSidenav" [rightSidenav]="rightSidenav" transparent="true"></portal-top-horizontal-menu>
+
+      <!-- card -->
+      <div fxFlex class="portal-tabbed-card mat-elevation-z12" fxLayout="column">
+        <!-- tabbed navigation -->
+        <nav mat-tab-nav-bar backgroundColor="primary">
+          <a mat-tab-link
+            routerLink="/"
+            routerLinkActive #homeActive="routerLinkActive"
+            [routerLinkActiveOptions]="{ exact: true }"
+            [active]="homeActive.isActive">
+            Home
+          </a>
+          <a mat-tab-link
+            routerLink="/dashboards/analytics"
+            routerLinkActive #dashActive="routerLinkActive"
+            [active]="dashActive.isActive">
+            Dashboard
+          </a>
+          <a mat-tab-link
+            [routerLink]="['/apps/email', { outlets: { list: 'inbox', messages: 'none' } }]"
+            routerLinkActive #emailActive="routerLinkActive"
+            [active]="emailActive.isActive">
+            Email
+          </a>
+          <a mat-tab-link
+            routerLink="/apps/calendar"
+            routerLinkActive #calendarActive="routerLinkActive"
+            [active]="calendarActive.isActive">
+            Calendar
+          </a>
+          <a mat-tab-link
+            routerLink="/apps/todo"
+            routerLinkActive #todoActive="routerLinkActive"
+            [active]="todoActive.isActive">
+            Todo
+          </a>
+          <a mat-tab-link
+            routerLink="/apps/contacts"
+            routerLinkActive #contactActive="routerLinkActive"
+            [active]="contactActive.isActive">
+            Contact
+          </a>
+        </nav>
+        <!-- page content -->
+        <div fxLayout="column" fxFlex="nogrow noshrink" class="portal-tabbed-content-wrapper portal-content-bg">
+          <div fxFlexFill class="portal-tabbed-content" portalScrollTop>
+            <router-outlet></router-outlet>
+            <portal-layout-loader></portal-layout-loader>
+          </div>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <portal-footer transparent="true"></portal-footer>
+    </div>
+  </div>
+</mat-sidenav-container>

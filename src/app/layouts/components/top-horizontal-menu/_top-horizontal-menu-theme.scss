@@ -1,0 +1,8 @@
+@mixin portal-top-horizontal-menu-theme($theme) {
+  $accent: map-get($theme, accent);
+
+  .portal-notification .portal-notification-badge {
+    background: mat-color($accent, default);
+    color: mat-color($accent, default-contrast);
+  }
+}

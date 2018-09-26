@@ -1,0 +1,29 @@
+@mixin portal-backgrounds($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .portal-content-bg {
+    background: mat-color($background, card);
+    color: mat-color($foreground, text);
+  }
+
+  .portal-accent-bg {
+    background: linear-gradient(125deg, mat-color($accent), mat-color($accent, darker));
+    color: mat-color($accent, default-contrast);
+    p a {
+      color: mat-color($accent, default-contrast);
+      text-decoration: underline;
+    }
+  }
+
+  .portal-primary-bg {
+    background: linear-gradient(125deg, mat-color($primary), mat-color($primary, darker));
+    color: mat-color($primary, default-contrast);
+    p a {
+      color: mat-color($primary, default-contrast);
+      text-decoration: underline;
+    }
+  }
+}

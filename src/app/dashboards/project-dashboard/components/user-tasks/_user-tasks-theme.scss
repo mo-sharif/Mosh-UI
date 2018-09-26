@@ -1,0 +1,38 @@
+@mixin portal-user-tasks-widget-theme($theme) {
+  $background: map-get($theme, background);
+  $accent: map-get($theme, accent);
+  $primary: map-get($theme, primary);
+
+  .portal-users {
+    background: darken(mat-color($background, background), 1);
+  }
+
+  .portal-users__list {
+    background: lighten(mat-color($background, background), 1);
+  }
+
+  .portal-badge--primary {
+    color: lighten(mat-color($background, background), 1);
+    background: lighten(mat-color($primary, default), 1);
+  }
+
+  .portal-badge--secondary {
+    color: lighten(mat-color($background, background), 1);
+    background: lighten(mat-color($accent, default), 1);
+  }
+
+  .portal-users-list-item--active {
+    background: mat-color($background, hover);
+  }
+
+  $mat-divider-inset-margin: 80px;
+  .mat-divider {
+    &.mat-divider-inset {
+      margin-left: $mat-divider-inset-margin;
+    }
+    [dir='rtl'] &.mat-divider-inset {
+      margin-left: auto;
+      margin-right: $mat-divider-inset-margin;
+    }
+  }
+}

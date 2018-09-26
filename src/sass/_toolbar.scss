@@ -1,0 +1,19 @@
+@mixin portal-toolbar($theme) {
+  $foreground: map-get($theme, foreground);
+
+  // Brand image & text
+  .portal-toolbar-brand {
+    max-height: 100%;
+    padding: 8px 0;
+    box-sizing: border-box;
+    object-fit: contain;
+  }
+  .portal-toolbar-brand-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .mat-toolbar {
+    color: mat-color($foreground, app-bar);
+  }
+}

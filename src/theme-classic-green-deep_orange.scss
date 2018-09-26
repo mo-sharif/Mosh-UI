@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* 3rd Party CSS */
+$fa-font-path: '../node_modules/font-awesome/fonts';
+@import "~font-awesome/scss/font-awesome";
+@import "~quill/dist/quill.snow.css";
+@import "~highlight.js/styles/monokai-sublime.css";
+@import "~fullcalendar/dist/fullcalendar.min.css";
+
+/* Portal CSS */
+@import 'sass/portal';
+
+/* Angular Material */
+@import '~@angular/material/theming';
+
+/* Typography */
+$app-typography: mat-typography-config(
+  $font-family: 'Barlow, sans-serif',
+  $display-4:     mat-typography-level(112px, 112px, 300),
+  $display-3:     mat-typography-level(56px, 56px, 400),
+  $display-2:     mat-typography-level(45px, 48px, 400),
+  $display-1:     mat-typography-level(34px, 40px, 400),
+  $headline:      mat-typography-level(24px, 32px, 400),
+  $title:         mat-typography-level(20px, 32px, 500),
+  $subheading-2:  mat-typography-level(14px, 28px, 400),
+  $subheading-1:  mat-typography-level(14px, 24px, 400),
+  $body-2:        mat-typography-level(14px, 24px, 600),
+  $body-1:        mat-typography-level(14px, 24px, 400),
+  $caption:       mat-typography-level(12px, 20px, 400),
+  $button:        mat-typography-level(14px, 14px, 500),
+  // Line-height must be unit-less fraction of the font-size.
+  $input:         mat-typography-level(16px, 1.125, 400)
+);
+
+// Set up typography with above rules
+@include mat-core($app-typography);
+
+
+$app-primary: mat-palette($mat-green);
+$app-accent: mat-palette($mat-deep-orange);
+$app-warn: mat-palette($mat-red);
+
+$app-theme: portal-light-theme($app-primary, $app-accent, $app-warn);
+
+// Create app styles
+@include angular-material-theme($app-theme);
+@include portal-theme($app-theme, $app-typography);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$sidenav-theme: portal-dark-theme($app-primary, $app-accent, $app-warn);
+.portal-sidenav-theme {
+  @include angular-material-theme($sidenav-theme);
+  @include portal-theme($sidenav-theme, $app-typography);
+}

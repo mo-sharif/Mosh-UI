@@ -1,0 +1,119 @@
+@mixin portal-loader($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  $portal-logo-size: 60px;
+  $portal-logo-factor: 0.8;
+  $portal-logo-inner-factor: 0.2;
+  $portal-logo-inner-color: mat-color($primary);
+  $portal-logo-circle: $portal-logo-size * $portal-logo-factor;
+  $portal-logo-inner-circle: $portal-logo-size * $portal-logo-inner-factor;
+  $portal-animation-time: 6s;
+
+  .app-loader-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    opacity: 1 !important;
+    > span {
+      display: block;
+      font-size: .875em;
+      margin-top: 12px;
+      text-transform: uppercase;
+    }
+  }
+
+  .portal-logo {
+    display: inline-block;
+    margin-top: 24px;
+    width: $portal-logo-size;
+    height: $portal-logo-size;;
+    animation: portal-fade-in 400ms .4s;
+    animation-fill-mode: both;
+  }
+
+  .portal-logo__circles {
+    width: $portal-logo-size;
+    height: $portal-logo-size;
+    position: relative;
+    animation: portal-logo__circles $portal-animation-time infinite;
+    border-radius: 50%;
+    -webkit-backface-visibility: hidden;
+    &:before {
+      content: "";
+      width: $portal-logo-size * 0.66;
+      height: $portal-logo-size * 0.66;
+      position: absolute;
+      border-radius: 50%;
+      top:  ($portal-logo-size - $portal-logo-size * 0.66) / 2;
+      left: ($portal-logo-size - $portal-logo-size * 0.66) / 2;
+      z-index: 1;
+    }
+  }
+
+  .portal-logo__circle {
+    width: $portal-logo-circle;
+    height: $portal-logo-circle;
+    position: absolute;
+    border-radius: 100%;
+    background: linear-gradient(to left, rgba(mat-color($accent), 1) 0%, rgba(mat-color($accent), 0) 90%);
+    animation: ani1 $portal-animation-time infinite ease-in-out;
+    z-index: 2;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .portal-logo__circle--inner {
+    width: $portal-logo-inner-circle;
+    height: $portal-logo-inner-circle;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    background: $portal-logo-inner-color;
+    padding: 2px;
+  }
+
+  .portal-logo__circle--bottom {
+    bottom: 0;
+    left: ($portal-logo-size - $portal-logo-circle)/2;
+  }
+  .portal-logo__circle--top {
+    left: ($portal-logo-size - $portal-logo-circle)/2;
+    background: linear-gradient(to right, rgba(mat-color($accent), 1) 0%, rgba(mat-color($accent), 0) 90%);
+  }
+  .portal-logo__circle--left {
+    top: ($portal-logo-size - $portal-logo-circle)/2;
+    background: linear-gradient(to top, rgba(mat-color($accent), 1) 0%, rgba(mat-color($accent), 0) 90%);
+  }
+  .portal-logo__circle--right {
+    top: ($portal-logo-size - $portal-logo-circle)/2;
+    right: 0;
+    background: linear-gradient(to bottom, rgba(mat-color($accent), 1) 0%, rgba(mat-color($accent), 0) 90%);
+  }
+
+  /**
+  * Animations
+  */
+  @keyframes portal-fade-in {
+    from {
+      transform: translateY(80px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes portal-logo__circles {
+    0%, 100% {
+      transform: rotate(0);
+    }
+    50% {
+      transform: rotate(360deg);
+    }
+  }
+}

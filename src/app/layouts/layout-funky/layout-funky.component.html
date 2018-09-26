@@ -1,0 +1,63 @@
+<mat-sidenav-container [dir]="layoutService.getDirection() | async" fxFlexFill>
+  <!-- left side navigation -->
+  <mat-sidenav class="portal-sidenav-theme" #leftSidenav mode="side" opened="true" fxLayout="column">
+    <mat-toolbar>
+      <mat-toolbar-row fxLayout="row" fxLayoutAlign="center center">
+        <img class="portal-toolbar-brand" src="assets/images/oxygenna.png" alt="Portal">
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <div fxFlex="nogrow noshrink" class="portal-funky-icon-menu portal-hide-scrollbars" fxLayout="column">
+      <a mat-button (click)="openMenu('dashboards', menuDrawer)">
+        <mat-icon>view_module</mat-icon>
+        <h3 i18n>Dashboards</h3>
+      </a>
+      <a mat-button (click)="openMenu('apps', menuDrawer)">
+        <mat-icon>store</mat-icon>
+        <h3 i18n>Apps</h3>
+      </a>
+      <a mat-button (click)="openMenu('elements', menuDrawer)">
+        <mat-icon>widgets</mat-icon>
+        <h3 i18n>Elements</h3>
+      </a>
+    </div>
+    <mat-toolbar>
+      <mat-toolbar-row fxLayout="row">
+        <span fxFlex></span>
+        <a mat-icon-button (click)="leftSidenav.close()">
+          <mat-icon>chevron_left</mat-icon>
+        </a>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </mat-sidenav>
+
+  <!-- right side navigation -->
+  <mat-sidenav #rightSidenav opened="false" position="end" class="portal-funky-rightsidenav">
+    <portal-notification-sidenav [sidenav]="rightSidenav" fxLayout="column" fxFlexFill></portal-notification-sidenav>
+  </mat-sidenav>
+
+  <mat-drawer-container fxFlexFill>
+    <mat-drawer class="portal-funky-drawer" mode="push" #menuDrawer>
+      <portal-funky-dashboards-menu *ngIf="currentMenu === 'dashboard'" [menuDrawer]="menuDrawer"></portal-funky-dashboards-menu>
+      <portal-funky-apps-menu *ngIf="currentMenu === 'apps'" [menuDrawer]="menuDrawer"></portal-funky-apps-menu>
+      <portal-funky-elements-menu *ngIf="currentMenu === 'elements'" [menuDrawer]="menuDrawer"></portal-funky-elements-menu>
+      <portal-funky-dashboards-menu *ngIf="currentMenu === 'dashboards'" [menuDrawer]="menuDrawer"></portal-funky-dashboards-menu>
+    </mat-drawer>
+
+    <div fxFlexFill fxLayout="column">
+      <!-- top toolbar -->
+      <portal-top-horizontal-menu [leftSidenav]="leftSidenav" [rightSidenav]="rightSidenav"></portal-top-horizontal-menu>
+
+      <!-- page content -->
+      <div fxLayout="column" fxFlex="nogrow noshrink" class="portal-funky-content-wrapper portal-content-bg">
+        <div fxFlexFill class="portal-funky-content" portalScrollTop>
+          <router-outlet (activate)="menuDrawer.close()"></router-outlet>
+          <portal-layout-loader></portal-layout-loader>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <portal-footer></portal-footer>
+    </div>
+
+  </mat-drawer-container>
+</mat-sidenav-container>

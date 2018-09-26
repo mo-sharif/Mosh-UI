@@ -1,0 +1,8 @@
+@mixin portal-user-menu-theme($theme) {
+  $accent: map-get($theme, accent);
+
+  .portal-user-menu-header {
+    background: mat-color($accent, 600);
+    color: mat-contrast($accent, 600);
+  }
+}

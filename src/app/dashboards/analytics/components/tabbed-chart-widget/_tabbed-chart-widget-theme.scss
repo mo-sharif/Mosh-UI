@@ -1,0 +1,13 @@
+@mixin portal-tabbed-charts-widget-theme($theme) {
+  $red: mat-palette($mat-red);
+  $green: mat-palette($mat-green);
+
+  .portal-stat-tab {
+    .portal-trend-down {
+      color: mat-color($red, default);
+    }
+    .portal-trend-up {
+      color: mat-color($green, default);
+    }
+  }
+}

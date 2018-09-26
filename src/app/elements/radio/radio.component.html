@@ -1,0 +1,22 @@
+<div class="portal-example-page">
+  <div class="portal-example-pager__header" fxLayout="row" fxLayoutAlign="center center">
+    <div class="portal-example-pager__header-content">
+      <mat-radio-group class="example-radio-group" [(ngModel)]="favBeatle">
+        <mat-radio-button value="John">John</mat-radio-button>
+        <mat-radio-button value="Paul">Paul</mat-radio-button>
+        <mat-radio-button value="George">George</mat-radio-button>
+        <mat-radio-button value="Ringo">Ringo</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </div>
+  <div class="portal-example-pager__content">
+    <p>Radio buttons allow the user to select one option from a set. Use radio buttons for exclusive selection if you think that the user needs to see all available options side-by-side.</p>
+    <p>Otherwise, consider a dropdown, which uses less space than displaying all options.</p>
+
+    <h3 class="portal-example-pager__content--heading">Simple Radio Example</h3>
+    <p>In the example below we will show you how to create a simple radio group and get the value of the selected option.</p>
+    <example-with-code title="Radio Button Example" example="radio-example-1" [tabs]="['html', 'scss']">
+      <example-radio-1></example-radio-1>
+    </example-with-code>
+  </div>
+</div>

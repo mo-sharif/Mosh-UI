@@ -1,0 +1,22 @@
+@import '../../../sass/utils';
+
+.portal-toolbar-leftsidenav {
+  box-shadow: 4px 0px 16px rgba(0, 0, 0, 0.2), -4px 0px 16px rgba(0, 0, 0, 0.2);
+  width: 256px;
+}
+
+.portal-toolbar-rightsidenav {
+  width: 320px;
+}
+
+.portal-toolbar-content-wrapper {
+  position: relative;
+}
+
+.portal-toolbar-content {
+  overflow-y: auto;
+}
+
+.portal-layout-toolbar-mega-menu-list {
+  min-width: 140px;
+}

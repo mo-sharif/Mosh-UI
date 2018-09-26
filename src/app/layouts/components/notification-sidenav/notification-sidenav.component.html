@@ -1,0 +1,167 @@
+<div class="portal-notification-sidenav" fxLayout="column" fxFlexFill>
+  <mat-tab-group fxFlex>
+    <mat-tab i18n-label label="Today">
+      <h1 class="portal-notifications-today mat-display-1">
+        {{ todaysDate | date:'EEEE, MMMM d, y' }}
+      </h1>
+      <mat-list>
+        <!-- weather list -->
+        <div class="portal-notifications-notification">
+          <h3 class="portal-notifications-subheader" matSubheader i18n>Weather (from Yahoo API)</h3>
+          <div *ngIf="weatherForecasts$ | async as weather; else loadingWeather">
+            <mat-list-item class="portal-notifications-weather-item" *ngFor="let place of weather;">
+              <h3 matLine>{{ place.city }}</h3>
+              <p matLine>{{ place.text }}</p>
+              <span matListAvatar>
+                <img  [src]="'http://l.yimg.com/a/i/us/we/52/' + place.code + '.gif'" alt=":">
+              </span>
+              <h4>{{ place.temp }}&deg;</h4>
+            </mat-list-item>
+          </div>
+          <ng-template #loadingWeather>
+            <mat-list-item>
+              <mat-icon>cloud_download</mat-icon>
+              <h3 matLine i18n>Fetching the latest weather</h3>
+            </mat-list-item>
+          </ng-template>
+        </div>
+
+        <!-- schedule list -->
+        <div class="portal-notifications-notification">
+          <h3 class="portal-notifications-subheader" matSubheader i18n>Schedule</h3>
+          <mat-list-item>
+            <h3 matLine><strong>Go for a walk with Peach</strong></h3>
+            <p matLine>
+              <mat-icon matListIcon>place</mat-icon>
+              Mushroom Kingdom
+            </p>
+            <span>9:30</span>
+          </mat-list-item>
+          <mat-list-item>
+            <h3 matLine><strong>Meeting with Bowser</strong></h3>
+            <p matLine>
+              <mat-icon matListIcon>place</mat-icon>
+              Peach's Castle
+            </p>
+            <span>11:15</span>
+          </mat-list-item>
+          <mat-list-item>
+            <h3 matLine><strong>Rescue Peach</strong></h3>
+            <p matLine>
+              <mat-icon matListIcon>place</mat-icon>
+              Bowser's Castle
+            </p>
+            <span>11:15</span>
+          </mat-list-item>
+        </div>
+      </mat-list>
+    </mat-tab>
+    <mat-tab i18n-label label="Notifications">
+      <div class="portal-notification-notifications">
+        <h2 class="portal-notifications-header">Today</h2>
+        <mat-card class="portal-notifications-notification mat-elevation-z">
+          <mat-card-header>
+            <mat-icon fontSet="fa" fontIcon="fa-comment" matCardAvatar class="portal-notifications-message"></mat-icon>
+            <mat-card-title><strong>Message</strong></mat-card-title>
+            <h5 class="mat-caption">
+              5 min ago
+              <mat-icon>clear</mat-icon>
+            </h5>
+          </mat-card-header>
+          <mat-card-content>
+            <p class="mat-body-2">Progress Report</p>
+            Hi, please find attached report...
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="portal-notifications-notification mat-elevation-z">
+          <mat-card-header>
+            <mat-icon matCardAvatar fontSet="fa" fontIcon="fa-facebook" class="portal-notifications-facebook"></mat-icon>
+            <mat-card-title><strong>Facebook</strong></mat-card-title>
+            <h5 class="mat-caption">
+              10 min ago
+              <mat-icon>clear</mat-icon>
+            </h5>
+          </mat-card-header>
+          <mat-card-content>
+            You received a new message
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="portal-notifications-notification mat-elevation-z">
+          <mat-card-header>
+            <mat-icon matCardAvatar fontSet="fa" fontIcon="fa-slack" class="portal-notifications-slack"></mat-icon>
+            <mat-card-title><strong>Slack</strong></mat-card-title>
+            <h5 class="mat-caption">
+              15 min ago
+              <mat-icon>clear</mat-icon>
+            </h5>
+          </mat-card-header>
+          <mat-card-content>
+            <p class="mat-body-2">#Support</p>
+            Hi there, got some news...
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="portal-notifications-notification mat-elevation-z">
+          <mat-card-header>
+            <mat-icon matCardAvatar fontSet="fa" fontIcon="fa-twitter" class="portal-notifications-twitter"></mat-icon>
+            <mat-card-title><strong>Twitter</strong></mat-card-title>
+            <h5 class="mat-caption">
+              1 hour ago
+              <mat-icon>clear</mat-icon>
+            </h5>
+          </mat-card-header>
+          <mat-card-content>
+            <span class="mat-body-2">Web design trends</span>
+            <p>#web #design</p>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="portal-notifications-notification mat-elevation-z">
+          <mat-card-header>
+            <mat-icon matCardAvatar fontSet="fa" fontIcon="fa-spotify" class="portal-notifications-spotify"></mat-icon>
+            <mat-card-title><strong>Spotify</strong></mat-card-title>
+            <h5 class="mat-caption">
+              2 hours ago
+              <mat-icon>clear</mat-icon>
+            </h5>
+          </mat-card-header>
+          <mat-card-content>
+            <span class="mat-body-2">No Quarter</span>
+            <p>Led Zeppelin</p>
+          </mat-card-content>
+        </mat-card>
+        <h2 class="portal-notifications-header">2 days ago</h2>
+        <mat-card class="portal-notifications-notification mat-elevation-z">
+          <mat-card-header>
+            <mat-icon matCardAvatar fontSet="fa" fontIcon="fa-facebook" class="portal-notifications-facebook"></mat-icon>
+            <mat-card-title><strong>Facebook</strong></mat-card-title>
+            <h5 class="mat-caption">
+              2 days ago
+              <mat-icon>clear</mat-icon>
+            </h5>
+          </mat-card-header>
+          <mat-card-content>
+            You received a new message
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="portal-notifications-notification mat-elevation-z">
+          <mat-card-header>
+            <mat-icon matCardAvatar fontSet="fa" fontIcon="fa-slack" class="portal-notifications-slack"></mat-icon>
+            <mat-card-title><strong>Slack</strong></mat-card-title>
+            <h5 class="mat-caption">
+              2 days ago
+              <mat-icon>clear</mat-icon>
+            </h5>
+          </mat-card-header>
+          <mat-card-content>
+            <p class="mat-body-2">#angular</p>
+            Just released our latest update
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+  <mat-toolbar>
+    <a mat-icon-button (click)="sidenav.close()">
+      <mat-icon>chevron_right</mat-icon>
+    </a>
+  </mat-toolbar>
+</div>

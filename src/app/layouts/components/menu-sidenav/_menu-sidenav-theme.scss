@@ -1,0 +1,70 @@
+@mixin portal-menu-sidenav-theme($theme, $typography) {
+  $accent: map-get($theme, accent);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .portal-sidnav-menu {
+    background: mat-color($background, app-bar);
+    color: mat-color($foreground, text);
+    // Sub header
+    .portal-sidnav-menu__subheader {
+      font-size: mat-font-size($typography, body-2);
+      font-weight: mat-font-weight($typography, body-2);
+      line-height: mat-line-height($typography, body-2);
+      background: mat-color($background, app-bar);
+
+    }
+    // Expansion Panel
+    .mat-expansion-panel {
+      background: mat-color($background, app-bar);
+    }
+    .mat-expansion-panel-body {
+      padding: 0px;
+      background: mat-color($background, background);
+      color: mat-color($foreground, text);
+      box-shadow: 0px 3px 3px -1px rgba(0, 0, 0, 0.07) inset, 0px -3px 3px -1px rgba(0, 0, 0, 0.07) inset;
+      .mat-list-item {
+        opacity: 0;
+        text-indent: 20px;
+        transition-property: opacity, text-indent;
+        transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        transition-duration: 0.4s;
+        .mat-list-item-content {
+          padding: 0 16px;
+        }
+      }
+    }
+    // Submenu items animation
+    .mat-expanded .mat-list-item {
+      opacity: 1;
+      text-indent: 0;
+    }
+    @for $i from 1 through 20 {
+      .mat-expanded .mat-list-item:nth-child(#{$i}) {
+        transition-delay: ($i - 1) * 0.12s;
+      }
+    }
+    .mat-expansion-indicator {
+      transition: transform .3s;
+      width: 24px;
+      text-align: center;
+      &:after {
+        padding: 2px;
+      }
+    }
+
+    // End detail icon
+    .mat-icon.portal-sidnav-menu__end_detail {
+      color: mat-color($accent, default);
+    }
+    // Badges
+    strong.portal-sidnav-menu__end_detail {
+      background: mat-color($accent, default);
+      color: mat-color($accent, default-contrast);
+      min-width: 24px;
+      text-align: center;
+      border-radius: 50%;
+      font-size: .75em;
+    }
+  }
+}

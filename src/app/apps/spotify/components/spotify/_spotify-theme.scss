@@ -1,0 +1,14 @@
+@mixin portal-spotify-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .mat-card-header-text {
+    overflow: hidden;
+  }
+  .portal-spotify-card__action .mat-icon {
+    color: mat-color($background, card);
+  }
+}
+

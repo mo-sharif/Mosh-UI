@@ -1,0 +1,16 @@
+@import '../../../../sass/utils';
+
+.portal-footer {
+  z-index: 5;
+  position: relative;
+  .mat-icon {
+    color: inherit;
+    @include portal-ui-icon-sizing(16px);
+    width: 48px;
+  }
+}
+.portal-transparent-footer {
+  background: transparent;
+  color: inherit;
+  box-shadow: none
+}

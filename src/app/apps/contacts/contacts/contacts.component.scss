@@ -1,0 +1,249 @@
+@import '../../../../sass/utils';
+
+.portal-contacts__list {
+  overflow: auto;
+}
+
+.portal-contacts__sidenav {
+  min-width: 300px;
+  z-index: 4;
+  .mat-list a {
+    cursor: pointer;
+  }
+}
+
+.portal-contacts__search {
+  max-width: 100%;
+  padding: 16px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,.075);
+  .mat-icon {
+    @include portal-ui-icon-sizing(16px);
+  }
+}
+
+.portal-contacts-app__list-item {
+  .mat-icon {
+    transition: color .5s, opacity .5s;
+    text-align: center;
+    opacity: .5;
+  }
+  &.portal-contacts-app__list-item--active .mat-icon {
+    animation: portal-contacts-app__list-item  .5s ease-out forwards;
+    animation-iteration-count: 1;
+  }
+}
+
+
+.portal-contacts__details {
+  height: 100%;
+  overflow: auto;
+}
+
+.portal-contacts__details-header {
+  // Add a background image or use the default animation
+  min-height: 33vh;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    transform-origin: 0 0;
+    top: 100%;
+    transform: translate3d(-50%, -50%, 0);
+    left: 96px;
+    border-radius: 50%;
+    opacity: 0;
+  }
+  &:before {
+    animation: portal-contacts__details-header-before  .6s ease-out forwards 1;
+    animation-delay: .2s;
+  }
+  &:after {
+    animation: portal-contacts__details-header-after  .4s ease-out  forwards 1;
+    animation-delay: .4s;
+  }
+}
+
+.portal-contacts__details-content {
+  position: relative;
+  padding: 16px;
+  z-index: 2;
+}
+
+.portal-contacts__details-avatar {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  animation: portal-contacts__details-avatar  .8s ease-out  forwards 1;
+  transform: translate3d(0px, -40px, 0);
+  img {
+    border-radius: 50%;
+    border-radius: 50%;
+    border-width: 16px;
+    border-style: solid;
+    position: relative;
+    z-index: 3;
+  }
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    height: 100%;
+  }
+  &:before {
+    width: 100%;
+    border-radius: 50%;
+    z-index: 1;
+    animation: portal-contacts__details-avatar-before  .3s ease-out  forwards 1;
+    animation-delay: 0.8s;
+    opacity: 0;
+  }
+  &:after {
+    width: 180px;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    transform: translateX(-50%);
+  }
+}
+
+.portal-contacts__details-extra {
+  min-width: 160px;
+  font-size: .8em;
+  z-index: 5;
+  position: relative;
+  padding-top: 60px;
+  text-align: center;
+  p {
+    margin-bottom: 0;
+    line-height: 24px;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.portal-contacts__details-main {
+  z-index: 5;
+  position: relative;
+  padding-top: 60px;
+}
+
+.portal-contacts__no-contact {
+  width: 100%;
+  height: 100%;
+  h2 {
+    font-size: .95em;
+    margin-top: 12px;
+  }
+  .portal-contacts__no-contact-icon {
+    width: 58px;
+    height: 58px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    text-align: center;
+    animation: portal-chat-no-messages-icon 1s cubic-bezier(.36,.07,.19,.97) both;
+    .mat-icon {
+      @include portal-ui-icon-sizing(40px);
+      opacity: 0;
+      animation: portal-chat-no-messages-icon-inner .5s cubic-bezier(.36,.07,.19,.97) both;
+      transform: translateY(12px);
+      animation-delay: .5s;
+    }
+  }
+}
+
+
+// Demo animations
+
+@keyframes portal-chat-no-messages-icon {
+  0% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes portal-chat-no-messages-icon-inner {
+  0% {
+    transform: translateY(25px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(12px)  scale(1.2, 1.2);
+    opacity: 1;
+
+  }
+  100% {
+    transform: translateY(14px);
+    opacity: 1;
+  }
+}
+
+
+@keyframes portal-contacts__details-avatar {
+  0% {
+    transform: translate3d(0px, -80px, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate3d(0px, -96px, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes portal-contacts__details-header-before {
+  0% {
+    width: 160px;
+    height: 160px;
+    opacity: 0;
+  }
+  100% {
+    width: 75vw;
+    height: 75vw;
+    opacity: 1;
+  }
+}
+
+@keyframes portal-contacts__details-header-after {
+  0% {
+    width: 160px;
+    height: 160px;
+    opacity: 0;
+  }
+  100% {
+    width: 35vw;
+    height: 35vw;
+    opacity: 1;
+  }
+}
+
+@keyframes portal-contacts__details-avatar-before {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes portal-contacts-app__list-item {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}

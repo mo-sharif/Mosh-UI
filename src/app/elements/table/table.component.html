@@ -1,0 +1,52 @@
+<div class="portal-example-page">
+  <div class="portal-example-pager__header" fxLayout="row" fxLayoutAlign="center center">
+    <div class="portal-example-pager__header-content mat-elevation-z8 portal-mat-table-example">
+      <mat-table #table [dataSource]="dataSource">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+          <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.position }}</mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="weight">
+          <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.weight }}</mat-cell>
+        </ng-container>
+
+        <!-- Color Column -->
+        <ng-container matColumnDef="symbol">
+          <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.symbol }}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </div>
+  </div>
+  <div class="portal-example-pager__content portal-example-pager__header-content--push">
+    <p>Data tables display sets of raw data. They usually appear in desktop enterprise products.</p>
+    <p>Data tables may be embedded on a surface, such as a card. They can include:</p>
+    <ul>
+      <li>A corresponding visualization</li>
+      <li>The ability to query and manipulate data</li>
+      <li>Data tables on cards may display navigation and data manipulation tools at the top and bottom.</li>
+    </ul>
+    <h3 class="portal-example-pager__content--heading">Table with filtering Example</h3>
+    <p>In the next example we will show you how to use a table with a filter input.</p>
+    <example-with-code title="Table Example" example="table-example-1" [tabs]="['ts', 'html']">
+      <example-table-1></example-table-1>
+    </example-with-code>
+  </div>
+</div>

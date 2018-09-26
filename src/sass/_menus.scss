@@ -1,0 +1,17 @@
+@mixin portal-menus($theme) {
+  $background: map-get($theme, background);
+  /* Utility classes */
+  .mat-menu-panel.portal-menu-no-padding {
+    .mat-menu-content {
+      padding: 0px
+    }
+  }
+
+  .mat-menu-panel.portal-menu-no-max-width {
+    max-width: initial;
+  }
+
+  .portal-menu--active {
+    background: mat-color($background, hover);
+  }
+}

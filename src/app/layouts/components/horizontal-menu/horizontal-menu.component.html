@@ -1,0 +1,173 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <a mat-button routerLink="/" routerLinkActive="portal-menu--active" [routerLinkActiveOptions]="{ exact: true }">
+      <span i18n>Home</span>
+    </a>
+    <a mat-button [matMenuTriggerFor]="dashMenu">
+      <span i18n>Dashboards</span>
+    </a>
+    <mat-menu
+      #dashMenu="matMenu"
+      yPosition="below"
+      [overlapTrigger]="false">
+      <a mat-menu-item routerLink="/dashboards/analytics" routerLinkActive="portal-menu--active">
+        <mat-icon matListIcon>insert_chart</mat-icon>
+        <span i18n>Analytics</span>
+      </a>
+      <a mat-menu-item routerLink="/dashboards/ecommerce" routerLinkActive="portal-menu--active">
+        <mat-icon matListIcon>shopping_cart</mat-icon>
+        <span i18n>E-Commerce</span>
+      </a>
+      <a mat-menu-item routerLink="/dashboards/crypto" routerLinkActive="portal-menu--active">
+        <mat-icon matListIcon>euro_symbol</mat-icon>
+        <span i18n>CryptoCurrency</span>
+      </a>
+      <a mat-menu-item routerLink="/dashboards/project" routerLinkActive="portal-menu--active">
+        <mat-icon matListIcon>event_note</mat-icon>
+        <span i18n>Project</span>
+      </a>
+    </mat-menu>
+    <a mat-button [matMenuTriggerFor]="appsMenu" i18n>Apps</a>
+    <mat-menu
+      #appsMenu="matMenu"
+      yPosition="below"
+      [overlapTrigger]="false">
+      <a mat-menu-item [routerLink]="['/apps/email', { outlets: { list: 'inbox', messages: 'none' } }]" routerLinkActive="portal-menu--active">
+        <mat-icon matListIcon>email</mat-icon>
+        <span i18n>Email</span>
+      </a>
+      <a mat-menu-item routerLink="/apps/todo" routerLinkActive="portal-menu--active">
+        <mat-icon matListIcon>check_circle</mat-icon>
+        <span i18n>Todo</span>
+      </a>
+      <a mat-menu-item routerLink="/apps/maps" routerLinkActive="portal-menu--active">
+        <mat-icon matListIcon>pin_drop</mat-icon>
+        <span i18n>Maps</span>
+      </a>
+      <a mat-menu-item routerLink="/apps/chat" routerLinkActive="portal-menu--active">
+        <mat-icon matListIcon>chat</mat-icon>
+        <span i18n>Chat</span>
+      </a>
+      <a mat-menu-item routerLink="/apps/calendar" routerLinkActive="portal-menu--active">
+        <mat-icon matListIcon>date_range</mat-icon>
+        <span i18n>Calendar</span>
+      </a>
+      <a mat-menu-item routerLink="/apps/contacts" routerLinkActive="portal-menu--active">
+        <mat-icon matListIcon>face</mat-icon>
+        <span i18n>Contact</span>
+      </a>
+    </mat-menu>
+    <button
+      mat-button
+      [mat-menu-trigger-for]="megaMenu">
+      Elements
+    </button>
+    <mat-menu
+      #megaMenu="matMenu"
+      yPosition="below"
+      [overlapTrigger]="false"
+      classList="portal-menu-no-max-width">
+      <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="start start">
+        <mat-nav-list class="portal-layout-toolbar-mega-menu-list">
+          <h3 matSubheader>Form Controls</h3>
+          <a mat-list-item routerLink="/elements/autocomplete" routerLinkActive="portal-menu--active">
+            Autocomplete
+          </a>
+          <a mat-list-item routerLink="/elements/checkbox" routerLinkActive="portal-menu--active">
+            Checkbox
+          </a>
+          <a mat-list-item routerLink="/elements/datepicker" routerLinkActive="portal-menu--active">
+            Datepicker
+          </a>
+          <a mat-list-item routerLink="/elements/form-field" routerLinkActive="portal-menu--active">
+            Form Field
+          </a>
+          <a mat-list-item routerLink="/elements/input" routerLinkActive="portal-menu--active">
+            Input
+          </a>
+          <a mat-list-item routerLink="/elements/radio" routerLinkActive="portal-menu--active">
+            Radio
+          </a>
+          <a mat-list-item routerLink="/elements/select" routerLinkActive="portal-menu--active">
+            Select
+          </a>
+          <a mat-list-item routerLink="/elements/slider" routerLinkActive="portal-menu--active">
+            Slider
+          </a>
+          <a mat-list-item routerLink="/elements/toggle" routerLinkActive="portal-menu--active">
+            Slide Toggle
+          </a>
+        </mat-nav-list>
+        <mat-nav-list class="portal-layout-toolbar-mega-menu-list">
+          <h3 matSubheader>Navigation</h3>
+          <a mat-list-item routerLink="/elements/menu" routerLinkActive="portal-menu--active">
+            Menu
+          </a>
+          <a mat-list-item routerLink="/elements/sidenav" routerLinkActive="portal-menu--active">
+            Sidenav
+          </a>
+          <a mat-list-item routerLink="/elements/toolbar" routerLinkActive="portal-menu--active">
+            Toolbar
+          </a>
+        </mat-nav-list>
+        <mat-nav-list class="portal-layout-toolbar-mega-menu-list">
+          <h3 matSubheader>Layout</h3>
+          <a mat-list-item routerLink="/elements/list" routerLinkActive="portal-menu--active">
+            List
+          </a>
+          <a mat-list-item routerLink="/elements/grid-list" routerLinkActive="portal-menu--active">
+            Grid List
+          </a>
+          <a mat-list-item routerLink="/elements/card" routerLinkActive="portal-menu--active">
+            Card
+          </a>
+          <a mat-list-item routerLink="/elements/stepper" routerLinkActive="portal-menu--active">
+            Stepper
+          </a>
+          <a mat-list-item routerLink="/elements/tabs" routerLinkActive="portal-menu--active">
+            Tabs
+          </a>
+          <a mat-list-item routerLink="/elements/expansion-panel" routerLinkActive="portal-menu--active">
+            Expansion Panel
+          </a>
+        </mat-nav-list>
+        <mat-nav-list class="portal-layout-toolbar-mega-menu-list">
+          <h3 matSubheader>Buttons & Indicators</h3>
+          <a mat-list-item routerLink="/elements/buttons" routerLinkActive="portal-menu--active">
+            Buttons
+          </a>
+          <a mat-list-item routerLink="/elements/button-toggle" routerLinkActive="portal-menu--active">
+            Button Toggle
+          </a>
+          <a mat-list-item routerLink="/elements/chips" routerLinkActive="portal-menu--active">
+            Chips
+          </a>
+          <a mat-list-item routerLink="/elements/mat-icon" routerLinkActive="portal-menu--active">
+            Material Icons
+          </a>
+          <a mat-list-item routerLink="/elements/fa-icon" routerLinkActive="portal-menu--active">
+            Font Awesome Icons
+          </a>
+          <a mat-list-item routerLink="/elements/progress-spinner" routerLinkActive="portal-menu--active">
+            Progress Spinner
+          </a>
+          <a mat-list-item routerLink="/elements/progress-bar" routerLinkActive="portal-menu--active">
+            Progress Bar
+          </a>
+        </mat-nav-list>
+        <mat-nav-list class="portal-layout-toolbar-mega-menu-list">
+          <h3 matSubheader>Popups & Modals</h3>
+          <a mat-list-item routerLink="/elements/dialog" routerLinkActive="portal-menu--active">
+            Dialog
+          </a>
+          <a mat-list-item routerLink="/elements/tooltip" routerLinkActive="portal-menu--active">
+            Tooltip
+          </a>
+          <a mat-list-item routerLink="/elements/snackbar" routerLinkActive="portal-menu--active">
+            Snackbar
+          </a>
+        </mat-nav-list>
+      </div>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>

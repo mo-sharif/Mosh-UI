@@ -1,0 +1,53 @@
+<div class="portal-example-page">
+  <div class="portal-example-pager__header" fxLayout="row" fxLayoutAlign="center center">
+    <div class="portal-example-pager__header-content">
+      <mat-horizontal-stepper class="portal-example-preview-stepper">
+        <mat-step>
+          <ng-template matStepLabel>What is your name?</ng-template>
+          <mat-form-field>
+            <input matInput placeholder="Last name, First name" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>What is your quest?</ng-template>
+          <mat-form-field>
+            <input matInput placeholder="State your quest" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>What is your favourite color?</ng-template>
+          <mat-form-field>
+            <mat-select placeholder="Favourite color">
+                <mat-option value="blue">Blue</mat-option>
+                <mat-option value="green">Green</mat-option>
+                <mat-option value="blue-wait">Blue. No, yel-- auuuuuuuugh!</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Finished</ng-template>
+          <h3>Off you go then</h3>
+        </mat-step>
+      </mat-horizontal-stepper>
+    </div>
+  </div>
+  <div class="portal-example-pager__content">
+    <p>Steppers convey progress through numbered steps.</p>
+    <p>Steppers display progress through a sequence of logical and numbered steps. They may also be used for navigation.</p>
+
+    <h3 class="portal-example-pager__content--heading">Stepper Example</h3>
+    <p>In the next example we will show you how create a stepper where a form must be valid to continue.</p>
+    <example-with-code title="Stepper Example With Form Validation" example="stepper-example-1">
+      <stepper-example-1></stepper-example-1>
+    </example-with-code>
+  </div>
+</div>

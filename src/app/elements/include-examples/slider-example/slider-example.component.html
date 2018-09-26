@@ -1,0 +1,15 @@
+<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="16px">
+  <section>
+    <mat-slider
+     max="100"
+     min="0"
+     step="1"
+     [thumb-label]="thumbLabel"
+     [(ngModel)]="value">
+    </mat-slider>
+  </section>
+  <section fxLayout="column">
+    <mat-form-field><input matInput type="number" placeholder="Value" [(ngModel)]="value"></mat-form-field>
+    <mat-checkbox [(ngModel)]="thumbLabel">Show discrete values</mat-checkbox>
+  </section>
+</div>

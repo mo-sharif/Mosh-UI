@@ -1,0 +1,19 @@
+@mixin portal-project-dashboard-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $accent: map-get($theme, accent);
+  $primary: map-get($theme, primary);
+  $red: mat-palette($mat-red);
+  $green: mat-palette($mat-green);
+
+  .portal-themed-shadow {
+    box-shadow: 0px 8px 16px darken(rgba(mat-color($primary, default), .1), 5%) !important;
+  }
+}
+@mixin portal-project-dashboard-theme-dark($theme) {
+  $primary: map-get($theme, primary);
+
+  .portal-themed-shadow {
+    box-shadow: 0px 8px 16px darken(rgba(mat-color($primary, default), .1), 50%) !important;
+  }
+}

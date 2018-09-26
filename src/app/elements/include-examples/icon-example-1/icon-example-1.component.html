@@ -1,0 +1,16 @@
+<mat-icon [color]="color">thumb_up</mat-icon>
+<h4>Set Icon Color</h4>
+<mat-button-toggle-group [(ngModel)]="color">
+  <mat-button-toggle value="">
+    Font Color
+  </mat-button-toggle>
+  <mat-button-toggle value="primary">
+    Primary
+  </mat-button-toggle>
+  <mat-button-toggle value="accent">
+    Accent
+  </mat-button-toggle>
+  <mat-button-toggle value="warn">
+    Warn
+  </mat-button-toggle>
+</mat-button-toggle-group>

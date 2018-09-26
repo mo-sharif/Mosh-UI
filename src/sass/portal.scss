@@ -1,0 +1,157 @@
+/* Portal Global  */
+@import 'typography';
+@import 'palette';
+@import 'theming';
+@import 'menus';
+@import 'backgrounds';
+@import 'inputs';
+@import 'toolbar';
+@import 'scrollbars';
+@import 'rtl';
+@import 'theme-icon';
+@import 'loader';
+
+/* Styles Used in Example Element Pages */
+@import 'examples';
+
+/* Layouts */
+@import '../app/layouts/layout-funky/_layout-funky-theme';
+
+/* Layout Components */
+@import '../app/layouts/components/user-menu/_user-menu-theme';
+@import '../app/layouts/components/notification-sidenav/_notification-sidenav-theme';
+@import '../app/layouts/components/menu-sidenav/_menu-sidenav-theme';
+@import '../app/layouts/components/vertical-icon-menu/_vertical-icon-menu-theme';
+@import '../app/layouts/components/layout-loader/_layout-loader-theme.scss';
+@import '../app/layouts/components/top-horizontal-menu/_top-horizontal-menu-theme';
+@import '../app/layouts/components/layout-switcher-menu/_layout-switcher-menu-theme';
+@import '../app/layouts/components/theme-switcher-menu/_theme-switcher-menu-theme';
+@import '../app/layouts/components/footer/_footer-theme';
+
+/* Apps */
+@import '../app/apps/maps/maps/_maps-theme';
+@import '../app/apps/email/email/_email-theme';
+@import '../app/apps/email/list/_list-theme';
+@import '../app/apps/email/messages/_messages-theme';
+@import '../app/apps/email/no-messages/_no-messages-theme';
+@import '../app/apps/todo/todo/_todo-theme';
+@import '../app/apps/chat/chat/_chat-theme';
+@import '../app/apps/notes/notes/_notes-theme';
+@import '../app/apps/calendar/calendar/_calendar-theme';
+@import '../app/apps/contacts/contacts/_contacts-theme';
+@import '../app/apps/spotify/components/spotify/_spotify-theme';
+
+/* Profile page */
+@import '../app/pages/profile/_profile-theme';
+
+/* Error pages */
+@import '../app/external-pages/error-404/_error-404-theme';
+@import '../app/external-pages/error-500/_error-500-theme';
+
+/* Dashboards */
+@import '../app/dashboards/analytics/_theme-analytics';
+@import '../app/dashboards/ecommerce/_theme-ecommerce';
+@import '../app/dashboards/project-dashboard/_theme-project-dashboard';
+
+/* Dashboard Components */
+@import '../app/dashboards/analytics/components/charts-widget/_charts-widget-theme';
+@import '../app/dashboards/analytics/components/tabbed-chart-widget/_tabbed-chart-widget-theme';
+@import '../app/dashboards/project-dashboard/components/user-tasks/_user-tasks-theme';
+@import '../app/dashboards/project-dashboard/components/project-states/_project-states-theme';
+
+/* UI */
+@import '../app/user-interface/colors/_colors-theme';
+@import '../app/user-interface/typography/_typography-theme';
+
+@mixin portal-theme($theme, $typography) {
+  /* Portal Typography */
+  @include portal-typography();
+
+  /* Portal Loader */
+  @include portal-loader($theme);
+
+  /* Menu Utility Classes */
+  @include portal-menus($theme);
+
+  /* Input Classes */
+  @include portal-inputs();
+
+  /* Toolbar Classes */
+  @include portal-toolbar($theme);
+
+  /* Coloured background classes */
+  @include portal-backgrounds($theme);
+
+  /* Hide scrollbars classes */
+  @include portal-scrollbars();
+
+  /* RTL */
+  @include portal-rtl();
+
+  /* Portal Layouts */
+  @include portal-layout-funky-theme($theme);
+
+  /* Portal Layout Component Themes */
+  @include portal-user-menu-theme($theme);
+  @include portal-notification-sidenav($theme);
+  @include portal-maps($theme);
+  @include portal-menu-sidenav-theme($theme, $typography);
+  @include portal-layout-compact-theme($theme, $typography);
+  @include portal-layout-loader-theme($theme);
+  @include portal-top-horizontal-menu-theme($theme);
+  @include portal-layout-switcher-theme($theme);
+  @include portal-theme-switcher-theme($theme);
+
+  @include portal-footer-theme($theme);
+
+  /* Portal Email Themes */
+  @include portal-email-theme($theme);
+  @include portal-email-list-theme($theme);
+  @include portal-email-no-messages-theme($theme);
+  @include portal-email-messages-theme($theme);
+
+  /* Portal Todo Themes */
+  @include portal-todo-theme($theme);
+
+  /* Portal Notes Themes */
+  @include portal-notes-theme($theme);
+
+  /* Portal Chat Themes */
+  @include portal-chat-theme($theme);
+
+  /* Portal Calendar Theme */
+  @include portal-calendar-theme($theme);
+
+  /* Portal Dashboards */
+  @include portal-dashboard-theme($theme);
+  @include portal-ecommerce-theme($theme);
+  @include portal-project-dashboard-theme($theme);
+
+  /* Portal Profile */
+  @include portal-profile-theme($theme);
+
+  /* Error Pages Themes */
+  @include portal-error-404-theme($theme);
+  @include portal-error-500-theme($theme);
+
+  /* Portal Contacts Theme */
+  @include portal-contacts-theme($theme);
+
+  /* Portal Typography Theme */
+  @include portal-typography-theme($theme);
+
+  /* Portal Spotify Theme */
+  @include portal-spotify-theme($theme);
+
+  /* Portal Dashboard Widgets */
+  @include portal-charts-widget-theme($theme);
+  @include portal-tabbed-charts-widget-theme($theme);
+  @include portal-user-tasks-widget-theme($theme);
+  @include portal-project-states-widget-theme($theme);
+
+  /* UI Colors Page */
+  @include portal-colors-theme($theme);
+
+  /* Example Pages */
+  @include portal-examples($theme);
+}

@@ -1,0 +1,23 @@
+<div class="portal-typography portal-example-page">
+  <div class="portal-example-pager__header portal-example-pager__header-drawer" fxLayout="row" fxLayoutAlign="center center">
+    <div class="portal-example-pager__header-content">
+      <mat-drawer-container #drawer class="portal-example-drawer">
+        <mat-drawer class="portal-example-preview-sidebar">
+          <h2>Hello there!</h2>
+          <h4>I'm a sidebar</h4>
+        </mat-drawer>
+      </mat-drawer-container>
+      <button mat-raised-button (click)="drawer.open()">Show me the sidebar!</button>
+    </div>
+  </div>
+  <div class="portal-example-pager__content">
+    <p>The navigation drawer slides in from the left and contains the navigation destinations for your app.</p>
+    <p>The nav drawer spans the height of the screen, with everything behind it visible but darkened by a scrim.</p>
+
+    <h3 class="portal-example-pager__content--heading">Sidenav Example</h3>
+    <p>In the next example we will show you how to modify the state of a sidenav.</p>
+    <example-with-code title="Slide Toggle Example" example="sidenav-example-1">
+      <sidenav-example-1></sidenav-example-1>
+    </example-with-code>
+  </div>
+</div>

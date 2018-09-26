@@ -1,0 +1,258 @@
+<div fxFlexFill fxLayout="column">
+  <mat-toolbar>
+    <mat-toolbar-row fxLayout="row" fxLayoutAlign="center center">
+      <img class="portal-toolbar-brand" src="assets/images/oxygenna.png" alt="Portal">
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div fxFlex="nogrow noshrink" class="portal-compact-sidemenu portal-hide-scrollbars" fxLayout="column">
+
+    <!-- dashboards menu -->
+
+    <a mat-button
+      [matMenuTriggerFor]="dashMenu"
+    >
+      <mat-icon>dashboard</mat-icon>
+      <h3 i18n>Dashboards</h3>
+      <strong class="portal-compact-sidemenu__end_detail">2</strong>
+    </a>
+    <mat-menu
+      #dashMenu="matMenu">
+      <a mat-menu-item routerLink="/dashboards/analytics" routerLinkActive="portal-menu--active">
+        <mat-icon>insert_chart</mat-icon>
+        <span>Analytics</span>
+      </a>
+      <a mat-menu-item routerLink="/dashboards/ecommerce" routerLinkActive="portal-menu--active">
+        <mat-icon>shopping_cart</mat-icon>
+        <span>E-Commerce</span>
+      </a>
+      <a mat-menu-item routerLink="/dashboards/crypto" routerLinkActive="portal-menu--active">
+        <mat-icon>euro_symbol</mat-icon>
+        <span>CryptoCurrency</span>
+      </a>
+      <a mat-menu-item routerLink="/dashboards/project" routerLinkActive="portal-menu--active">
+        <mat-icon>event_note</mat-icon>
+        <span>Project</span>
+      </a>
+    </mat-menu>
+
+    <!-- apps menu -->
+
+    <a mat-button
+      [matMenuTriggerFor]="appsMenu">
+      <mat-icon>desktop_windows</mat-icon>
+      <h3 i18n>Apps</h3>
+    </a>
+    <mat-menu
+      #appsMenu="matMenu">
+      <a mat-menu-item [routerLink]="['/apps/email', { outlets: { list: 'inbox', messages: 'none' } }]" routerLinkActive="portal-menu--active">
+        <mat-icon>email</mat-icon>
+        <span>Email</span>
+      </a>
+      <a mat-menu-item routerLink="/apps/todo" routerLinkActive="portal-menu--active">
+        <mat-icon>check_circle</mat-icon>
+        <span>Todo</span>
+      </a>
+      <a mat-menu-item routerLink="/apps/maps" routerLinkActive="portal-menu--active">
+        <mat-icon>pin_drop</mat-icon>
+        <span>Maps</span>
+      </a>
+      <a mat-menu-item routerLink="/apps/chat" routerLinkActive="portal-menu--active">
+        <mat-icon>chat</mat-icon>
+        <span>Chat</span>
+      </a>
+      <a mat-menu-item routerLink="/apps/calendar" routerLinkActive="portal-menu--active">
+        <mat-icon>date_range</mat-icon>
+        <span>Calendar</span>
+      </a>
+      <a mat-menu-item routerLink="/apps/contacts" routerLinkActive="portal-menu--active">
+        <mat-icon>face</mat-icon>
+        <span>Contact</span>
+      </a>
+    </mat-menu>
+
+    <!-- pages menu -->
+
+    <a mat-button
+      [matMenuTriggerFor]="pagesMenu">
+      <mat-icon fontSet="fa" fontIcon="fa-file-o"></mat-icon>
+      <h3 i18n>Pages</h3>
+    </a>
+    <mat-menu
+      #pagesMenu="matMenu">
+      <a mat-menu-item routerLink="/external/login" routerLinkActive="portal-menu--active">
+        Login
+      </a>
+      <a mat-menu-item routerLink="/external/register" routerLinkActive="portal-menu--active">
+        Register
+      </a>
+      <a mat-menu-item routerLink="/external/forgot-password" routerLinkActive="portal-menu--active">
+        Forgot Password
+      </a>
+    </mat-menu>
+
+    <!-- elements menu -->
+
+    <a mat-button
+      [matMenuTriggerFor]="elementsMenu">
+      <mat-icon>extension</mat-icon>
+      <h3 i18n>Elements</h3>
+    </a>
+    <mat-menu
+      #elementsMenu="matMenu">
+      <a mat-menu-item [matMenuTriggerFor]="formControlsMenu">Form Controls</a>
+      <a mat-menu-item [matMenuTriggerFor]="navigationMenu">Navigation</a>
+      <a mat-menu-item [matMenuTriggerFor]="layoutMenuMenu">Layouts</a>
+      <a mat-menu-item [matMenuTriggerFor]="buttonsMenu">Buttons</a>
+      <a mat-menu-item [matMenuTriggerFor]="popupsMenu">Popups & Modals</a>
+      <a mat-menu-item [matMenuTriggerFor]="tablesMenu">Tables</a>
+    </mat-menu>
+
+    <!-- elements sub menu (form controls) -->
+
+    <mat-menu #formControlsMenu="matMenu">
+      <a mat-menu-item routerLink="/elements/autocomplete" routerLinkActive="portal-menu--active">
+        <span>Autocomplete</span>
+      </a>
+      <a mat-menu-item routerLink="/elements/checkbox" routerLinkActive="portal-menu--active">
+        <span>Checkbox</span>
+      </a>
+      <a mat-menu-item routerLink="/elements/datepicker" routerLinkActive="portal-menu--active">
+        <span>Datepicker</span>
+      </a>
+      <a mat-menu-item routerLink="/elements/form-field" routerLinkActive="portal-menu--active">
+        <span>Form Field</span>
+      </a>
+      <a mat-menu-item routerLink="/elements/input" routerLinkActive="portal-menu--active">
+        <span>Input</span>
+      </a>
+      <a mat-menu-item routerLink="/elements/radio" routerLinkActive="portal-menu--active">
+        <span>Radio</span>
+      </a>
+      <a mat-menu-item routerLink="/elements/select" routerLinkActive="portal-menu--active">
+        <span>Select</span>
+      </a>
+      <a mat-menu-item routerLink="/elements/slider" routerLinkActive="portal-menu--active">
+        <span>Slider</span>
+      </a>
+      <a mat-menu-item routerLink="/elements/toggle" routerLinkActive="portal-menu--active">
+        <span>Slide Toggle</span>
+      </a>
+    </mat-menu>
+
+    <!-- elements sub menu (navigation) -->
+
+    <mat-menu #navigationMenu="matMenu">
+      <a mat-menu-item routerLink="/elements/menu" routerLinkActive="portal-menu--active">
+        <span>Menu</span>
+      </a>
+      <a mat-menu-item routerLink="/elements/sidenav" routerLinkActive="portal-menu--active">
+        <span>Sidenav</span>
+      </a>
+      <a mat-menu-item routerLink="/elements/toolbar" routerLinkActive="portal-menu--active">
+        <span>Toolbar</span>
+      </a>
+    </mat-menu>
+
+    <!-- elements sub menu (layout) -->
+
+    <mat-menu #layoutMenuMenu="matMenu">
+      <a mat-menu-item routerLink="/elements/list" routerLinkActive="portal-menu--active">
+        <span>List</span>
+      </a>
+      <a mat-menu-item routerLink="/elements/grid-list" routerLinkActive="portal-menu--active">
+        <span>Grid List</span>
+      </a>
+      <a mat-menu-item routerLink="/elements/card" routerLinkActive="portal-menu--active">
+        <span>Card</span>
+      </a>
+      <a mat-menu-item routerLink="/elements/stepper" routerLinkActive="portal-menu--active">
+        <span>Stepper</span>
+      </a>
+      <a mat-menu-item routerLink="/elements/tabs" routerLinkActive="portal-menu--active">
+        <span>Tabs</span>
+      </a>
+      <a mat-menu-item routerLink="/elements/expansion-panel" routerLinkActive="portal-menu--active">
+        <span>Expansion Panel</span>
+      </a>
+    </mat-menu>
+
+    <!-- elements sub menu (buttons) -->
+
+    <mat-menu #buttonsMenu="matMenu">
+      <a mat-menu-item routerLink="/elements/buttons" routerLinkActive="portal-menu--active">
+        <span>Buttons</span>
+      </a>
+      <a mat-menu-item routerLink="/elements/button-toggle" routerLinkActive="portal-menu--active">
+        <span>Button Toggle</span>
+      </a>
+      <a mat-menu-item routerLink="/elements/chips" routerLinkActive="portal-menu--active">
+        <span>Chips</span>
+      </a>
+      <a mat-menu-item routerLink="/elements/mat-icon" routerLinkActive="portal-menu--active">
+        <span>Material Icons</span>
+      </a>
+      <a mat-menu-item routerLink="/elements/fa-icon" routerLinkActive="portal-menu--active">
+        <span>Font Awesome Icons</span>
+      </a>
+      <a mat-menu-item routerLink="/elements/progress-spinner" routerLinkActive="portal-menu--active">
+        <span>Progress Spinner</span>
+      </a>
+      <a mat-menu-item routerLink="/elements/progress-bar" routerLinkActive="portal-menu--active">
+        <span>Progress Bar</span>
+      </a>
+    </mat-menu>
+
+    <!-- elements sub menu (popups) -->
+
+    <mat-menu #popupsMenu="matMenu">
+      <a mat-menu-item routerLink="/elements/dialog" routerLinkActive="portal-menu--active">
+        <span>Dialog</span>
+      </a>
+      <a mat-menu-item routerLink="/elements/tooltip" routerLinkActive="portal-menu--active">
+        <span>Tooltip</span>
+      </a>
+      <a mat-menu-item routerLink="/elements/snackbar" routerLinkActive="portal-menu--active">
+        <span>Snackbar</span>
+      </a>
+    </mat-menu>
+
+    <!-- elements sub menu (tables) -->
+
+    <mat-menu #tablesMenu="matMenu">
+      <a mat-menu-item routerLink="/elements/table" routerLinkActive="portal-menu--active">
+        <span>Table</span>
+      </a>
+      <a mat-menu-item routerLink="/elements/sortable" routerLinkActive="portal-menu--active">
+        <span>Sortable</span>
+      </a>
+      <a mat-menu-item routerLink="/elements/paginator" routerLinkActive="portal-menu--active">
+        <span>Paginator</span>
+      </a>
+    </mat-menu>
+
+    <!-- rxjs menu -->
+
+    <a mat-button
+      [matMenuTriggerFor]="rxjsMenu">
+      <mat-icon>loop</mat-icon>
+      <h3 i18n>RxJS</h3>
+    </a>
+    <mat-menu
+      #rxjsMenu="matMenu">
+      <a mat-menu-item routerLink="/rxjs/intro" routerLinkActive="portal-menu--active">
+        <span>Introduction</span>
+      </a>
+      <a mat-menu-item routerLink="/rxjs/subject" routerLinkActive="portal-menu--active">
+        <span>Subject</span>
+      </a>
+    </mat-menu>
+  </div>
+  <mat-toolbar>
+    <mat-toolbar-row fxLayout="row">
+      <span fxFlex></span>
+      <a mat-icon-button (click)="sidenav.close()">
+        <mat-icon>chevron_left</mat-icon>
+      </a>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>

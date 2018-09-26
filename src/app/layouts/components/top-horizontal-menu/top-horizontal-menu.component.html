@@ -1,0 +1,17 @@
+<mat-toolbar class="portal-toolbar mat-elevation-z6" [ngClass]="{ 'portal-transparent-toolbar': transparent }">
+  <mat-toolbar-row>
+    <button *ngIf="showMenuIcon()" mat-icon-button (click)="leftSidenav.open()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span portalHeaderTitle></span>
+    <span fxFlex></span>
+    <portal-theme-switcher-menu fxHide fxShow.gt-sm></portal-theme-switcher-menu>
+    <portal-layout-switcher-menu fxHide fxShow.gt-sm></portal-layout-switcher-menu>
+    <portal-user-menu></portal-user-menu>
+    <portal-language-menu fxHide fxShow.gt-sm></portal-language-menu>
+    <button class="portal-notification" [ngClass]="{ 'portal-notification-active': !notificationsChecked }" mat-icon-button (click)="openRightSidenav()">
+      <mat-icon>notifications</mat-icon>
+      <span *ngIf="!notificationsChecked" class="portal-notification-badge">2</span>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>

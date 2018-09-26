@@ -1,0 +1,14 @@
+@mixin portal-ui-icon-sizing($icon-size) {
+  font-size: $icon-size;
+  width: $icon-size * 1.5;
+  height: $icon-size * 1.5;
+  line-height: $icon-size * 1.5;
+  text-align: center;
+  padding: 0px;
+  flex-shrink: 0;
+}
+
+// Display classes
+.portal-display-block {
+  display: block;
+}

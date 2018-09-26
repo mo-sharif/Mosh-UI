@@ -1,0 +1,30 @@
+<mat-card>
+  <div class="portal-tab-chart">
+    <canvas baseChart
+      [data]="doughnutChartData"
+      [labels]="doughnutChartLabels"
+      [options]="doughnutChartOptions"
+      [colors]="doughnutChartColors"
+      [legend]="false"
+      chartType="doughnut"></canvas>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-between center" class="portal-text-align-center portal-widget__doughnut-labels">
+    <div fxFlex="33">
+      <mat-icon fontSet="fa" fontIcon="fa-laptop" class="portal-font-size-big">
+        <span [ngStyle]="{'background-color': doughnutChartColors[0].backgroundColor[0]}"></span>
+      </mat-icon>
+      <div class="mat-caption">Desktop</div>
+      <p class="mat-display-1 portal-font-weight-light" portalCount [countTo]="deviceSessions[0]"></p>
+    </div>
+    <div fxFlex="33">
+      <mat-icon fontSet="fa" fontIcon="fa-tablet" class="portal-font-size-big"><span [ngStyle]="{'background-color': doughnutChartColors[0].backgroundColor[1]}"></span></mat-icon>
+      <div class="mat-caption">Tablet</div>
+      <p class="mat-display-1 portal-font-weight-light" portalCount [countTo]="deviceSessions[1]"></p>
+    </div>
+    <div fxFlex="33">
+      <mat-icon fontSet="fa" fontIcon="fa-mobile" class="portal-font-size-big"><span [ngStyle]="{'background-color': doughnutChartColors[0].backgroundColor[2]}"></span></mat-icon>
+      <div class="mat-caption">Mobile</div>
+      <p class="mat-display-1 portal-font-weight-light" portalCount [countTo]="deviceSessions[2]"></p>
+    </div>
+  </div>
+</mat-card>

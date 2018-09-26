@@ -1,0 +1,40 @@
+@mixin portal-profile-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $accent: map-get($theme, accent);
+  $primary: map-get($theme, primary);
+
+  .portal-profile__avatar {
+    border: 8px solid mat-color($background, card);
+    box-shadow: none;
+    animation: portal-profile__avatar 1s forwards 1;
+    animation-delay: 1.2s;
+  }
+  .portal-profile__content {
+    .mat-icon {
+      color: mat-color($accent, default);
+    }
+    .mat-tab-label {
+      min-height: 72px;
+      flex: 1 1 auto;
+    }
+    .mat-tab-body-wrapper {
+      padding: 36px;
+    }
+    .mat-tab-body-content {
+      margin-bottom: 0;
+    }
+    textarea {
+      min-height: 100px;
+    }
+  }
+
+  @keyframes portal-profile__avatar {
+    0% {
+      box-shadow: none;
+    }
+    100% {
+      box-shadow: 0px 4px 8px rgba(0,0,0,.15), 0px 0px 0 15vw rgba(mat-color($accent, 800), .7), 0px 0px 0 30vw rgba(mat-color($accent, 700), .6), 0px 0px 0 45vw rgba(mat-color($accent, 600), .5);
+    }
+  }
+}

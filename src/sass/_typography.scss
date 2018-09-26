@@ -1,0 +1,67 @@
+@mixin portal-typography() {
+  /* HTML CSS */
+  html {
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    font-kerning: auto;
+  }
+
+  html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  // Typography classes
+  .portal-font-weight-light {
+    font-weight: lighter !important;
+  }
+  .portal-font-weight-bold {
+    font-weight: bold !important;
+  }
+  .portal-font-uppercase {
+    text-transform: uppercase;
+  }
+  .portal-font-italic {
+    font-style: italic;
+  }
+
+  .portal-text-align-center {
+    text-align: center;
+  }
+  .portal-text-align-left {
+    text-align: left;
+  }
+  .portal-text-align-right {
+    text-align: right;
+  }
+
+  .portal-font-size-big {
+    font-size: 1.75em;
+  }
+  .portal-font-size-small {
+    font-size: 0.75em;
+  }
+
+  /* Example typography */
+  .portal-example-preview {
+    height: 300px;
+    min-height: 300px;
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+
+  .portal-example-docs {
+    padding: 16px;
+
+    .portal-example-docs__heading {
+      font-weight: 300;
+      font-size: 24px;
+      line-height: 32px;
+      margin: 40px 0 20px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid rgba(0,0,0,.12);
+    }
+  }
+}

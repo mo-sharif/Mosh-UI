@@ -1,0 +1,16 @@
+@mixin portal-theme-switcher-theme($theme) {
+  $background: map-get($theme, background);
+  $accent: map-get($theme, accent);
+
+  .portal-theme-switcher-menu {
+    &.mat-menu-panel {
+      background: mat-color($background, selected-button);
+      min-width: 200px;
+      padding: 15px;
+    }
+    .portal-theme-switcher-item.active {
+      background: mat-color($accent, lighter);
+      border-radius: 50%;
+    }
+  }
+}

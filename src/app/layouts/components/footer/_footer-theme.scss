@@ -1,0 +1,11 @@
+@import '../../../../sass/utils';
+
+@mixin portal-footer-theme($theme) {
+  $accent: map-get($theme, accent);
+
+  .portal-footer {
+    a {
+      color: mat-color($accent, default);
+    }
+  }
+}

@@ -1,0 +1,42 @@
+<h1 mat-dialog-title i18n>{{ type }} Event</h1>
+<div mat-dialog-content>
+  <form [formGroup]="eventForm" fxLayout="column">
+    <mat-form-field>
+      <input matInput
+        formControlName="title"
+        type="text"
+        required
+        placeholder="Event title">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput
+        formControlName="location"
+        type="text"
+        required
+        placeholder="Event location">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput
+        formControlName="description"
+        type="text"
+        required
+        placeholder="Event Description">
+    </mat-form-field>
+    <div fxLayout="row" fxLayoutGap="16px">
+      <mat-form-field fxFlex>
+        <input matInput [matDatepicker]="startDatePicker" placeholder="Start date" formControlName="start">
+        <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker #startDatePicker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field fxFlex>
+        <input matInput [matDatepicker]="endDatePicker" placeholder="End date" formControlName="end">
+        <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker #endDatePicker></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions fxLayoutAlign="end center">
+  <button mat-button i18n [disabled]="eventForm.invalid" (click)="submit()">{{ type }}</button>
+  <button mat-button mat-dialog-close i18n>Cancel</button>
+</div>

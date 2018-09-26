@@ -1,0 +1,24 @@
+<div fxLayout="row" fxLayout.lt-lg="column" fxLayoutGap="16px">
+  <div fxFlex="100">
+    <dashboard-gdax-ticker></dashboard-gdax-ticker>
+  </div>
+</div>
+<div class="portal-dashboard-page-wrapper">
+  <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutGap="16px">
+    <div class="portal-widget" fxFlex="70">
+      <portal-dashboard-daily-performance class="portal-widget__content portal-widget__content--no-padding"></portal-dashboard-daily-performance>
+    </div>
+
+    <div class="portal-widget" fxFlex="30">
+      <portal-dashboard-annual-performance class="portal-widget__content portal-widget__content--no-padding"></portal-dashboard-annual-performance>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="16px">
+    <div class="portal-widget" fxFlex="30">
+      <portal-dashboard-most-popular class="portal-widget__content portal-widget__content--no-padding"></portal-dashboard-most-popular>
+    </div>
+    <div class="portal-widget" fxFlex="70">
+      <portal-dashboard-market-cap class="portal-widget__content portal-widget__content--no-padding"></portal-dashboard-market-cap>
+    </div>
+  </div>
+</div>

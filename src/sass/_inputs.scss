@@ -1,0 +1,5 @@
+@mixin portal-inputs() {
+  .portal-remove-fixed-infix-width .mat-form-field-infix {
+    width: auto;
+  }
+}

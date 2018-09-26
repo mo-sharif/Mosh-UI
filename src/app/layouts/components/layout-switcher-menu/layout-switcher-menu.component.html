@@ -1,0 +1,35 @@
+<mat-menu #colorMenu="matMenu" fxLayout="column" classList="portal-menu-no-padding portal-switcher-menu">
+  <mat-grid-list cols="3" rowHeight="60px" gutterSize="10px" class="portal-switcher-menu-grid">
+    <mat-grid-tile *ngFor="let layout of layouts" [ngClass]="{ 'active': isActive(layout) }">
+      <button
+        mat-icon-button
+        [matTooltip]="layout.name"
+        (click)="switch(layout)">
+        <div class="portal-theme-icon" [ngClass]="'portal-theme-icon--layout-' + layout.id">
+          <div class="portal-theme-icon__sidebar portal-sidenav-theme">
+            <div class="mat-toolbar"></div>
+          </div>
+          <div class="portal-theme-icon__toolbar mat-toolbar"></div>
+          <div class="portal-theme-icon__content" ></div>
+          <div class="portal-theme-icon__action" ></div>
+        </div>
+      </button>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2" class="portal-switcher-menu-grid-rtl">
+      <mat-slide-toggle
+        labelPosition="before"
+        [ngModel]="layoutService.isRTL() | async"
+        (change)="layoutService.toggleDirection()">
+        RTL
+      </mat-slide-toggle>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-menu>
+
+<button
+  mat-icon-button
+  [matMenuTriggerFor]="colorMenu"
+  matTooltip="Switch Layout">
+   <mat-icon>apps</mat-icon>
+</button>
+

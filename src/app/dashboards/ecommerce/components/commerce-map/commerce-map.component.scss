@@ -1,0 +1,9 @@
+agm-map {
+  height: 100%;
+  width: 100%;
+  min-height: 300px;
+  display: block;
+  @media (max-width: 959px) {
+    height: 400px;
+  }
+}

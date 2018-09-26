@@ -1,0 +1,80 @@
+.portal-calendar-page {
+
+}
+
+.portal-calendar-page__container {
+  padding: 16px;
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.portal-calendar-page__background {
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 110%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: portal-calendar-page__background 15s ease-out forwards 1;
+  }
+}
+
+$i : 0;
+@while $i <= 11 {
+  .portal-calendar-page__background-month-#{$i}:before {
+    background-image: url(../../../../assets/images/calendar/#{$i+1}.jpg);
+  }
+  $i : $i + 1;
+}
+
+.portal-calendar-page__date {
+  margin-bottom: 0px;
+}
+
+.portal-calendar-page__event_button {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 10;
+}
+
+.portal-calendar-page__view-container {
+  position: relative;
+}
+.portal-calendar-page__view-indicator {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  bottom: 0px;
+  left: -3px;
+  transition: transform .3s;
+}
+
+.mat-icon-button.portal-calendar-page__view-active + .mat-icon-button + .mat-icon-button + .portal-calendar-page__view-indicator{
+  transform: translateX(20px);
+}
+.mat-icon-button + .mat-icon-button.portal-calendar-page__view-active + .mat-icon-button + .portal-calendar-page__view-indicator{
+  transform: translateX(60px);
+}
+.mat-icon-button + .mat-icon-button + .mat-icon-button.portal-calendar-page__view-active + .portal-calendar-page__view-indicator{
+  transform: translateX(101px);
+}
+
+// Demo animations
+@keyframes portal-calendar-page__background {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-8%);
+  }
+}

@@ -1,0 +1,38 @@
+<div class="portal-example-docs">
+  <div fxLayout="row" fxLayoutAlign="center none">
+    <div fxFlex.gt-md="60" fxFlex.md="80" fxFlex.lt-md="90">
+      <h1>RxJS Subject</h1>
+
+      <h3>Subject example</h3>
+      <p>
+        In this example we will use a subject to store the input from the user.
+      </p>
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Search GitHub Repos</mat-card-title>
+          <mat-card-subtitle>Type a name below</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-form-field>
+            <input matInput
+              [(ngModel)]="searchTerm"
+              (ngModelChange)="searchTermChanged($event)"
+              type="text"
+              placeholder="Search for a repo">
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-content *ngIf="results$ | async as results">
+          <mat-list>
+              <mat-list-item *ngFor="let repo of results.items">
+                {{ repo.name }}
+              </mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+
+    </div>
+  </div>
+</div>
+
+

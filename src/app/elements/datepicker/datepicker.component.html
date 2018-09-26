@@ -1,0 +1,21 @@
+<div class="portal-example-page">
+  <div class="portal-example-pager__header" fxLayout="row" fxLayoutAlign="center center">
+    <div class="portal-example-pager__header-content">
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="portal-example-pager__content">
+    <p>Date pickers use a dialog window to select a single date.</p>
+    <p>The selected day is indicated by a filled circle. The current day is indicated by a different color and type weight.</p>
+
+    <h3 class="portal-example-pager__content--heading">Simple Date Picker Example</h3>
+    <p>In the next example we will show you how to use a simple date picker and also how to set the language of the calendar.</p>
+    <example-with-code title="Simple Date Select" example="datepicker-example-1">
+      <example-datepicker-1></example-datepicker-1>
+    </example-with-code>
+  </div>
+</div>

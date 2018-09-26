@@ -1,0 +1,10 @@
+@mixin portal-layout-loader-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .portal-layout-loader {
+    background: mat-color($background, background);
+    color: mat-color($foreground, text);
+  }
+}
+

@@ -1,0 +1,35 @@
+<div class="portal-spotify-wrapper" fxLayout="column">
+  <div fxLayout="row" fxLayoutAlign="center center" class="portal-spotify-wrapper-search" fxFlex>
+    <mat-card class="portal-spotify-card portal-spotify-card--login" >
+      <mat-card-content>
+        <img src="assets/images/spotify-logo.png" alt="spotify">
+        <mat-form-field>
+          <input matInput
+            [(ngModel)]="searchTerm"
+            (ngModelChange)="searchTermChange($event)"
+            type="text"
+            required
+            placeholder="Search for an album">
+        </mat-form-field>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div *ngIf="searchResults$ | async as searchResults" fxLayout="row wrap">
+    <div fxFlex="25" fxFlex.sm="50" fxFlex.xs="100" *ngFor="let album of searchResults.albums.items">
+      <mat-card  class="portal-spotify-card">
+        <img matCardImage [src]="album.images[0].url">
+        <mat-card-header>
+          <mat-card-title class="portal-spotify-card__title portal-font-weight-bold">{{ album.name }}</mat-card-title>
+          <mat-card-subtitle class="portal-spotify-card__subtitle">
+            <span *ngFor="let artist of album.artists">{{ artist.name }}</span>
+          </mat-card-subtitle>
+        </mat-card-header>
+        <button mat-icon-button (click)="play(album)" class="portal-spotify-card__action">
+          <mat-icon>play_arrow</mat-icon>
+        </button>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+

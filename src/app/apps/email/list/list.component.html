@@ -1,0 +1,12 @@
+<mat-list class="portal-thread-list" *ngIf="threads$ | async as threads">
+  <a mat-list-item
+    class="portal-thread-list__item"
+    *ngFor="let thread of threads"
+    [routerLink]="['/apps/email', { outlets: { list: [this.route.snapshot.params.list], messages: [thread.id] } }]"
+    routerLinkActive="portal-thread-list__item--active">
+    <img matListAvatar [src]="thread.from.image" [alt]="thread.from.name">
+    <h3 matLine>{{ thread.from.name }}</h3>
+    <h4 matLine>{{ thread.subject }}</h4>
+    <p matLine></p>
+  </a>
+</mat-list>

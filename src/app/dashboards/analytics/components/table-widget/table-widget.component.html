@@ -1,0 +1,63 @@
+<mat-card>
+  <mat-tab-group>
+    <mat-tab label="Brand Paid Search" i18n-label>
+      <mat-table [dataSource]="paidDataSource">
+
+        <ng-container matColumnDef="page">
+          <mat-header-cell *matHeaderCellDef>Page</mat-header-cell>
+          <mat-cell *matCellDef="let visit">{{ visit.url }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="pageviews">
+          <mat-header-cell *matHeaderCellDef i18n>Page Views</mat-header-cell>
+          <mat-cell *matCellDef="let visit">{{ visit.views }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="duration">
+          <mat-header-cell *matHeaderCellDef i18n>Duration</mat-header-cell>
+          <mat-cell *matCellDef="let visit">{{ visit.duration }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="conversion">
+          <mat-header-cell *matHeaderCellDef i18n>Conversion Rate</mat-header-cell>
+          <mat-cell *matCellDef="let visit">{{ visit.conversion }}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+
+      <mat-paginator #paidPaginator
+        [pageSize]="5"></mat-paginator>
+    </mat-tab>
+
+    <mat-tab label="Generic Search">
+      <mat-table [dataSource]="genericDataSource">
+        <ng-container matColumnDef="page">
+          <mat-header-cell *matHeaderCellDef>Page</mat-header-cell>
+          <mat-cell *matCellDef="let visit">{{ visit.url }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="pageviews">
+          <mat-header-cell *matHeaderCellDef i18n>Page Views</mat-header-cell>
+          <mat-cell *matCellDef="let visit">{{ visit.views }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="duration">
+          <mat-header-cell *matHeaderCellDef i18n>Duration</mat-header-cell>
+          <mat-cell *matCellDef="let visit">{{ visit.duration }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="conversion">
+          <mat-header-cell *matHeaderCellDef i18n>Conversion Rate</mat-header-cell>
+          <mat-cell *matCellDef="let visit">{{ visit.conversion }}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+      <mat-paginator #genericPaginator
+        [pageSize]="5"></mat-paginator>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>

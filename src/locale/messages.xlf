@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="d2a7deb7096cada2c3177157652680fe7e6de0ed" datatype="html">
+        <source>Projects</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/layout-funky/layout-funky.component.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/layout-funky/sub-menus/projects/projects.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4d13a9cd5ed3dcee0eab22cb25198d43886942be" datatype="html">
+        <source>Users</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/layout-funky/layout-funky.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/layout-funky/sub-menus/users/users.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="450e28e57284212c18cd3beb79b91cfea5a0d122" datatype="html">
+        <source>My Profile</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/mega-menu/mega-menu.component.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/user-menu/user-menu.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f2005fa461c06dc2e04d8918bbabedf23604b5b7" datatype="html">
+        <source>Activity</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/mega-menu/mega-menu.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/user-menu/user-menu.component.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8bcabdf6b16cad0313a86c7e940c5e3ad7f9f8ab" datatype="html">
+        <source>Notifications</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/mega-menu/mega-menu.component.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/user-menu/user-menu.component.ts</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/notification-sidenav/notification-sidenav.component.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="491fb3df2a04f0c436c93531d8923dd137726eb8" datatype="html">
+        <source>Settings and privacy</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/mega-menu/mega-menu.component.ts</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/user-menu/user-menu.component.ts</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="69703274543d03e3dcf78103d49d441c84f72252" datatype="html">
+        <source>Help Center</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/mega-menu/mega-menu.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/user-menu/user-menu.component.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4be43cbd2aff766dfaa46d832a0f80d5c0c2fdd4" datatype="html">
+        <source>Sever Instance 1</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/mega-menu/mega-menu.component.ts</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8e58e3d3de6bda0032ae6781207d8f9f24a067fc" datatype="html">
+        <source>Sever Instance 2</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/mega-menu/mega-menu.component.ts</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="310291e489701c38eacb3d502f3d1e85cd79e46a" datatype="html">
+        <source>Sever Instance 3</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/mega-menu/mega-menu.component.ts</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f758614e7406db9e990140558d7552e02c4b2e90" datatype="html">
+        <source>Sever Instance 4</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/mega-menu/mega-menu.component.ts</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3a34cc8d4f7e4f8e03f4a619fd40722046248c6f" datatype="html">
+        <source>Sever Instance 5</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/mega-menu/mega-menu.component.ts</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="24968c3b9f7cb940df7e5bf46f61a11710481829" datatype="html">
+        <source>Reports</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/mega-menu/mega-menu.component.ts</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="af88c1e95a1d16d3cdbb7210981e0bfb6dc1d137" datatype="html">
+        <source>Events</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/mega-menu/mega-menu.component.ts</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9cc5bcc636bfcae038b882a388e5e424d35ac9c2" datatype="html">
+        <source>Backups</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/mega-menu/mega-menu.component.ts</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cd045ef411bf3a60e8367cdb8b78c6421b759246" datatype="html">
+        <source>Scheduled Tasks</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/mega-menu/mega-menu.component.ts</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cec2f1396a9d5824bf5766fe67192590a9e05bf0" datatype="html">
+        <source>Accessibility</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/mega-menu/mega-menu.component.ts</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e112bb358cec46f73f6fb9e45928b123a2d7f80c" datatype="html">
+        <source>Deploy</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/mega-menu/mega-menu.component.ts</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2fbc9e6a2a8b9a1a94b7d22fb168c66ee2fdc68d" datatype="html">
+        <source>Print Statistics</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/mega-menu/mega-menu.component.ts</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d6aa677632f8da387de7b2cff37d6a2651d17744" datatype="html">
+        <source>Create Support Ticket</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/mega-menu/mega-menu.component.ts</context>
+          <context context-type="linenumber">95</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="047f50bc5b5d17b5bec0196355953e1a5c590ddb" datatype="html">
+        <source>Update</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/mega-menu/mega-menu.component.ts</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bc2e854e111ecf2bd7db170da5e3c2ed08181d88" datatype="html">
+        <source>Advanced</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/mega-menu/mega-menu.component.ts</context>
+          <context context-type="linenumber">103</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="640eec093c685babaa3265137215e3cc92ad704d" datatype="html">
+        <source>Sign Out</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/user-menu/user-menu.component.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6aac700f6329534e15ce6f9a4d526a004c1d1785" datatype="html">
+        <source>Portal</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/menu-sidenav/menu-sidenav.component.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/vertical-icon-menu/vertical-icon-menu.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="23b29a213bb374b4ecb78f7dfb948132bb9cc0b4" datatype="html">
+        <source>Weather (from Yahoo API)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/notification-sidenav/notification-sidenav.component.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/examples/dashboards/components/weather-widget/weather-widget.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6d834ec4213e9f60e1ce1f1f378c3c0c285d320b" datatype="html">
+        <source>Fetching the latest weather</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/notification-sidenav/notification-sidenav.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/examples/dashboards/components/weather-widget/weather-widget.component.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4a4f46a2dcec36bd5c8c371ceee55c2226dec27f" datatype="html">
+        <source>Schedule</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/notification-sidenav/notification-sidenav.component.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7fb1099e29660162f9154d5b2feee7743a423df6" datatype="html">
+        <source>Today</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/notification-sidenav/notification-sidenav.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a0843de0a64adcc7ee6a946408b6876cd8abdcae" datatype="html">
+        <source>English</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/language-menu/language-menu.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b9c0d5369eefa96e46448daeaff66f211d2b1806" datatype="html">
+        <source>Greek</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/language-menu/language-menu.component.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4cfabb48965febabe67eb491a3b7e58555d3d52a" datatype="html">
+        <source>Classic</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/vertical-icon-menu/vertical-icon-menu.component.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dcfe12c1a954a6631d712f4bc7ac57f894e521ef" datatype="html">
+        <source>Toolbar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/vertical-icon-menu/vertical-icon-menu.component.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="afcc302fef69f59a521fc00557882f81d4b2e687" datatype="html">
+        <source>Funky</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/vertical-icon-menu/vertical-icon-menu.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="28f5b865dfed5cb985310b4b6be8ad9a19c24970" datatype="html">
+        <source>Boxed</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/vertical-icon-menu/vertical-icon-menu.component.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="81cf037f1784108531987672cb369ae17e385eb8" datatype="html">
+        <source>Compact</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/layouts/components/vertical-icon-menu/vertical-icon-menu.component.ts</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f85d3635e67d1aaaf60378a1d81c4f1aa47b64cc" datatype="html">
+        <source>Dashboard Example</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/examples/dashboards/dashboard/dashboard.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7765a5af8aea4a6559c50cfbd4f31e049bcd2a84" datatype="html">
+        <source>Support Tickets</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/examples/dashboards/components/tickets-widget/tickets-widget.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9cc4c88afd67b6d174a5b2173467d708a01be995" datatype="html">
+        <source>
+    SpaceX Launches
+  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/examples/dashboards/components/table-widget/table-widget.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e30cb10765883a2f33c0e2477e0e3a63353a215c" datatype="html">
+        <source>Rocket</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/examples/dashboards/components/table-widget/table-widget.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/examples/dashboards/components/table-widget/table-widget.component.ts</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ac2110c3f7d8e27b9f1bfa0787f2a498207f13b8" datatype="html">
+        <source>Payloads</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/examples/dashboards/components/table-widget/table-widget.component.ts</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/examples/dashboards/components/table-widget/table-widget.component.ts</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dd5bba9d8d3f50c9a9928405a8b2f1d44547efc0" datatype="html">
+        <source>Customers</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/examples/dashboards/components/table-widget/table-widget.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/examples/dashboards/components/table-widget/table-widget.component.ts</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="16302eeb2cd78dd7af1782f154a41257c47a4530" datatype="html">
+        <source>Previous Launches</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/examples/dashboards/components/table-widget/table-widget.component.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9b475bb63675494482effde989c7f1f18c232620" datatype="html">
+        <source>Contacts</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/examples/dashboards/components/contacts-widget/contacts-widget.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2b0edde22b0c9de418a1fdb2a391e7d412b1f3c9" datatype="html">
+        <source>Todo List</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/examples/dashboards/components/todo-widget/todo-widget.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1a83e9e4c9179e62fc020802fc4fc93c42b7734c" datatype="html">
+        <source>Deselect all</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/examples/dashboards/components/todo-widget/todo-widget.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b463541a7e303aa4d0b1102eaff8afbaf34e7a74" datatype="html">
+        <source>Select all</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/examples/dashboards/components/todo-widget/todo-widget.component.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="548b5c4723cb240a3fb7d3e8b4be6c96c4c8d346" datatype="html">
+        <source>News Feed</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/examples/dashboards/components/news-widget/news-widget.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

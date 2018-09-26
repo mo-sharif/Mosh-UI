@@ -1,0 +1,21 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <form fxLayout="column" class="example-form" fxLayoutGap="16px">
+    <mat-form-field>
+      <input matInput #message placeholder="Message" maxlength="256">
+      <mat-hint align="start"><strong>Input field with hints and placeholder</strong></mat-hint>
+      <mat-hint align="end">{{ message.value.length }} / 256</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Leave a comment"></textarea>
+      <mat-hint align="start"><strong>Text area with hints and placeholder. Drag to expand</strong></mat-hint>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <span matPrefix>+1 &nbsp;</span>
+      <input type="tel" matInput placeholder="Telephone">
+      <mat-icon matSuffix>mode_edit</mat-icon>
+      <mat-hint align="start"><strong>Input field with prefixes and suffixes</strong></mat-hint>
+    </mat-form-field>
+  </form>
+</div>

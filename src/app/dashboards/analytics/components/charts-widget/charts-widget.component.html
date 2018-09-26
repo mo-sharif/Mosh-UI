@@ -1,0 +1,23 @@
+<div fxFlexFill class="portal-chart-widget">
+  <!-- <ngx-charts-bar-vertical-stacked
+    *ngIf="chart$ | async as chart; else loading;"
+    class="portal-chart-widget__chart"
+    [results]="chart"
+    [gradient]="gradient"
+    [legend]="showLegend"
+    [showXAxisLabel]="showXAxisLabel"
+    [showYAxisLabel]="showYAxisLabel"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel"
+    [scheme]="colorScheme"
+    xAxis="true"
+    yAxis="true"
+    (select)="onSelect($event)">
+  </ngx-charts-bar-vertical-stacked> -->
+  <ng-template #loading>
+    <div fxFlexFill class="portal-chart-widget__loading" fxLayout="column" fxLayoutAlign="center center">
+      <mat-progress-spinner mode="indeterminate" color="primary" [diameter]="48" [strokeWidth]="2"></mat-progress-spinner>
+      {{ 'Loading Chart Data' }}
+    </div>
+  </ng-template>
+</div>

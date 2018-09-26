@@ -1,0 +1,72 @@
+@mixin portal-contacts-theme($theme) {
+  $background: map-get($theme, background);
+  $accent: map-get($theme, accent);
+  $primary: map-get($theme, primary);
+
+  .portal-contacts {
+    background: darken(mat-color($background, background), 1);
+  }
+
+  .portal-contacts__search {
+    background: mat-color($background, app-bar);
+  }
+
+  .portal-contacts__list {
+    background: lighten(mat-color($background, background), 1);
+  }
+
+  .portal-contacts-app__list-item--active {
+    background: mat-color($background, hover);
+    .mat-icon {
+      color: mat-color($accent, default);
+    }
+  }
+  .portal-contacts__details-header {
+    background: mat-color($accent, 700);
+    &:before {
+      background: mat-color($accent, 500);
+    }
+    &:after {
+      background: mat-color($accent, default);
+    }
+  }
+
+  .portal-contacts__details-content {
+    background: mat-color($background, card);
+    box-shadow: 0px -10px 20px rgba(mat-color($accent, 700), .8);
+  }
+  .portal-contacts__details-avatar {
+    img {
+      border-color: mat-color($background, card);
+    }
+    &:after {
+      background: mat-color($background, card);
+    }
+    &:before {
+      box-shadow: 0px 0px 40px mat-color($accent, 700);
+    }
+  }
+
+  .portal-contacts__details-extra {
+    a {
+      color: mat-color($accent, default);
+    }
+  }
+
+  .portal-contacts__no-contact-icon {
+    background: mat-color($accent, default);
+    border: 4px solid mat-color($accent, default);
+    color: mat-color($accent, default-contrast);
+  }
+
+  $mat-divider-inset-margin: 80px;
+  .mat-divider {
+    &.mat-divider-inset {
+      margin-left: $mat-divider-inset-margin;
+    }
+    [dir='rtl'] &.mat-divider-inset {
+      margin-left: auto;
+      margin-right: $mat-divider-inset-margin;
+    }
+  }
+}

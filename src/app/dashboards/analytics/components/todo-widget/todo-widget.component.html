@@ -1,0 +1,21 @@
+<div fxFlexFill class="portal-dashboard-widget" fxLayout="column">
+  <h3 class="portal-dashboard-widget__title" i18n>Todo List</h3>
+  <mat-selection-list class="portal-todo-widget-list" #todos fxFlex>
+    <mat-list-option *ngFor="let todo of todoList">
+      {{ todo }}
+    </mat-list-option>
+  </mat-selection-list>
+  <mat-toolbar class="portal-todo-widget-actions">
+    <mat-toolbar-row>
+      <mat-form-field floatPlaceholder="never">
+        <input matInput placeholder="Add Todo" [(ngModel)]="newTodo">
+      </mat-form-field>
+      <a mat-mini-fab (click)="addTodo()"><mat-icon>add</mat-icon></a>
+    </mat-toolbar-row>
+    <mat-toolbar-row>
+      <button mat-button (click)="todos.deselectAll()" i18n>Deselect all</button>
+      <span fxFlex></span>
+      <button mat-button (click)="todos.selectAll()" i18n>Select all</button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>

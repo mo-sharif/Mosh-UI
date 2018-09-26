@@ -1,0 +1,37 @@
+<div class="portal-sidenav-theme" fxLayout="column" fxFlexFill>
+  <mat-toolbar>
+    <span i18n>Dashboards</span>
+    <span fxFlex></span>
+    <button mat-icon-button (click)="menuDrawer.close()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-toolbar>
+  <div class="portal-funky-drawer-menu" fxFlex="nogrow noshrink">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/dashboards/analytics" routerLinkActive="portal-menu--active">
+        <mat-icon matListIcon>insert_chart</mat-icon>
+        <h3 matLine>Analytics</h3>
+      </a>
+      <a mat-list-item routerLink="/dashboards/ecommerce" routerLinkActive="portal-menu--active">
+        <mat-icon matListIcon>shopping_carr</mat-icon>
+        <h3 matLine>E-Commerce</h3>
+      </a>
+      <a mat-list-item routerLink="/dashboards/crypto" routerLinkActive="portal-menu--active">
+        <mat-icon matListIcon>euro_symbol</mat-icon>
+        <h3 matLine>CryptoCurrency</h3>
+      </a>
+      <a mat-list-item routerLink="/dashboards/project" routerLinkActive="portal-menu--active">
+        <mat-icon matListIcon>event_note</mat-icon>
+        <h3 matLine>Project</h3>
+      </a>
+    </mat-nav-list>
+  </div>
+  <mat-toolbar>
+    <mat-toolbar-row>
+      <span fxFlex></span>
+      <button mat-icon-button>
+        <mat-icon>info</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>

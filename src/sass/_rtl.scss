@@ -1,0 +1,20 @@
+@mixin portal-rtl() {
+  [dir="rtl"] {
+
+    // Portal Widgets
+    .portal-widget-wrapper {
+      .portal-widget-heading {
+        padding-left: 0;
+        padding-right: 12px;
+        border-left-width: 0px;
+        border-right-width: solid;
+        border-right-style: solid;
+        &:after {
+          left: auto;
+          right: -2px;
+        }
+      }
+    }
+
+  }
+}

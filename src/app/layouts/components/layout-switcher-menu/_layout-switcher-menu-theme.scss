@@ -1,0 +1,45 @@
+@mixin portal-layout-switcher-theme($theme) {
+  $accent: map-get($theme, accent);
+  $primary: map-get($theme, primary);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  .mat-menu-panel.portal-switcher-menu {
+    background: mat-color($background, selected-button);
+    min-width: 200px;
+    padding: 15px 15px 0;
+    .mat-icon-button {
+      width: auto;
+    }
+    .mat-grid-tile {
+      overflow: visible;
+    }
+    .active {
+      background: mat-color($accent, lighter);
+      border-radius: 50%;
+    }
+    .portal-switcher-menu-grid-rtl {
+      width: 100% !important;
+      .mat-figure {
+        background: mat-color($background, background);
+        margin: 0px -15px;
+      }
+    }
+  }
+
+  .portal-theme-icon__action {
+    background: mat-color($foreground, base);
+  }
+  .portal-theme-icon__content {
+    background: mat-color($background, background);
+  }
+  .portal-theme-icon__toolbar {
+    .portal-theme-icon--layout-classic &,
+    .portal-theme-icon--layout-toolbar &,
+    .portal-theme-icon--layout-boxed &,
+    .portal-theme-icon--layout-funky &,
+    .portal-theme-icon--layout-tabbed & {
+      background: mat-color($background, app-bar);
+    }
+  }
+}

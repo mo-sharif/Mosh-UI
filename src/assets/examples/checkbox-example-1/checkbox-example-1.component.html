@@ -1,0 +1,6 @@
+<h3 class="mat-subheading-2">Bedtime Alarm</h3>
+<span class="mat-display-1">7:00</span>
+<form [formGroup]="alarmForm" novalidate>
+  <mat-checkbox *ngFor="let day of days" [formControlName]="day" color="primary">{{ day }}</mat-checkbox>
+</form>
+<button mat-raised-button [disabled]="alarmForm.value.length === 0" (click)="setAlarm()">Set Alarm</button>

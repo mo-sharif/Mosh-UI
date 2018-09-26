@@ -1,0 +1,12 @@
+<div class="portal-dashboard-widget" fxFlexFill>
+  <h3 class="portal-dashboard-widget__title" i18n>Support Tickets</h3>
+  <mat-list>
+    <mat-list-item *ngFor="let agent of agents">
+      <img matListAvatar src="assets/images/oxygenna.png" alt="her majesty">
+      <h3 matLine>{{ agent.name }}</h3>
+      <p matLine>
+        {{ agent.content }}
+      </p>
+    </mat-list-item>
+  </mat-list>
+</div>

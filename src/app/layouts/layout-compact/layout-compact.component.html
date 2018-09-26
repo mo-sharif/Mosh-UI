@@ -1,0 +1,28 @@
+<mat-sidenav-container [dir]="layoutService.getDirection() | async" fxFlexFill>
+  <!-- left side navigation -->
+  <mat-sidenav #leftSidenav class="portal-compact-leftsidenav" [mode]="leftSidenavMode" [(opened)]="leftSidenavOpen">
+    <portal-vertical-icon-menu class="portal-sidenav-theme" [sidenav]="leftSidenav"></portal-vertical-icon-menu>
+  </mat-sidenav>
+
+  <!-- right side navigation -->
+  <mat-sidenav #rightSidenav opened="false" position="end" class="portal-compact-rightsidenav">
+    <portal-notification-sidenav [sidenav]="rightSidenav" fxLayout="column" fxFlexFill></portal-notification-sidenav>
+  </mat-sidenav>
+
+  <!-- main content -->
+  <div fxLayout="column" fxFlexFill>
+    <!-- top toolbar -->
+    <portal-top-horizontal-menu [leftSidenav]="leftSidenav" [rightSidenav]="rightSidenav"></portal-top-horizontal-menu>
+
+    <!-- page content -->
+    <div fxLayout="column" fxFlex="nogrow noshrink" class="portal-compact-content-wrapper portal-content-bg">
+      <div fxFlexFill class="portal-compact-content" portalScrollTop>
+        <router-outlet></router-outlet>
+        <portal-layout-loader></portal-layout-loader>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <portal-footer></portal-footer>
+  </div>
+</mat-sidenav-container>

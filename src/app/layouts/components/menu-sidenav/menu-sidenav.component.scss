@@ -1,0 +1,47 @@
+@import '../../../../sass/utils';
+
+.portal-sidnav-menu {
+  overflow-y: auto;
+
+  // Subheader
+  .portal-sidnav-menu__subheader {
+    margin: 12px 0;
+    padding: 0 16px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  // Expansion Panel
+  .mat-expansion-panel {
+    box-shadow: none;
+    .mat-expansion-panel-header {
+      padding: 0px 16px;
+      .mat-expansion-panel-header-title {
+        margin: 0;
+        align-items: center;
+        h3 {
+          margin: 0;
+          padding: 0 16px;
+        }
+        .mat-icon {
+          @include portal-ui-icon-sizing(16px);
+        }
+      }
+    }
+  }
+  // Menu List.
+  .mat-nav-list {
+    padding: 0px;
+    // Left menu icon
+    .mat-list-icon {
+      @include portal-ui-icon-sizing(16px);
+    }
+    // End detail icon
+    .mat-icon.portal-sidnav-menu__end_detail {
+      @include portal-ui-icon-sizing(16px);
+    }
+  }
+  // Stop home menu item from auto focusing when sidenav opens in over mode
+  .mat-list-item-focus {
+    background: transparent;
+  }
+}

@@ -1,0 +1,35 @@
+<mat-sidenav-container [dir]="layoutService.getDirection() | async" fxFlexFill>
+  <!-- left side navigation -->
+  <mat-sidenav #leftSidenav class="portal-boxed-leftsidenav" opened="false">
+    <portal-menu-sidenav class="portal-sidenav-theme" [sidenav]="leftSidenav" fxLayout="column" fxFlexFill></portal-menu-sidenav>
+  </mat-sidenav>
+
+  <!-- right side navigation -->
+  <mat-sidenav #rightSidenav opened="false" position="end" class="portal-boxed-rightsidenav">
+    <portal-notification-sidenav [sidenav]="rightSidenav" fxLayout="column" fxFlexFill></portal-notification-sidenav>
+  </mat-sidenav>
+
+  <div class="portal-content-bg" fxLayout="row" fxLayoutAlign="center none" fxFlexFill>
+    <div class="portal-boxed-container" fxFlex.gt-md="80" fxFlex.lt-md="100" fxLayout="column">
+
+      <!-- top toolbar -->
+      <portal-top-horizontal-menu [leftSidenav]="leftSidenav" [rightSidenav]="rightSidenav" transparent="true"></portal-top-horizontal-menu>
+
+      <!-- card -->
+      <div fxFlex class="portal-boxed-card mat-elevation-z12" fxLayout="column">
+        <!-- navigation menu toolbar -->
+        <portal-horizontal-menu></portal-horizontal-menu>
+        <!-- main content -->
+        <div fxLayout="column" fxFlex="nogrow noshrink" class="portal-boxed-content-wrapper portal-content-bg">
+          <div fxFlexFill class="portal-boxed-content" portalScrollTop>
+            <router-outlet></router-outlet>
+            <portal-layout-loader></portal-layout-loader>
+          </div>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <portal-footer transparent="true"></portal-footer>
+    </div>
+  </div>
+</mat-sidenav-container>

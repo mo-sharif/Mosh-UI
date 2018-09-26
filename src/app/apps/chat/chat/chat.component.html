@@ -1,0 +1,81 @@
+<div fxLayout="row" fxFlexFill class="portal-chat-app__wrapper">
+
+  <div class="portal-chat-app__sidenav mat-elevation-z5" fxLayout="column" fxFlex="30" *ngIf="conversations$ | async as conversations">
+    <mat-list class="portal-hide-scrollbar" fxFlex>
+      <a class="portal-chat-app__list-item"
+        mat-list-item
+        *ngFor="let conversation of conversations"
+        [ngClass]="{ 'portal-chat-app__list-item--active': (selectedConversation$ | async)?.id  === conversation.id }"
+        (click)="selectConversation(conversation)">
+        <img mat-list-avatar
+          [src]="conversation.from.image"
+          alt="{{ conversation.from.name }}">
+        <h3 class="portal-font-weight-bold"
+          matLine
+          [innerHTML]="conversation.from.name">
+        </h3>
+        <p matLine>
+          {{ conversation.title }}
+        </p>
+        <p matLine>
+          {{ conversation.messages[0].date | date:'short' }}
+        </p>
+        <mat-icon *ngIf="(selectedConversation$ | async)?.id  === conversation.id" fontSet="fa" fontIcon="fa-comment"></mat-icon>
+        <mat-icon *ngIf="(selectedConversation$ | async)?.id  !== conversation.id" fontSet="fa" fontIcon="fa-comment-o"></mat-icon>
+      </a>
+    </mat-list>
+  </div>
+
+  <div fxFlex fxLayout="column">
+    <div fxFlex fxLayout="column" *ngIf="selectedConversation$ | async as conversation; else nomessage;">
+      <div fxFlex class="portal-messages-container portal-hide-scrollbar">
+        <div class="portal-message" *ngFor="let message of conversation.messages"
+          fxLayout="row"
+          fxLayoutAlign="start center"
+          [fxLayout]="message.from.name === conversation.messages[0].from.name ? 'row' : 'row-reverse'"
+          [ngClass]="{ 'portal-message--not-author': message.from.name !== conversation.messages[0].from.name  }">
+
+          <div class="portal-message__user" fxHide.lt-md="true">
+            <img class="portal-message__avatar" [src]="message.from.image">
+            <span class="mat-caption">{{ message.from.name }}</span>
+          </div>
+
+          <mat-card class="portal-message__card">
+            <mat-card-content [innerHTML]="message.content"></mat-card-content>
+            <div class="portal-message__card-time">
+              {{ message.date | date | amTimeAgo }}
+            </div>
+            <div class="portal-message__card-action">
+              <a>
+                {{ 'Edit comment' }}
+              </a>
+              <a class="portal-message__card-action--warning">
+                {{ 'Delete comment' }}
+              </a>
+            </div>
+          </mat-card>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="start center" class="portal-messages-container__new-message-wrapper mat-elevation-z5">
+        <mat-form-field fxFlex floatPlaceholder="never" class="portal-messages-container__new-message portal-chat-app__sidenav">
+          <input matInput placeholder="Type a message here" [(ngModel)]="newMessage">
+        </mat-form-field>
+        <button mat-button mat-icon-button aria-label="Insert" (click)="insertMessage(conversation)">
+          <mat-icon>send</mat-icon>
+        </button>
+      </div>
+    </div>
+    <ng-template #nomessage>
+      <div class="portal-chat-no-messages" fxFlexFill fxLayout="column" fxLayoutAlign="center center">
+        <div class="portal-chat-no-messages-icon">
+          <mat-icon fontSet="fa" fontIcon="fa-comments"></mat-icon>
+          <mat-icon fontSet="fa" fontIcon="fa-comment"></mat-icon>
+          <div class="portal-chat-no-messages-dots">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+        <h2 i18n>Select a conversation to start</h2>
+      </div>
+    </ng-template>
+  </div>
+</div>

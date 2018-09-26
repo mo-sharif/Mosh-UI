@@ -1,0 +1,15 @@
+<mat-form-field>
+  <mat-select placeholder="Select a contact" [(ngModel)]="contactIndex">
+      <mat-option *ngFor="let contact of contacts; let i = index;" [value]="i">{{ contact.name }}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-list *ngIf="contactIndex">
+    <mat-list-item>
+      <img matListAvatar [src]="contacts[contactIndex].photo" [alt]="contacts[contactIndex].name">
+      <span matLine>
+        {{ contacts[contactIndex].name }}
+        {{ contacts[contactIndex].surname }}
+      </span>
+    </mat-list-item>
+</mat-list>

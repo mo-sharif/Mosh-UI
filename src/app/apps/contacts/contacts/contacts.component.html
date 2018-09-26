@@ -1,0 +1,66 @@
+<div fxLayout.xs="column" fxLayout="row" class="portal-contacts" fxFlexFill>
+
+  <div class="portal-contacts__sidenav mat-elevation-z4" fxLayout="column">
+    <mat-form-field class="portal-contacts__search" color="primary">
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+    <mat-list class="portal-contacts__list portal-hide-scrollbars">
+      <div class="portal-contacts-app__list-item"
+        *ngFor="let contact of contacts.connect() | async as contacts"
+        (click)="onClickedContact(contact)"
+        [ngClass]="{ 'portal-contacts-app__list-item--active': selectedContact  === contact }">
+        <a mat-list-item>
+          <img matListAvatar [src]="contact.photo" [alt]="contact.name">
+          <h3 class="portal-font-weight-bold" matLine>{{ contact.name }} {{ contact.surname }}</h3>
+          <p matLine>
+            {{ contact.phone }}
+          </p>
+          <mat-icon fontSet="fa" fontIcon="{{selectedContact  === contact ? 'fa-user': 'fa-user-o'}}" matSuffix></mat-icon>
+        </a>
+        <mat-divider class="mat-divider-inset"></mat-divider>
+      </div>
+    </mat-list>
+  </div>
+  <div fxLayout="column" fxFlex class="portal-contacts__details" *ngIf="selectedContact; else nocontact;">
+    <div class="portal-contacts__details-header"></div>
+    <div class="portal-contacts__details-content" fxFlex>
+      <div class="portal-contacts__details-avatar">
+        <img [src]="selectedContact.photo" [alt]="selectedContact.name">
+      </div>
+      <div fxLayout="row" fxLayoutGap="24px">
+        <div class="portal-contacts__details-extra">
+          <p>{{ selectedContact.gender }}, age {{ selectedContact.age }}</p>
+          <p>{{ selectedContact.region }}</p>
+          <p>{{ selectedContact.phone }}</p>
+          <p>{{ selectedContact.email }}</p>
+          <p>{{ selectedContact.birthday.dmy }}</p>
+          <p>
+            <a href="#">
+              <mat-icon fontSet="fa" fontIcon="fa-twitter"></mat-icon>
+            </a>
+            <a href="#">
+              <mat-icon fontSet="fa" fontIcon="fa-facebook"></mat-icon>
+            </a>
+            <a href="#">
+              <mat-icon fontSet="fa" fontIcon="fa-linkedin"></mat-icon>
+            </a>
+
+          </p>
+        </div>
+        <div class="portal-contacts__details-main" fxflex>
+          <h1>{{ selectedContact.name }}, {{ selectedContact.surname }}</h1>
+          <div [innerHTML]="selectedContact.bio"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #nocontact>
+    <div class="portal-contacts__no-contact" fxLayout="column" fxLayoutAlign="center center">
+        <div class="portal-contacts__no-contact-icon">
+          <mat-icon fontSet="fa" fontIcon="fa-user"></mat-icon>
+        </div>
+        <h2 i18n>Select a contact</h2>
+      </div>
+  </ng-template>
+ </div>

@@ -1,0 +1,63 @@
+<div class="portal-accent-bg portal-login-container" fxLayoutAlign="center center" fxLayoutAlign.lt-sm="none">
+  <mat-card class="portal-login-card mat-elevation-z"
+    fxFlex="100"
+    fxFlex.md="80"
+    fxFlex.gt-md="60"
+    fxLayout.lt-sm="column">
+    <mat-card-content
+      fxFlex="auto"
+      fxFlex.gt-sm="50%"
+      fxLayout="column"
+      fxLayoutAlign="space-between none"
+      class="portal-primary-bg">
+      <div>
+        <mat-card-title fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+          <img class="portal-login-card__logo" src="assets/images/oxygenna.png"/>
+          <h1 i18n>Portal Admin Panel</h1>
+        </mat-card-title>
+        <div>
+          <p i18n>Welcome to our admin panel. Please login using the form or register for a new account using the button below.</p>
+          <p i18n>Portal is an amazing and easy to use Admin template. If you have any questions feel free to contact us in our support forum.</p>
+        </div>
+      </div>
+      <a mat-raised-button i18n
+        color="accent"
+        (click)="register()">
+        Create an account
+      </a>
+    </mat-card-content>
+    <mat-card-content
+      fxFlex="auto"
+      fxFlex.gt-sm="50%"
+      fxLayout="column"
+      fxLayoutAlign="space-between none">
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <mat-form-field>
+          <input matInput formControlName="email" placeholder="Email Address" (keyup.enter)="login()">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="password" formControlName="password" placeholder="Password" (keyup.enter)="login()">
+        </mat-form-field>
+      </form>
+      <div fxLayout="column" fxLayoutGap="16px">
+        <div fxLayout="row" fxLayoutGap="16px" fxLayout.lt-md="column">
+          <button mat-raised-button i18n
+            type="submit"
+            fxFlex="50%"
+            fxFlex.lt-md="none"
+            color="primary"
+            (click)="login()"
+            [disabled]="!loginForm.valid">
+            Login
+          </button>
+          <a mat-button i18n
+            fxFlex="50%"
+            fxFlex.lt-md="none"
+            (click)="forgotPassword()">
+            Forgot Password?
+          </a>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

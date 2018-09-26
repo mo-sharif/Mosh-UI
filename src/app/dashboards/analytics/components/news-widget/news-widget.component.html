@@ -1,0 +1,69 @@
+<div fxFlexFill class="portal-dashboard-widget">
+  <h3 class="portal-dashboard-widget__title" i18n>News Feed</h3>
+  <mat-card>
+    <mat-card-header>
+        <img mat-card-avatar src="https://uinames.com/api/photos/male/3.jpg">
+        <mat-card-title>Frederic Botescu</mat-card-title>
+        <mat-card-subtitle>3 min ago</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta quis vero temporibus eos magnam commodi asperiores itaque ut blanditiis, ipsa neque assumenda dicta hic sapiente tempore qui, amet nam dignissimos?
+    </mat-card-content>
+    <mat-card-actions>
+      <div fxLayout="row" fxLayoutAlign="space-between center" class="portal-news-item-actions__share">
+        <mat-icon>favorite</mat-icon>
+        <span>58</span>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center" class="portal-news-item-actions__share">
+        <mat-icon>comment</mat-icon>
+        <span>18</span>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center" class="portal-news-item-actions__share">
+        <mat-icon>reply</mat-icon>
+        <span>8</span>
+      </div>
+      <span fxFlex></span>
+      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+          <mat-icon>share</mat-icon>
+      </button>
+      <mat-menu #appMenu="matMenu">
+        <button mat-menu-item>Twitter</button>
+        <button mat-menu-item>Facebook</button>
+        <button mat-menu-item>Google+</button>
+      </mat-menu>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card>
+    <mat-card-header>
+        <img mat-card-avatar src="https://uinames.com/api/photos/male/1.jpg">
+        <mat-card-title>Leopold Kramár</mat-card-title>
+        <mat-card-subtitle>3 min ago</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta quis vero temporibus eos magnam commodi asperiores itaque ut blanditiis, ipsa neque assumenda dicta hic sapiente tempore qui, amet nam dignissimos?
+    </mat-card-content>
+    <mat-card-actions>
+      <div fxLayout="row" fxLayoutAlign="space-between center" class="portal-news-item-actions__share portal-news-item-actions__share--clicked">
+        <mat-icon>favorite</mat-icon>
+        <span>38</span>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center" class="portal-news-item-actions__share">
+        <mat-icon>comment</mat-icon>
+        <span>17</span>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center" class="portal-news-item-actions__share">
+        <mat-icon>reply</mat-icon>
+        <span>36</span>
+      </div>
+      <span fxFlex></span>
+      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+          <mat-icon>share</mat-icon>
+      </button>
+      <mat-menu #appMenu="matMenu">
+        <button mat-menu-item>Twitter</button>
+        <button mat-menu-item>Facebook</button>
+        <button mat-menu-item>Google+</button>
+      </mat-menu>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -1,0 +1,30 @@
+<mat-card fxLayout="column" fxLayoutAlign="space-between stretch"  class="portal-themed-shadow">
+  <div class="portal-widget__padding  portal-widget__content--flex" fxLayout="row" fxLayoutAlign="center center">
+    <div fxFlex>
+      <mat-card-title class="mat-card-title" il8n>{{ issuesTitle }} View</mat-card-title>
+      <mat-card-subtitle class="mat-card-subtitle" il8n>June 2018 - July 2018</mat-card-subtitle>
+    </div>
+    <div>
+      <mat-menu #issuesStatusMenu="matMenu">
+        <button mat-menu-item (click)="changeSales('Daily')" i18n>Day</button>
+        <button mat-menu-item (click)="changeSales('Weekly')" i18n>Week</button>
+        <button mat-menu-item (click)="changeSales('Monthly')" i18n>Month</button>
+      </mat-menu>
+      <button mat-icon-button [matMenuTriggerFor]="issuesStatusMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <mat-card-content>
+    <div class="portal-line-chart">
+      <canvas baseChart
+        [datasets]="lineChartDatasets"
+        [labels]="lineChartLabels"
+        [options]="lineChartOptions"
+        [colors]="lineChartColors"
+        [legend]="true"
+        chartType="line" ></canvas>
+    </div>
+  </mat-card-content>
+</mat-card>

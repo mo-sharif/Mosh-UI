@@ -1,0 +1,166 @@
+<div class="portal-profile-container portal-accent-bg" fxLayout="row" fxLayoutAlign="center">
+  <div fxFlex="80" fxFlex.sm="90" fxFlex.xs="100">
+    <div class="portal-profile__header" fxLayout="row" >
+      <div class="portal-profile__header-content" fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="start center">
+        <img src="assets/images/avatars/male/16.jpg" class="portal-profile__avatar" >
+        <div class="portal-profile__header-text">
+          <h1 i18n>Profile / Christos</h1>
+          <p i18n>Edit your perfonal information, change your password and set your privacy settings here.</p>
+        </div>
+      </div>
+    </div>
+    <div class="portal-profile__content">
+      <mat-card>
+        <mat-card-content>
+          <mat-tab-group>
+            <mat-tab label="Profile">
+              <ng-template mat-tab-label>
+                <mat-icon>account_circle</mat-icon>Profile
+              </ng-template>
+              <div class="portal-profile-container__content-tab">
+                <form [formGroup]="profileForm" fxLayout="column" fxLayoutGap="16px">
+                  <div fxLayout="row" fxLayoutGap="16px">
+                    <mat-form-field fxFlex="50">
+                      <input matInput
+                        formControlName="firstname"
+                        type="text"
+                        required
+                        placeholder="Enter your first name">
+                      <mat-error *ngIf="profileForm.get('firstname').hasError('required')" i18n>
+                        This is a required field
+                      </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="50">
+                      <input matInput
+                        formControlName="lastname"
+                        type="text"
+                        required
+                        placeholder="Enter your last name">
+                      <mat-error *ngIf="profileForm.get('lastname').hasError('required')" i18n>
+                        We also need your last name
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div fxLayout="row">
+                    <mat-form-field fxFlex>
+                      <input matInput
+                        formControlName="email"
+                        type="text"
+                        required
+                        placeholder="Enter your email address">
+                      <mat-error *ngIf="profileForm.get('email').hasError('required')" i18n>
+                        Please enter your email
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div fxLayout="row">
+                    <mat-form-field fxFlex>
+                      <input matInput
+                        formControlName="location"
+                        type="text"
+                        placeholder="Enter your location">
+                    </mat-form-field>
+                  </div>
+                  <div fxLayout="row">
+                      <mat-form-field fxFlex>
+                        <input matInput
+                          formControlName="website"
+                          type="text"
+                          placeholder="Website">
+                      </mat-form-field>
+                    </div>
+                  <div fxLayout="row">
+                    <mat-form-field fxFlex>
+                      <textarea matInput
+                        formControlName="describe"
+                        maxlength="255"
+                        placeholder="Describe yourself in 255 chars"></textarea>
+                      <mat-hint align="end">{{ profileForm.value.describe?.length || 0 }}/255</mat-hint>
+                    </mat-form-field>
+                  </div>
+                </form>
+              </div>
+            </mat-tab>
+            <mat-tab label="Password">
+              <ng-template mat-tab-label>
+                <mat-icon>security</mat-icon>Change Password
+              </ng-template>
+              <div class="portal-profile-container__content-tab">
+                <form [formGroup]="passwordForm">
+                  <div fxLayout="row">
+                    <mat-form-field fxFlex>
+                      <input matInput
+                        formControlName="oldPassword"
+                        type="text"
+                        required
+                        placeholder="Current password">
+                      <mat-error *ngIf="passwordForm.get('oldPassword').hasError('required')" i18n>
+                        This is a required field
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div fxLayout="row">
+                    <mat-form-field fxFlex>
+                      <input matInput
+                        formControlName="password"
+                        type="password"
+                        required
+                        placeholder="New password">
+                      <mat-error *ngIf="passwordForm.get('password').hasError('required')" i18n>
+                        This is a required field
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div fxLayout="row">
+                    <mat-form-field fxFlex>
+                      <input matInput
+                        formControlName="passwordConfirm"
+                        type="password"
+                        required
+                        placeholder="Confirm new password">
+                      <mat-error *ngIf="passwordForm.get('passwordConfirm').hasError('required')" i18n>
+                        This is a required field
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </form>
+              </div>
+            </mat-tab>
+            <mat-tab label="Notifications">
+              <ng-template mat-tab-label>
+                <mat-icon>notifications</mat-icon>Notifications
+              </ng-template>
+              <div class="portal-profile-container__content-tab">
+                <form [formGroup]="notificationsForm">
+                  <div class="toggle-container">
+                      <mat-icon>location_on</mat-icon><mat-slide-toggle fxFlex formControlName="showLocation">Show my location</mat-slide-toggle>
+                      <mat-icon>person_pin</mat-icon><mat-slide-toggle fxFlex formControlName="showUsername">Show my avatar</mat-slide-toggle>
+                  </div>
+                  <div class="toggle-container">
+                      <mat-icon>group</mat-icon><mat-slide-toggle fxFlex formControlName="showAvatar">Show my connections</mat-slide-toggle>
+                      <mat-icon>share</mat-icon><mat-slide-toggle fxFlex formControlName="showProfile">Show social links</mat-slide-toggle>
+                  </div>
+                  <div class="toggle-container">
+                      <mat-icon>notifications_active</mat-icon><mat-slide-toggle fxFlex formControlName="sendNotifications">Send notifications</mat-slide-toggle>
+                      <mat-icon>backup</mat-icon><mat-slide-toggle fxFlex formControlName="showBackups">Allow cloud backups</mat-slide-toggle>
+                  </div>
+                </form>
+              </div>
+            </mat-tab>
+          </mat-tab-group>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button i18n
+          type="submit"
+          color="accent"
+          (click)="showSnackbar()"
+          [disabled]="!profileForm.valid">
+          Update Settings
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,69 @@
+<mat-tab-group>
+  <mat-tab label="Previous SpaceX Launches" i18n-label>
+    <mat-table [dataSource]="previousDataSource">
+      <!-- Number Column -->
+      <ng-container matColumnDef="number">
+        <mat-header-cell *matHeaderCellDef>#</mat-header-cell>
+        <mat-cell *matCellDef="let launch">{{ launch.flight_number }}</mat-cell>
+      </ng-container>
+
+      <!-- Rocket Column -->
+      <ng-container matColumnDef="rocket">
+        <mat-header-cell *matHeaderCellDef i18n>Rocket</mat-header-cell>
+        <mat-cell *matCellDef="let launch">{{ launch.rocket.rocket_name }}</mat-cell>
+      </ng-container>
+
+      <!-- Payloads Column -->
+      <ng-container matColumnDef="payloads">
+        <mat-header-cell *matHeaderCellDef i18n>Payloads</mat-header-cell>
+        <mat-cell *matCellDef="let launch">{{ launch.payloads[0].payload_id }}</mat-cell>
+      </ng-container>
+
+      <!-- Customers Column -->
+      <ng-container matColumnDef="customers">
+        <mat-header-cell *matHeaderCellDef i18n>Customers</mat-header-cell>
+        <mat-cell *matCellDef="let launch">{{ launch.payloads[0].customers[0] }}</mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+    <mat-paginator #previousPaginator
+      [pageSize]="5"></mat-paginator>
+  </mat-tab>
+
+  <mat-tab label="Upcoming SpaceX Launches">
+    <mat-table [dataSource]="upcomingDataSource">
+      <!-- Number Column -->
+      <ng-container matColumnDef="number">
+        <mat-header-cell *matHeaderCellDef>#</mat-header-cell>
+        <mat-cell *matCellDef="let launch">{{ launch.flight_number }}</mat-cell>
+      </ng-container>
+
+      <!-- Rocket Column -->
+      <ng-container matColumnDef="rocket">
+        <mat-header-cell *matHeaderCellDef i18n>Rocket</mat-header-cell>
+        <mat-cell *matCellDef="let launch">{{ launch.rocket.rocket_name }}</mat-cell>
+      </ng-container>
+
+      <!-- Payloads Column -->
+      <ng-container matColumnDef="payloads">
+        <mat-header-cell *matHeaderCellDef i18n>Payloads</mat-header-cell>
+        <mat-cell *matCellDef="let launch">{{ launch.payloads[0].payload_id }}</mat-cell>
+      </ng-container>
+
+      <!-- Customers Column -->
+      <ng-container matColumnDef="customers">
+        <mat-header-cell *matHeaderCellDef i18n>Customers</mat-header-cell>
+        <mat-cell *matCellDef="let launch">{{ launch.payloads[0].customers[0] }}</mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator #upcomingPaginator
+      [pageSize]="5"></mat-paginator>
+  </mat-tab>
+
+</mat-tab-group>

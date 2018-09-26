@@ -1,0 +1,8 @@
+.portal-bar-chart {
+  display: flex;
+  justify-content: flex-end;
+  canvas {
+    min-height: 100%;
+    max-width: 100%;
+  }
+}

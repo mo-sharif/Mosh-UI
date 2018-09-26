@@ -1,0 +1,30 @@
+<div class="portal-accent-bg portal-error-500-container" fxLayoutAlign="center center" fxLayoutAlign.lt-sm="none">
+  <mat-card class="portal-error-500  mat-elevation-z portal-text-align-center"
+    fxFlex.lt-sm="100"
+    fxFlex="50"
+    fxFlex.md="40"
+    fxFlex.gt-md="30"
+    fxLayout.lt-sm="column">
+    <mat-card-content
+      fxFlex="auto"
+      fxLayout="column"
+      fxLayoutAlign="space-between none">
+      <div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <h1 i18n>Internal Server Error</h1>
+        </div>
+        <p i18n>Oops looks liks something has gone wrong</p>
+      </div>
+      <form [formGroup]="searchForm" (ngSubmit)="goHome()">
+        <mat-form-field>
+          <input matInput formControlName="search" placeholder="Search Portal" (keyup.enter)="goHome()">
+          <mat-icon matSuffix (click)="goHome()">search</mat-icon>
+        </mat-form-field>
+      </form>
+      <a mat-button i18n
+        (click)="goHome()">
+        Go Home
+      </a>
+    </mat-card-content>
+  </mat-card>
+</div>
