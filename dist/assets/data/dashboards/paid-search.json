@@ -1,0 +1,76 @@
+[{
+    "url": "/products/1",
+    "views": 12,
+    "duration": "00:00:55",
+    "conversion": "45%"
+}, {
+    "url": "/products/2",
+    "views": 23,
+    "duration": "00:01:05",
+    "conversion": "42%"
+}, {
+    "url": "/products/3",
+    "views": 156,
+    "duration": "00:02:17",
+    "conversion": "28%"
+}, {
+    "url": "/products/4",
+    "views": 53,
+    "duration": "00:01:18",
+    "conversion": "55%"
+}, {
+    "url": "/products/5",
+    "views": 67,
+    "duration": "00:03:00",
+    "conversion": "23%"
+}, {
+    "url": "/products/6",
+    "views": 65,
+    "duration": "00:02:25",
+    "conversion": "32%"
+}, {
+    "url": "/products/7",
+    "views": 8,
+    "duration": "00:01:14",
+    "conversion": "14%"
+}, {
+    "url": "/products/8",
+    "views": 65,
+    "duration": "00:01:42",
+    "conversion": "12%"
+}, {
+    "url": "/products/9",
+    "views": 575,
+    "duration": "00:00:51",
+    "conversion": "22%"
+}, {
+    "url": "/products/10",
+    "views": 72,
+    "duration": "00:00:38",
+    "conversion": "28%"
+}, {
+    "url": "/products/11",
+    "views": 198,
+    "duration": "00:03:22",
+    "conversion": "36%"
+}, {
+    "url": "/products/12",
+    "views": 475,
+    "duration": "00:02:43",
+    "conversion": "67%"
+}, {
+    "url": "/products/13",
+    "views": 12,
+    "duration": "00:00:14",
+    "conversion": "45%"
+}, {
+    "url": "/products/14",
+    "views": 11,
+    "duration": "00:00:59",
+    "conversion": "29%"
+}, {
+    "url": "/products/15",
+    "views": 487,
+    "duration": "00:00:21",
+    "conversion": "0%"
+}]

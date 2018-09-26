@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="fill: inherit;">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>tabbed</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icons" stroke="none" stroke-width="1" style="fill: inherit;" fill-rule="evenodd">
+        <g id="tabbed" style="fill: inherit;">
+            <rect id="Rectangle-Copy" x="0" y="4" width="24" height="20" rx="1"></rect>
+            <rect id="Rectangle-2" x="0" y="0" width="8" height="24" rx="1"></rect>
+        </g>
+    </g>
+</svg>
