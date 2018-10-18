@@ -1,6 +1,20 @@
-# Portal Angular
+# Mosh UI
 
+<a href="https://mosh-media.github.io/Mosh-UI/">Live Demo</a><br>
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
+
+## Project summary
+
+Mosh UI provides an easy solution to display analytic and profile data. 
+<ul>
+<li>Angular 4, CLI wordspace and RxJS</li> 
+<li>API integration with apps and services</li>
+<li>Customizable</li>  
+<li>SASS</li>   
+</ul>
+
+<hr>
+
 
 ## Development server
 
