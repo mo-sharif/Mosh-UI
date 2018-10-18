@@ -8,7 +8,7 @@ Mosh UI provides a universal solution to data visualization
 
 ## live demo
 
-[Live Demo](https://mosh-media.github.io/Mosh-UI/dashboards/analytics "Check it out")
+[Live Demo](https://mosh-media.github.io/Mosh-UI "Check it out")
 
 [Master tree](https://github.com/Mosh-Media/Mosh-UI/tree/master "Check it out")
 
